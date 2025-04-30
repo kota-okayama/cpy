@@ -1,0 +1,4739 @@
+version: '2.2'
+type: NORMAL
+id: 59edc75b-cd4e-480e-b073-93f5f502aa6d
+summary:
+  creation_date: '2022-12-28 01:08:19.221'
+  update_date: '2022-12-28 01:09:44.393'
+  num_of_bookdata: 500
+  num_of_pairs:
+    3: 75
+    2: 125
+    1: 25
+  config_match: null
+  config_mismatch: null
+books:
+  '4022571454':
+  - id: b8dc7d40-4a47-46c6-801f-5409449b07d6
+    group: '4022571454'
+    lib_id: Chiba_Abiko-1009710039904
+    title: 佐藤栄作日記 第5巻
+    author: 佐藤 栄作/著
+    publisher: 朝日新聞社
+    isbn: 4-02-257145-4
+    pubdate: 1997/10
+    source: Chiba_Abiko
+  - id: 968842da-5b0d-4311-b9e6-c6a5d3723112
+    group: '4022571454'
+    lib_id: Tokyo_Ota-000168358
+    title: 佐藤栄作日記 第5巻
+    author: 佐藤栄作著
+    publisher: 朝日新聞社
+    isbn: 4-02-257145-4
+    pubdate: '1997'
+    source: Tokyo_Ota
+  - id: 1a836004-b806-4bc0-8fb8-03d7a1c71eb6
+    group: '4022571454'
+    lib_id: Osaka_Sakai-1000000435733
+    title: 佐藤栄作日記 第5巻
+    author: 佐藤 栄作/著
+    publisher: 朝日新聞社
+    isbn: 4-02-257145-4
+    pubdate: 1997/10
+    source: Osaka_Sakai
+  '4052007239':
+  - id: 9c841be0-8654-4a5c-bd28-2799bf984113
+    group: '4052007239'
+    lib_id: Ishikawa_Hakui-48947
+    title: ばけばけおばけはかせ・おばけぐんだん ぼくたちのえらんだどうわ
+    author: 原 ゆたか/作
+    publisher: 東京:学研
+    isbn: 4-05-200723-9
+    pubdate: '1996.05'
+    source: Ishikawa_Hakui
+  - id: 7c5a8ea9-820c-4d7e-ac66-f84e1ae757f7
+    group: '4052007239'
+    lib_id: Osaka_Higashiosaka-1100254076
+    title: ばけばけおばけはかせ・おばけぐんだん
+    author: 原 ゆたか 著
+    publisher: 学習研究社
+    isbn: 4-05-200723-9
+    pubdate: '1996'
+    source: Osaka_Higashiosaka
+  - id: 1a202ee4-9c3a-484a-9cac-7f46f6d41bdd
+    group: '4052007239'
+    lib_id: Tokyo_Hachioji-B11438268
+    title: ばけばけおばけはかせ・おばけぐんだん [ぼくたちの えら んだどうわ]
+    author: 原ゆたか/作
+    publisher: 学研
+    isbn: 4-05-200723-9
+    pubdate: '1996.5'
+    source: Tokyo_Hachioji
+  '4041058600':
+  - id: 4c061312-46d8-43dc-910e-e86703be57e0
+    group: '4041058600'
+    lib_id: Osaka_Kashiwara-10572885
+    title: ザ・スパイ 角川文庫 iコ11-12
+    author: パウロ・コエーリョ/〔著〕
+    publisher: 東京:KADOKAWA
+    isbn: '4041058600'
+    pubdate: '2018.06'
+    source: Osaka_Kashiwara
+  - id: d11680ca-05f0-429e-93bf-4e7212e60dea
+    group: '4041058600'
+    lib_id: Shiga_Pref-4583739
+    title: ザ・スパイ
+    author: パウロ・コエーリョ∥[著], ほか
+    publisher: KADOKAWA
+    isbn: 978-4-04-105860-2
+    pubdate: '2018.6'
+    source: Shiga_Pref
+  - id: 35642429-7369-4628-8b6a-647500b797f5
+    group: '4041058600'
+    lib_id: Shizuoka_Fuji-B12620676
+    title: ザ・スパイ
+    author: パウロ・コエーリョ/[著]
+    publisher: KADOKAWA
+    isbn: 978-4-04-105860-2
+    pubdate: ''
+    source: Shizuoka_Fuji
+  '4000920456':
+  - id: cefa062a-f660-400f-9414-04043c45124f
+    group: '4000920456'
+    lib_id: Saitama_Chichibu-744592
+    title: エンデ全集 5 はてしない物語 下
+    author: エンデ/〔著〕
+    publisher: 東京:岩波書店
+    isbn: '4000920456'
+    pubdate: '1997.07'
+    source: Saitama_Chichibu
+  - id: 03f8500b-1f0a-4bab-96c6-cd9c945e92fb
+    group: '4000920456'
+    lib_id: Aichi_Kariya-B10394746
+    title: エンデ全集 5   はてしない物語
+    author: エンデ/[著]
+    publisher: 岩波書店
+    isbn: 4-00-092045-6
+    pubdate: '1997.7'
+    source: Aichi_Kariya
+  - id: ea163580-0d6c-4fe7-a084-1c4f3dd65ef6
+    group: '4000920456'
+    lib_id: Osaka_Habikino-427636
+    title: エンデ全集 5 はてしない物語 下
+    author: エンデ
+    publisher: 岩波書店
+    isbn: 978-4-00-092045-2
+    pubdate: '1997'
+    source: Osaka_Habikino
+  400430119X:
+  - id: c5c2f14b-8ce9-458f-9642-5df619da7e06
+    group: 400430119X
+    lib_id: Hokkaido_Sapporo-1001000261750
+    title: 和菓子の京都
+    author: 川端 道喜/著
+    publisher: 岩波書店
+    isbn: 4-00-430119-X
+    pubdate: 1990/04
+    source: Hokkaido_Sapporo
+  - id: f975d9a4-96b0-4519-8ff0-5e55f3ff1ca3
+    group: 400430119X
+    lib_id: Saitama_Okegawa-B10222997
+    title: 和菓子の京都 [岩波新書 新赤版] (119)
+    author: 川端道喜/著
+    publisher: 岩波書店
+    isbn: 4-00-430119-X
+    pubdate: '1990.4'
+    source: Saitama_Okegawa
+  - id: 3068dd26-7a78-4351-8921-8e00fda3747b
+    group: 400430119X
+    lib_id: Hyogo_Miki-539573
+    title: 和菓子の京都 岩波新書 新赤版 119
+    author: 川端 道喜/著
+    publisher: 岩波書店
+    isbn: 400430119X
+    pubdate: '1990'
+    source: Hyogo_Miki
+  '4048729616':
+  - id: daaf8723-1d94-4ec1-8d37-26923221912e
+    group: '4048729616'
+    lib_id: Yamaguchi_Hagi-9222
+    title: 夏色の軌跡
+    author: 西浦 一輝/〔著〕
+    publisher: 東京:角川書店
+    isbn: 4-04-872961-6
+    pubdate: '1996.05'
+    source: Yamaguchi_Hagi
+  - id: 4cda98e2-a7ee-4d8f-9cbb-3800d0ac4b2a
+    group: '4048729616'
+    lib_id: Niigata_Shibata-146974
+    title: 夏色の軌跡
+    author: 西浦 一輝/〔著〕
+    publisher: 東京:角川書店
+    isbn: 4-04-872961-6
+    pubdate: '1996.05'
+    source: Niigata_Shibata
+  - id: ebeead23-7904-4d3b-81e3-79be43710a5e
+    group: '4048729616'
+    lib_id: Hiroshima_Sera-7573
+    title: 夏色の軌跡
+    author: 西浦 一輝/〔著〕
+    publisher: 東京:角川書店
+    isbn: 4-04-872961-6
+    pubdate: '1996.05'
+    source: Hiroshima_Sera
+  '4102130055':
+  - id: d2668fd3-8b76-42c0-911f-ba5a5005c7db
+    group: '4102130055'
+    lib_id: Yamaguchi_Hofu-642172
+    title: 月と六ペンス 改版
+    author: モーム/〔著〕
+    publisher: 東京:新潮社
+    isbn: '4102130055'
+    pubdate: '1990'
+    source: Yamaguchi_Hofu
+  - id: 3121e24b-0cf9-4e0f-a0b2-17915f07e973
+    group: '4102130055'
+    lib_id: Tokyo_Minato-1000000776881
+    title: 月と六ペンス
+    author: モーム/[著]
+    publisher: 新潮社
+    isbn: 9784-10-213005-6
+    pubdate: 2010/02
+    source: Tokyo_Minato
+  - id: 50386647-6cff-48c6-b213-bb3681b9fece
+    group: '4102130055'
+    lib_id: Nagano_Suwa_Wide-1601742
+    title: 月と六ペンス
+    author: モーム‖[著]
+    publisher: 新潮社
+    isbn: '4102130055'
+    pubdate: '1990'
+    source: Nagano_Suwa_Wide
+  '4022571527':
+  - id: dc78274d-3001-40a9-bba0-154e7d62c53e
+    group: '4022571527'
+    lib_id: Yamaguchi_Shimonoseki-001-333768
+    title: 記者ありき
+    author: 木村/栄文‖著
+    publisher: 朝日新聞社
+    isbn: 4-02-257152-7
+    pubdate: '1997.06'
+    source: Yamaguchi_Shimonoseki
+  - id: 60e5fbd8-cd32-4a14-a12b-ec281c9f8bae
+    group: '4022571527'
+    lib_id: Fukuoka_Omuta-166257
+    title: 記者ありき 六皷・菊竹淳の生涯
+    author: 木村 栄文/著
+    publisher: 東京:朝日新聞社
+    isbn: '4022571527'
+    pubdate: '1997.06'
+    source: Fukuoka_Omuta
+  - id: 5686b239-dd2f-4b1c-a33f-97a545181023
+    group: '4022571527'
+    lib_id: Hiroshima_Hatsukaichi-B00060028
+    title: 記者ありき
+    author: ''
+    publisher: 朝日新聞社
+    isbn: 4-02-257152-7
+    pubdate: '1997.6'
+    source: Hiroshima_Hatsukaichi
+  '4051032787':
+  - id: a97e1e3d-2c20-42a1-914b-aac4c9ed246a
+    group: '4051032787'
+    lib_id: Hiroshima_Mihara-B10291101
+    title: 'コネコチャン ミーツケタ 子ねこちゃん,みーつけた   '
+    author: ''
+    publisher: ''
+    isbn: 4-05-103278-7
+    pubdate: '1989.11'
+    source: Hiroshima_Mihara
+  - id: 8b726c9f-b29a-45ab-8026-8785f3178056
+    group: '4051032787'
+    lib_id: Gifu_Tajimi-B10114353
+    title: 子ねこちゃん,みーつけた
+    author: ディミーター・インキオフ/作
+    publisher: 学研
+    isbn: 4-05-103278-7
+    pubdate: '1989.11'
+    source: Gifu_Tajimi
+  - id: d87c1818-bb86-494e-bed9-1f36b150d649
+    group: '4051032787'
+    lib_id: Chiba_Narita-1000478058
+    title: 子ねこちゃん,みーつけた(ぼくとクララおねえちゃん,2)
+    author: ''
+    publisher: ''
+    isbn: 4-05-103278-7
+    pubdate: ''
+    source: Chiba_Narita
+  '4052048326':
+  - id: 20975c40-eec1-4ec5-b919-8cc372b8fa5d
+    group: '4052048326'
+    lib_id: Aichi_Toyohashi-1102322630
+    title: けろけろいけのひっこし
+    author: 桐 隆一/作・絵
+    publisher: 学研教育みらい
+    isbn: 4-05-204832-6
+    pubdate: '2018.5'
+    source: Aichi_Toyohashi
+  - id: 8a7725d6-7f73-430d-b2fc-a6bfc5426577
+    group: '4052048326'
+    lib_id: Aichi_Nisshin-B11891738
+    title: けろけろいけのひっこし
+    author: 桐隆一/作・絵
+    publisher: 学研教育みらい
+    isbn: 978-4-05-204832-6
+    pubdate: '2018.5'
+    source: Aichi_Nisshin
+  - id: 1a866501-ca6d-4640-b896-f4e015b35779
+    group: '4052048326'
+    lib_id: Miyagi_Iwanuma-10104455
+    title: けろけろいけのひっこし
+    author: 桐 隆一/作・絵
+    publisher: 東京:学研教育みらい
+    isbn: '4052048326'
+    pubdate: '2018.05'
+    source: Miyagi_Iwanuma
+  '4000112090':
+  - id: a8374a82-093d-4b82-a87c-5b40e2c723a5
+    group: '4000112090'
+    lib_id: Gifu_Tajimi-B10319682
+    title: 岩波講座文学 9
+    author: 小森陽一/[ほか]編集委員
+    publisher: 岩波書店
+    isbn: 4-00-011209-0
+    pubdate: '2002.9'
+    source: Gifu_Tajimi
+  - id: 5bada667-189e-4610-ac36-352b8a10156e
+    group: '4000112090'
+    lib_id: Mie_Suzuka-28432
+    title: 岩波講座文学 9 フィクションか歴史か
+    author: 小森 陽一
+    publisher: 岩波書店
+    isbn: 978-4-00-011209-3
+    pubdate: 2002/09
+    source: Mie_Suzuka
+  - id: 8bae1586-a929-4752-aec2-98962b4d36ad
+    group: '4000112090'
+    lib_id: Tokyo_Meguro-B10306840
+    title: 岩波講座文学  9
+    author: 小森陽一/[ほか]編集委員
+    publisher: 岩波書店
+    isbn: 4-00-011209-0
+    pubdate: '2002.9'
+    source: Tokyo_Meguro
+  '4093878374':
+  - id: 01d5dd50-4ddc-4f9f-b1a1-30d57133659e
+    group: '4093878374'
+    lib_id: Kanagawa_Chigasaki-678652
+    title: ある日犬の国から手紙が来て
+    author: 田中 マルコ
+    publisher: 小学館
+    isbn: 978-4-09-387837-1
+    pubdate: 2009/03
+    source: Kanagawa_Chigasaki
+  - id: 4a024f62-5437-445e-b6ff-5ca40a6b2926
+    group: '4093878374'
+    lib_id: Niigata_Tainai-227678
+    title: ある日犬の国から手紙が来て モクとおじいちゃん~ごめんね~
+    author: 田中 マルコ/文
+    publisher: 東京:小学館
+    isbn: '4093878374'
+    pubdate: '2009.03'
+    source: Niigata_Tainai
+  - id: 339cc09d-1fee-43a4-b04f-30e50a037aa9
+    group: '4093878374'
+    lib_id: Tokyo_Higashikurume-1009810635810
+    title: ある日犬の国から手紙が来て
+    author: 田中 マルコ/文
+    publisher: 小学館
+    isbn: 9784-09-387837-1
+    pubdate: 2009/03
+    source: Tokyo_Higashikurume
+  410205605X:
+  - id: 77d783bc-cc05-40fc-8eb5-363e730d2262
+    group: 410205605X
+    lib_id: Fukuoka_Omuta-124034
+    title: 結婚しよう 新潮文庫
+    author: アップダイク/[著]
+    publisher: 東京:新潮社
+    isbn: 4-10-205605-X
+    pubdate: '1988.08'
+    source: Fukuoka_Omuta
+  - id: 92aefbe2-d839-4558-a164-b1ee21f3680f
+    group: 410205605X
+    lib_id: Toyama_Nanto-80115
+    title: 結婚しよう 新潮文庫
+    author: ジョン・アップダイク‖著 岩元 巌‖訳
+    publisher: ''
+    isbn: 4-10-205605-X
+    pubdate: '1988'
+    source: Toyama_Nanto
+  - id: f2a7ee8a-db12-472c-8075-c0a400fa0cf2
+    group: 410205605X
+    lib_id: Kanagawa_Fujisawa-816159
+    title: 結婚しよう(新潮文庫)
+    author: アップダイク著 岩元巌訳
+    publisher: 新潮社
+    isbn: 4-10-205605-X
+    pubdate: '1992.'
+    source: Kanagawa_Fujisawa
+  '4022501707':
+  - id: 9401a465-140d-4061-92f8-c5c571e74130
+    group: '4022501707'
+    lib_id: Osaka_Kishiwada-210085
+    title: 今夜は心だけ抱いて
+    author: 唯川 恵/著
+    publisher: 東京:朝日新聞社
+    isbn: 4-02-250170-7
+    pubdate: '2006.03'
+    source: Osaka_Kishiwada
+  - id: c644e209-22ad-4d49-9086-067a857783a9
+    group: '4022501707'
+    lib_id: Saitama_Toda-B10593324
+    title: 今夜は心だけ抱いて
+    author: 唯川恵/著
+    publisher: 朝日新聞社
+    isbn: 4-02-250170-7
+    pubdate: '2006.3'
+    source: Saitama_Toda
+  - id: 8f978eca-76e7-448b-b1f8-dd1f6f18a218
+    group: '4022501707'
+    lib_id: Gifu_Kani-B10642800
+    title: 今夜は心だけ抱いて
+    author: 唯川恵/著
+    publisher: 朝日新聞社
+    isbn: 4-02-250170-7
+    pubdate: '2006.3'
+    source: Gifu_Kani
+  '4052010809':
+  - id: cad01284-8bfb-45b5-b79c-6581b18273d7
+    group: '4052010809'
+    lib_id: Aichi_Okazaki-1100853906
+    title: 耳を立ててよくおきき ウサギじいさんの知恵
+    author: ホルヘ・ティモシー/作
+    publisher: 学研
+    isbn: 4-05-201080-9
+    pubdate: '1999.8'
+    source: Aichi_Okazaki
+  - id: df07035a-b475-441c-8aea-0e1820519c09
+    group: '4052010809'
+    lib_id: Kagoshima_Ibusuki-162244
+    title: 耳を立ててよくおきき  ウサギじいさんの知恵
+    author: ホルヘ・ティモシー/作
+    publisher: 東京:学研
+    isbn: 4-05-201080-9
+    pubdate: '1999.08'
+    source: Kagoshima_Ibusuki
+  - id: ccc50767-a498-4a39-a5dd-1e842be24e36
+    group: '4052010809'
+    lib_id: Nagano_Suwa_Wide-T99032622
+    title: 耳を立ててよくおきき ウサギじいさんの知恵
+    author: ホルヘ・ティモシー∥作
+    publisher: 学研
+    isbn: 4-05-201080-9
+    pubdate: '1999.8'
+    source: Nagano_Suwa_Wide
+  '4000071130':
+  - id: cc0e6684-9de1-413f-825d-e3df26c3100c
+    group: '4000071130'
+    lib_id: Saitama_Fukaya-3-0000456192
+    title: 幸福論 第2部
+    author: ヒルティ
+    publisher: 岩波書店
+    isbn: 4-00-007113-0
+    pubdate: '1993.10'
+    source: Saitama_Fukaya
+  - id: 03db18a2-1dc7-468e-91fb-1f4fa9c17dc1
+    group: '4000071130'
+    lib_id: Ehime_Niihama-00520233
+    title: 幸福論 第2部
+    author: ヒルティ‖著[ヒルティ カール], ほか
+    publisher: 岩波書店
+    isbn: 4-00-007113-0
+    pubdate: '199310'
+    source: Ehime_Niihama
+  - id: 2f9ef0b2-8f50-4f6b-9e61-0dc99e5cdb39
+    group: '4000071130'
+    lib_id: Saitama_Kawaguchi-B10675028
+    title: 幸福論 第2部  (ワイド版岩波文庫)
+    author: ヒルティ/著
+    publisher: 岩波書店
+    isbn: 4-00-007113-0
+    pubdate: '1993.10'
+    source: Saitama_Kawaguchi
+  '4000039571':
+  - id: d95c684a-fcae-4856-9a63-3577bd940ae6
+    group: '4000039571'
+    lib_id: Hyogo_Kato-67051
+    title: 障害児教育入門 子どもと教育
+    author: 野村庄吾/著
+    publisher: 東京:岩波書店
+    isbn: 4-00-003957-1
+    pubdate: '1996.11'
+    source: Hyogo_Kato
+  - id: d1aa5df0-8c7e-4c4d-877b-2f32d8e39538
+    group: '4000039571'
+    lib_id: Aichi_Handa-B10217923
+    title: 障害児教育入門 [子どもと教育]
+    author: 野村庄吾/著
+    publisher: 岩波書店
+    isbn: 4-00-003957-1
+    pubdate: '1996.11'
+    source: Aichi_Handa
+  - id: 4b40e204-652e-40cb-9b70-911ea1aa1302
+    group: '4000039571'
+    lib_id: Chiba_Shiroi-B10723196
+    title: 障害児教育入門 [子どもと教育]
+    author: ''
+    publisher: 岩波書店
+    isbn: 4-00-003957-1
+    pubdate: '1996.11'
+    source: Chiba_Shiroi
+  '4023311952':
+  - id: baf9b0a1-582d-47f0-a36c-38f8a4cfcd6b
+    group: '4023311952'
+    lib_id: Saitama_Gyoda-1277456
+    title: 生命の逆襲
+    author: 福岡 伸一/著
+    publisher: 東京:朝日新聞出版
+    isbn: 978-4-02-331195-4
+    pubdate: '2013.04'
+    source: Saitama_Gyoda
+  - id: b1025180-43e3-4581-8dcd-7a0b33022278
+    group: '4023311952'
+    lib_id: Aomori_Misawa-10058919
+    title: 生命の逆襲
+    author: 福岡 伸一/著
+    publisher: 東京:朝日新聞出版
+    isbn: 978-4-02-331195-4
+    pubdate: '2013.04'
+    source: Aomori_Misawa
+  - id: 9fd58151-c3bc-4d59-b59e-89364f29be53
+    group: '4023311952'
+    lib_id: Kanagawa_Yugawara-459190
+    title: 生命の逆襲
+    author: 福岡 伸一/著
+    publisher: 東京:朝日新聞出版
+    isbn: '4023311952'
+    pubdate: '2013.04'
+    source: Kanagawa_Yugawara
+  '4093882819':
+  - id: 2dfb69ac-1f4b-45f5-b466-313021cf7b39
+    group: '4093882819'
+    lib_id: Nara_Kashiba-259039
+    title: 新島八重の茶事記
+    author: 筒井 紘一/著
+    publisher: 小学館
+    isbn: 978-4-09-388281-1
+    pubdate: '2013.01'
+    source: Nara_Kashiba
+  - id: 6ed5da2c-26d5-40cd-8238-537d96551b07
+    group: '4093882819'
+    lib_id: Nara_Yamatotakada-172099
+    title: 新島八重の茶事記
+    author: 筒井 紘一/著
+    publisher: 東京:小学館
+    isbn: 978-4-09-388281-1
+    pubdate: '2013.01'
+    source: Nara_Yamatotakada
+  - id: 4bc77836-fece-4fc4-84cb-a1bfc40f2384
+    group: '4093882819'
+    lib_id: Hyogo_Nishinomiya-1000000736765
+    title: 新島八重の茶事記
+    author: 筒井 紘一/著
+    publisher: 小学館
+    isbn: 9784-09-388281-1
+    pubdate: 2013/01
+    source: Hyogo_Nishinomiya
+  405204553X:
+  - id: 663aa435-e9df-48b3-9cc7-bc40d3e4f1e0
+    group: 405204553X
+    lib_id: Gifu_Godo-454779
+    title: イヌのクイズ図鑑 ニューワイド学研の図鑑
+    author: ''
+    publisher: 東京:学研プラス
+    isbn: 978-4-05-204553-0
+    pubdate: '2016.12'
+    source: Gifu_Godo
+  - id: 7a0064ed-5352-479d-a223-e58c7d24b5fb
+    group: 405204553X
+    lib_id: Aichi_Kitanagoya-B11916329
+    title: イヌのクイズ図鑑 ニューワイド学研の図鑑
+    author: ''
+    publisher: 学研プラス
+    isbn: 978-4-05-204553-0
+    pubdate: '2016.12'
+    source: Aichi_Kitanagoya
+  - id: f5bd55fe-eeaf-4089-a370-19d95d7ba983
+    group: 405204553X
+    lib_id: Hokkaido_Niikappu-10029501
+    title: イヌのクイズ図鑑 ニューワイド学研の図鑑
+    author: ''
+    publisher: 東京:学研プラス
+    isbn: 978-4-05-204553-0
+    pubdate: '2016.12'
+    source: Hokkaido_Niikappu
+  '4000022318':
+  - id: fb91c2e3-cd47-40a3-add7-824f9099424d
+    group: '4000022318'
+    lib_id: Aichi_Tahara-B11437733
+    title: 村に火をつけ、白痴になれ
+    author: 栗原康/著
+    publisher: 岩波書店
+    isbn: 978-4-00-002231-6
+    pubdate: '2016.3'
+    source: Aichi_Tahara
+  - id: 9deef80b-abb7-46ef-a80b-1284a3f4705c
+    group: '4000022318'
+    lib_id: Hiroshima_Hatsukaichi-B10346339
+    title: 村に火をつけ、白痴になれ
+    author: 栗原康/著
+    publisher: 岩波書店
+    isbn: 978-4-00-002231-6
+    pubdate: '2016.3'
+    source: Hiroshima_Hatsukaichi
+  - id: 4688e425-778b-42b5-8b29-bf04928e556f
+    group: '4000022318'
+    lib_id: Hokkaido_Asahikawa-2441094
+    title: 村に火をつけ、白痴になれ 伊藤野枝伝
+    author: 栗原 康/著
+    publisher: 東京:岩波書店
+    isbn: 978-4-00-002231-6
+    pubdate: '2016.03'
+    source: Hokkaido_Asahikawa
+  '4000248790':
+  - id: 3146fe1e-a335-4227-8c7a-2cf99ff5ad53
+    group: '4000248790'
+    lib_id: Tokyo_Pref-1152782372
+    title: '[ 和図書 ] 未完の中国 課題としての民主化'
+    author: 加々美 光行/著
+    publisher: 岩波書店
+    isbn: 978-4-00-024879-2
+    pubdate: '2016.3'
+    source: Tokyo_Pref
+  - id: dce13bab-dabd-4fa6-8b4a-409b2c06f3b5
+    group: '4000248790'
+    lib_id: Hyogo_Sayo-1152033
+    title: 未完の中国 課題としての民主化
+    author: 加々美 光行/著
+    publisher: 東京:岩波書店
+    isbn: 978-4-00-024879-2
+    pubdate: '2016.03'
+    source: Hyogo_Sayo
+  - id: de0b32c8-df3e-4b17-80fb-251fd9eabdf4
+    group: '4000248790'
+    lib_id: Ibaraki_Ushiku-B10678290
+    title: 未完の中国 課題としての民主化
+    author: 加々美光行/著
+    publisher: 岩波書店
+    isbn: 978-4-00-024879-2
+    pubdate: '2016.3'
+    source: Ibaraki_Ushiku
+  '4050502488':
+  - id: cc366af4-bd65-4b3d-a34d-d02e8eb5214d
+    group: '4050502488'
+    lib_id: Tokyo_Suginami-1000000922023
+    title: 現代日本の文学 38 梅崎春生 椎名麟三集
+    author: 足立 巻一/[ほか]編
+    publisher: 学研
+    isbn: 4-05-050248-8
+    pubdate: 1978/00
+    source: Tokyo_Suginami
+  - id: 05773ce0-a687-4850-821a-184454c3d7a6
+    group: '4050502488'
+    lib_id: Shiga_Takashima-201523
+    title: 現代日本の文学 38 梅崎春生 椎名麟三集
+    author: 足立 巻一/〔ほか〕編
+    publisher: 東京:学研
+    isbn: 4-05-050248-8
+    pubdate: '1978'
+    source: Shiga_Takashima
+  - id: 458db1c1-74ba-40bb-beaa-861c5e135106
+    group: '4050502488'
+    lib_id: Shimane_Hamada-10048740
+    title: 現代日本の文学 38 梅崎春生 椎名麟三集
+    author: 足立 巻一/[ほか]編
+    publisher: 東京:学研
+    isbn: 4-05-050248-8
+    pubdate: '1978'
+    source: Shimane_Hamada
+  '4033308806':
+  - id: 19a0d44c-7d09-426a-a866-0faef5773ab5
+    group: '4033308806'
+    lib_id: Aichi_Kariya-B10055123
+    title: くんちゃんはあきらめないもん
+    author: つちだのぶこ/作・絵
+    publisher: 偕成社
+    isbn: 4-03-330880-6
+    pubdate: '2001.2'
+    source: Aichi_Kariya
+  - id: 4734eb03-2c5d-4025-bb54-8b79fb163134
+    group: '4033308806'
+    lib_id: Fukuoka_Miyako-156964
+    title: くんちゃんはあきらめないもん
+    author: つちだ のぶこ/作・絵
+    publisher: 東京:偕成社
+    isbn: 4-03-330880-6
+    pubdate: '2001.02'
+    source: Fukuoka_Miyako
+  - id: c984a915-af08-4a9f-9cba-8cf960379cbe
+    group: '4033308806'
+    lib_id: Tokyo_Inagi-1100213359
+    title: くんちゃんはあきらめないもん
+    author: つちだ のぶこ/作・絵
+    publisher: 偕成社
+    isbn: 4-03-330880-6
+    pubdate: '2001.2'
+    source: Tokyo_Inagi
+  '4062176114':
+  - id: 9f0c9027-8512-45e8-a914-f59e5bacf874
+    group: '4062176114'
+    lib_id: Kagawa_Utazu-33291945
+    title: お菓子の本の旅
+    author: 小手鞠 るい
+    publisher: 講談社
+    isbn: 978-4-06-217611-8
+    pubdate: 2012/04
+    source: Kagawa_Utazu
+  - id: b5faf132-8e1b-4035-bdae-61cd70676985
+    group: '4062176114'
+    lib_id: Fukui_Pref-1105083006
+    title: お菓子の本の旅
+    author: 小手鞠るい∥著[コデマリ,ルイ]
+    publisher: 講談社
+    isbn: 978-4-06-217611-8
+    pubdate: '2012.4'
+    source: Fukui_Pref
+  - id: 607251e8-6603-41f3-a4b7-4d985b7fd42d
+    group: '4062176114'
+    lib_id: Niigata_Minamiuonuma-124052
+    title: お菓子の本の旅
+    author: 小手鞠 るい/著
+    publisher: 東京:講談社
+    isbn: 978-4-06-217611-8
+    pubdate: '2012.04'
+    source: Niigata_Minamiuonuma
+  '4022560843':
+  - id: 8e816d18-cb5f-4cdb-b490-2082c04755fc
+    group: '4022560843'
+    lib_id: Miyagi_Sendai-1103907325
+    title: ' 世界経済三国志 下 覇権の一五〇年'
+    author: 朝日ジャーナル/編
+    publisher: 朝日新聞社
+    isbn: 4-02-256084-3
+    pubdate: '1989.12'
+    source: Miyagi_Sendai
+  - id: 67b5dd53-750d-4571-a379-20b18255ccea
+    group: '4022560843'
+    lib_id: Hyogo_Amagasaki-55012
+    title: 世界経済三国志 下 覇権の150年
+    author: 朝日ジャーナル
+    publisher: 朝日新聞社出版局
+    isbn: 978-4-02-256084-1
+    pubdate: '1989'
+    source: Hyogo_Amagasaki
+  - id: 8c752175-9e9b-49fb-b01f-12a7864240bd
+    group: '4022560843'
+    lib_id: Chiba_Sodegaura-64450
+    title: 世界経済三国志 下 覇権の一五〇年
+    author: 朝日ジャーナル/編
+    publisher: 東京:朝日新聞社
+    isbn: 4-02-256084-3
+    pubdate: '1989.12'
+    source: Chiba_Sodegaura
+  '4046318767':
+  - id: 86641f99-5190-4572-80c0-6a4a9f272324
+    group: '4046318767'
+    lib_id: Ibaraki_Moriya-10988971
+    title: 世にも奇妙な商品カタログ 2 角川つばさ文庫 Aち1-2
+    author: 地図十行路/作
+    publisher: 東京:KADOKAWA
+    isbn: 978-4-04-631876-3
+    pubdate: '2019.07'
+    source: Ibaraki_Moriya
+  - id: 328ce387-00e4-4015-9f26-4fd125ce619d
+    group: '4046318767'
+    lib_id: Aichi_Komaki-B14150669
+    title: 世にも奇妙な商品カタログ 2
+    author: 地図十行路/作
+    publisher: KADOKAWA
+    isbn: 978-4-04-631876-3
+    pubdate: '2019.7'
+    source: Aichi_Komaki
+  - id: 4c2caa47-a151-4aed-a3bd-d877fe30bcd9
+    group: '4046318767'
+    lib_id: Osaka_Kaizuka-1149491
+    title: 世にも奇妙な商品カタログ 2 ピッタリもらえる懸賞ハガキ・道の種他(角川つばさ文庫 A ち 1-2)
+    author: 地図十行路
+    publisher: KADOKAWA
+    isbn: 978-4-04-631876-3
+    pubdate: 2019/07
+    source: Osaka_Kaizuka
+  '4048736930':
+  - id: d57dc95a-e221-4904-acf9-68b3e4dfb59f
+    group: '4048736930'
+    lib_id: Yamanashi_Minamialps-79400
+    title: 初桜 青春俳句講座
+    author: 水原 佐保/著
+    publisher: 東京:角川書店
+    isbn: '4048736930'
+    pubdate: '2006.06'
+    source: Yamanashi_Minamialps
+  - id: e87a4d86-f177-4989-9c4c-67810fa0e0e9
+    group: '4048736930'
+    lib_id: Tochigi_Nikko-3-0000443720
+    title: 初桜
+    author: 水原 佐保
+    publisher: 角川書店
+    isbn: 4-04-873693-0
+    pubdate: '2006.6'
+    source: Tochigi_Nikko
+  - id: ee7dce48-cb99-4b5b-b41d-39211c7e6685
+    group: '4048736930'
+    lib_id: Osaka_Minoo-B10598315
+    title: 初桜 青春 俳句講座
+    author: 水原佐保/著
+    publisher: 角川書店
+    isbn: 4-04-873693-0
+    pubdate: '2006.6'
+    source: Osaka_Minoo
+  '4023332402':
+  - id: 2225d778-f1cb-48d8-9684-52e077a1d553
+    group: '4023332402'
+    lib_id: Chiba_Oamishirasato-1615785
+    title: ソノモノで編む、冬の編み物
+    author: 松本 恵衣子/著
+    publisher: 東京:朝日新聞出版
+    isbn: 978-4-02-333240-9
+    pubdate: '2018.09'
+    source: Chiba_Oamishirasato
+  - id: c3f13e15-d8cd-479d-ab8a-75d7eb5ebd6f
+    group: '4023332402'
+    lib_id: Gifu_Ogaki-B12265818
+    title: ソノモノで編む、冬の編み物
+    author: 松本恵衣子/著
+    publisher: 朝日新聞出版
+    isbn: 978-4-02-333240-9
+    pubdate: '2018.9'
+    source: Gifu_Ogaki
+  - id: 9407a5fa-d939-4bfc-97a5-8f9850f9175e
+    group: '4023332402'
+    lib_id: Tokyo_Kunitachi-B12178078
+    title: ソノモノで編む、冬の編み物
+    author: 松本恵衣子/著
+    publisher: 朝日新聞出版
+    isbn: '9784023332409'
+    pubdate: '2018.9'
+    source: Tokyo_Kunitachi
+  '4034311002':
+  - id: 102b05cf-3141-4e63-ad3f-3a5dfdd9ca22
+    group: '4034311002'
+    lib_id: Saitama_Asaka-463883
+    title: ぼく字がかけるよ 教室ねずみジョンのお話
+    author: ビバリィ・ランデル/作
+    publisher: 偕成社
+    isbn: '4034311002'
+    pubdate: '1989'
+    source: Saitama_Asaka
+  - id: 5b09901d-536b-4c63-9745-de40141f4c55
+    group: '4034311002'
+    lib_id: Tokyo_Chofu-130903
+    title: ぼく字がかけるよ-教室ねずみジョンのお話-(偕成社・幼年翻訳どうわ)
+    author: ビバリィ・ランデル作 ノエラ・ヤング絵 かわいともこ訳
+    publisher: 偕成社
+    isbn: 4-03-431100-2
+    pubdate: '1989.08'
+    source: Tokyo_Chofu
+  - id: 5207e201-23a4-42b1-af4a-d86b11372996
+    group: '4034311002'
+    lib_id: Chiba_Narashino-4330
+    title: ぼく字がかけるよ 教室ねずみジョンのお話 (幼年翻訳どうわ)
+    author: ビバリィ=ランデル
+    publisher: 偕成社
+    isbn: 978-4-03-431100-4
+    pubdate: 1989/08
+    source: Chiba_Narashino
+  '4035278009':
+  - id: 0904b6d3-b220-4aef-9987-26d2bd99eff8
+    group: '4035278009'
+    lib_id: Nagano_Yamagata-14811
+    title: 科学のカレンダー 10月の巻 観察する・しらべる・考える
+    author: 科学のほんの会/編著
+    publisher: 東京:偕成社
+    isbn: '4035278009'
+    pubdate: '1998.03'
+    source: Nagano_Yamagata
+  - id: e89b6ec3-bb6b-4113-a1c2-2faf761d5e42
+    group: '4035278009'
+    lib_id: Aichi_Kariya-B10402550
+    title: 科学のカレンダー 10月の巻 観察する・しらべる・考える
+    author: 科学のほんの会/編著
+    publisher: 偕成社
+    isbn: 4-03-527800-9
+    pubdate: '1998.3'
+    source: Aichi_Kariya
+  - id: 5ca5e8b3-08d2-4e96-8f53-b94d55fcf122
+    group: '4035278009'
+    lib_id: Hiroshima_Higashihiroshima-142484
+    title: 科学のカレンダー 10月の巻 観察する・しらべる・考える
+    author: 科学のほんの会/編著
+    publisher: 東京:偕成社
+    isbn: 4-03-527800-9
+    pubdate: '1998.03'
+    source: Hiroshima_Higashihiroshima
+  '4033331301':
+  - id: 29e44416-acc5-4870-9b29-2029d58fd3cb
+    group: '4033331301'
+    lib_id: Aichi_Nishio-B10224813
+    title: サワガニ [カラー自然シリーズ] (13)
+    author: 七尾 純∥構成
+    publisher: 偕成社
+    isbn: 4-03-333130-1
+    pubdate: '1978'
+    source: Aichi_Nishio
+  - id: aeb2aedd-e74e-4823-b569-5b4f878effc0
+    group: '4033331301'
+    lib_id: Tokyo_Ome-T74011926
+    title: サワガニ カラー自然シリーズ
+    author: 七尾 純/構成
+    publisher: 偕成社
+    isbn: 4-03-333130-1
+    pubdate: '1978'
+    source: Tokyo_Ome
+  - id: 15c2988a-1c61-4446-b864-39b58955c728
+    group: '4033331301'
+    lib_id: Saitama_Chichibu-881572
+    title: サワガニ カラー自然シリーズ 13
+    author: 小田 英智∥著 桜井 淳史/写真
+    publisher: 偕成社
+    isbn: '4033331301'
+    pubdate: '1975.11'
+    source: Saitama_Chichibu
+  '4053021553':
+  - id: 2bedfd9a-64ba-4412-a9c1-dcc43ee0ab6d
+    group: '4053021553'
+    lib_id: Nara_Sango-346949
+    title: くわしい!わかる!図解日本の産業 7 商業・サービス業
+    author: 保岡 孝之/監修
+    publisher: 学研
+    isbn: '4053021553'
+    pubdate: '2006.03'
+    source: Nara_Sango
+  - id: 6228b8e5-1e74-4242-8b97-9e0166f7d8dc
+    group: '4053021553'
+    lib_id: Nagano_Nagano-507552
+    title: くわしい!わかる!図解日本の産業 7 商業・サービス業
+    author: 保岡 孝之/監修
+    publisher: 東京:学研
+    isbn: 4-05-302155-3
+    pubdate: '2006.03'
+    source: Nagano_Nagano
+  - id: 17f5d295-bb38-47e4-9768-75b6844c3c0f
+    group: '4053021553'
+    lib_id: Osaka_Takatsuki-B10463720
+    title: くわしい!わかる!図解日本の産業 7
+    author: 保岡孝之/監修
+    publisher: 学研
+    isbn: 4-05-302155-3
+    pubdate: '2006.3'
+    source: Osaka_Takatsuki
+  400300194X:
+  - id: b16b3f3d-5222-4ec7-9b62-8a5dca45dbc3
+    group: 400300194X
+    lib_id: Saitama_Pref-1000101003168
+    title: 今昔物語集 本朝部 下
+    author: 池上洵一/編
+    publisher: 岩波書店
+    isbn: 4-00-300194-X
+    pubdate: 2001/09
+    source: Saitama_Pref
+  - id: eff08b73-1676-4cf2-b81f-bb66a624b6bc
+    group: 400300194X
+    lib_id: Nara_Kashiba-171767
+    title: 今昔物語集 本朝部下 岩波文庫
+    author: 池上 洵一/編
+    publisher: 岩波書店
+    isbn: 4-00-300194-X
+    pubdate: '2001.09'
+    source: Nara_Kashiba
+  - id: ae528134-36fa-4c85-9d5e-2302b2c53223
+    group: 400300194X
+    lib_id: Chiba_Narita-1001170744
+    title: 今昔物語集,本朝部下(岩波文庫)
+    author: ''
+    publisher: ''
+    isbn: 4-00-300194-X
+    pubdate: ''
+    source: Chiba_Narita
+  '4000076612':
+  - id: 9b094f09-71e8-45eb-ac17-83cff9dbc3ba
+    group: '4000076612'
+    lib_id: Okinawa_Uruma-0100020756
+    title: エントロピーとは何だろうか New science age 11
+    author: 小出/昭一郎‖著
+    publisher: 岩波書店
+    isbn: 4-00-007661-2
+    pubdate: '1985.6'
+    source: Okinawa_Uruma
+  - id: dcbd6757-e91d-452a-aaac-447f8a5dc5e1
+    group: '4000076612'
+    lib_id: Hyogo_Tatsuno-13016
+    title: エントロピーとは何だろうか New science age 11
+    author: 小出 昭一郎/著
+    publisher: 東京:岩波書店
+    isbn: 4-00-007661-2
+    pubdate: '1985.06'
+    source: Hyogo_Tatsuno
+  - id: 1f5b8836-b1ed-4771-9f23-111d1f2268df
+    group: '4000076612'
+    lib_id: Tokyo_Ota-3969263
+    title: エントロピーとは何だろうか(New science age 11)
+    author: 小出昭一郎/著 安孫子誠也/著
+    publisher: 岩波書店
+    isbn: 4-00-007661-2
+    pubdate: '1985.06'
+    source: Tokyo_Ota
+  '4003750888':
+  - id: 271f947e-de85-4c6f-a554-a9844c39fd85
+    group: '4003750888'
+    lib_id: Tokyo_Toshima-3081750
+    title: 恋愛論 下(岩波文庫 32-526-2)
+    author: スタンダール/著 杉本圭子/訳
+    publisher: 岩波書店
+    isbn: 978-4-00-375088-9
+    pubdate: '2016.02'
+    source: Tokyo_Toshima
+  - id: 5ec1e582-2d47-468c-8073-08b76fcba276
+    group: '4003750888'
+    lib_id: Chiba_Kashiwa-2268359
+    title: 恋愛論 下 (岩波文庫)
+    author: スタンダール
+    publisher: 岩波書店
+    isbn: 978-4-00-375088-9
+    pubdate: '2016'
+    source: Chiba_Kashiwa
+  - id: 870fcfb9-a540-4ec4-acd9-fde648a242b0
+    group: '4003750888'
+    lib_id: Tokyo_Kokubunji-B11646018
+    title: 恋愛論 下
+    author: スタンダール/著
+    publisher: 岩波書店
+    isbn: '9784003750889'
+    pubdate: '2016.2'
+    source: Tokyo_Kokubunji
+  '4022578475':
+  - id: 86c993cc-88ba-4da6-bbbb-3d0b5b02e11b
+    group: '4022578475'
+    lib_id: Chiba_Oamishirasato-829327
+    title: 生きもの夢千里
+    author: 朝日新聞地域報道部のにんげん記者たち/編
+    publisher: 東京:朝日新聞社
+    isbn: 4-02-257847-5
+    pubdate: '2003.06'
+    source: Chiba_Oamishirasato
+  - id: a5922e94-63f5-4fa2-a783-b40fb47095a1
+    group: '4022578475'
+    lib_id: Hokkaido_Wakkanai-119401
+    title: 生きもの夢千里
+    author: 朝日新聞地域報道部のにんげん記者たち/編
+    publisher: 東京:朝日新聞社
+    isbn: 4-02-257847-5
+    pubdate: '2003.06'
+    source: Hokkaido_Wakkanai
+  - id: dc109599-9d10-4ce5-a235-cb5960599bc9
+    group: '4022578475'
+    lib_id: Okinawa_Okinawa-000520096
+    title: 生きもの夢千里
+    author: 朝日新聞地域報道部のにんげん記者たち編
+    publisher: 朝日新聞社
+    isbn: 4-02-257847-5
+    pubdate: '2003'
+    source: Okinawa_Okinawa
+  '4039671104':
+  - id: 8de23844-686d-4ac6-bc0a-f48d9a81333f
+    group: '4039671104'
+    lib_id: Chiba_Yachiyo-B11606861
+    title: 森の友だちとごちそうどろぼう
+    author: アリソン□アトリー/作
+    publisher: 偕成社
+    isbn: 4-03-967110-4
+    pubdate: '1987.12'
+    source: Chiba_Yachiyo
+  - id: 1734c339-d1bb-457f-a5fb-1d09e47ef6c4
+    group: '4039671104'
+    lib_id: Fukui_Sakai-40805
+    title: 森の友だちとごちそうどろぼう リトル・グレイラビット 1
+    author: アリソン=アトリー/作
+    publisher: 東京:偕成社
+    isbn: 4-03-967110-4
+    pubdate: '1987.12'
+    source: Fukui_Sakai
+  - id: 4e9e1a9d-ee26-4514-bc74-d9ff48ef71a3
+    group: '4039671104'
+    lib_id: Tokyo_Mizuho-T88-00186
+    title: 森の友だちとごちそうどろぼう リトル・グレイラビット
+    author: アリソン=アトリー/作
+    publisher: 偕成社
+    isbn: 4-03-967110-4
+    pubdate: '1987'
+    source: Tokyo_Mizuho
+  '4004312841':
+  - id: edfc3dd0-359f-46be-a644-0a3198b3f9f5
+    group: '4004312841'
+    lib_id: Osaka_Kumatori-B11150016
+    title: 日本語と時間
+    author: 藤井 貞和/著
+    publisher: 岩波書店
+    isbn: '9784004312840'
+    pubdate: '2010'
+    source: Osaka_Kumatori
+  - id: dfb01eab-54bd-46a5-a754-63a21e795934
+    group: '4004312841'
+    lib_id: Nagano_Pref-1000000417214
+    title: 日本語と時間(岩波新書 新赤版 1284)
+    author: 藤井 貞和/著
+    publisher: 岩波書店
+    isbn: 9784-00-431284-0
+    pubdate: 2010/12
+    source: Nagano_Pref
+  - id: 1b8513eb-d957-4300-844f-34e084c02f26
+    group: '4004312841'
+    lib_id: Saitama_Soka-2608583
+    title: 日本語と時間 〈時の文法〉をたどる
+    author: 藤井 貞和/著
+    publisher: 東京:岩波書店
+    isbn: 978-4-00-431284-0
+    pubdate: '2010.12'
+    source: Saitama_Soka
+  '4035279609':
+  - id: a6ff0eeb-e864-421a-948b-a897fcf18e0f
+    group: '4035279609'
+    lib_id: Aichi_Komaki-B12778780
+    title: 総合学習遊んで学ぶ野菜の本 6
+    author: 伊東正/監修
+    publisher: 偕成社
+    isbn: 4-03-527960-9
+    pubdate: '2001.3'
+    source: Aichi_Komaki
+  - id: 537fdb7f-02ac-402e-ba46-4d1844acb948
+    group: '4035279609'
+    lib_id: Kumamoto_Amakusa-560437
+    title: 総合学習遊んで学ぶ野菜の本 6 その深い結びつきを知ろう
+    author: 伊東 正/監修
+    publisher: 東京:偕成社
+    isbn: '4035279609'
+    pubdate: '2001.03'
+    source: Kumamoto_Amakusa
+  - id: 96c0a295-e61c-4ef3-bbb5-d15dd85df8c7
+    group: '4035279609'
+    lib_id: Okinawa_Okinawa-000332669
+    title: 総合学習遊んで学ぶ野菜の本 6 人間と野菜−その深い結びつきを知ろう−
+    author: 伊東正監修
+    publisher: 偕成社
+    isbn: 4-03-527960-9
+    pubdate: '2001'
+    source: Okinawa_Okinawa
+  '4062187566':
+  - id: 2962f1d7-417e-497a-98f8-8d8f5afed2c1
+    group: '4062187566'
+    lib_id: Tochigi_Sano-1117452
+    title: <世界史>の哲学 東洋篇
+    author: 大澤 真幸/著
+    publisher: ''
+    isbn: 978-4-06-218756-5
+    pubdate: '2014.01'
+    source: Tochigi_Sano
+  - id: fade249c-9e1e-4fe2-91b9-148c78c2679b
+    group: '4062187566'
+    lib_id: Tokyo_Kodaira-2102159
+    title: <世界史>の哲学 東洋篇
+    author: 大澤 真幸/著
+    publisher: 東京:講談社
+    isbn: '4062187566'
+    pubdate: '2014.01'
+    source: Tokyo_Kodaira
+  - id: f1759170-c919-468b-bfbf-790da4dfca1d
+    group: '4062187566'
+    lib_id: Tokyo_Hino-1002000015081
+    title: <世界史>の哲学 東洋篇
+    author: 大澤 真幸/著
+    publisher: 講談社
+    isbn: 978-4-06-218756-5
+    pubdate: 2014/01
+    source: Tokyo_Hino
+  '4046311517':
+  - id: 12148137-02da-4290-9bd3-83bb31fbe264
+    group: '4046311517'
+    lib_id: Kagawa_Tadotsu-15357281
+    title: 豆腐小僧
+    author: 京極夏彦
+    publisher: 角川書店
+    isbn: 978-4-04-631151-1
+    pubdate: 2011/05
+    source: Kagawa_Tadotsu
+  - id: 65596f6f-b605-44a4-9bb4-5b1fcf2dbd9b
+    group: '4046311517'
+    lib_id: Gumma_Maebashi-1009915538698
+    title: 豆富小僧 (角川つばさ文庫 Aき2-1)
+    author: 京極 夏彦/作
+    publisher: 角川書店
+    isbn: 9784-04-631151-1
+    pubdate: 2011/04
+    source: Gumma_Maebashi
+  - id: ea795f92-e7fa-40c1-9b70-a04fc1ecef71
+    group: '4046311517'
+    lib_id: Tokyo_Nishitokyo-2621013
+    title: 豆富小僧(角川つばさ文庫 Aき2-1)
+    author: 京極夏彦/作 みことあけみ/挿絵
+    publisher: 角川書店
+    isbn: 978-4-04-631151-1
+    pubdate: '2011.04'
+    source: Tokyo_Nishitokyo
+  '4041014948':
+  - id: cb92deb6-4ccf-453b-8728-d9250c3616a0
+    group: '4041014948'
+    lib_id: Tokyo_Koto-B14781307
+    title: ふらっと銀次事件帳 3  [角川文庫] (ま36-3)
+    author: 牧秀彦/[著]
+    publisher: KADOKAWA
+    isbn: 978-4-04-101494-3
+    pubdate: '2014.6'
+    source: Tokyo_Koto
+  - id: 0641a88b-7b89-456d-96e3-2231826423d9
+    group: '4041014948'
+    lib_id: Kumamoto_Aso-697413
+    title: ふらっと銀次事件帳 3 角川文庫 ま36-3
+    author: 牧 秀彦/〔著〕
+    publisher: 東京:KADOKAWA
+    isbn: '4041014948'
+    pubdate: '2014.06'
+    source: Kumamoto_Aso
+  - id: d7dda9e5-4560-40e2-8274-c187debbc461
+    group: '4041014948'
+    lib_id: Fukushima_Koriyama-1667467
+    title: ふらっと銀次事件帳 3  角川文庫
+    author: 牧 秀彦/[著]
+    publisher: 東京:KADOKAWA
+    isbn: 978-4-04-101494-3
+    pubdate: '2014'
+    source: Fukushima_Koriyama
+  '4000030159':
+  - id: 6b916487-1f56-436f-8a1d-d3dd9a131f9a
+    group: '4000030159'
+    lib_id: Nagano_Ueda-174724
+    title: 原発事故-日本では?  岩波ブックレット No.75
+    author: 高木 仁三郎/〔著〕
+    publisher: 東京:岩波書店
+    isbn: 4-00-003015-9
+    pubdate: '1986.12'
+    source: Nagano_Ueda
+  - id: b4ffeac0-eba6-49e4-9d46-7170890f4714
+    group: '4000030159'
+    lib_id: Fukuoka_Itoshima-10180268
+    title: 原発事故-日本では?  岩波ブックレット No.75
+    author: 高木 仁三郎/[著]
+    publisher: 東京:岩波書店
+    isbn: 4-00-003015-9
+    pubdate: '1986.12'
+    source: Fukuoka_Itoshima
+  - id: 6e0be84d-e69b-46ac-9818-47716fc3349a
+    group: '4000030159'
+    lib_id: Saitama_Tokigawa-59457
+    title: 原発事故-日本では? 岩波ブックレット No.75
+    author: 高木 仁三郎/著
+    publisher: 東京:岩波書店
+    isbn: '4000030159'
+    pubdate: '1986.12'
+    source: Saitama_Tokigawa
+  '4103005114':
+  - id: a168194c-6de7-4a1f-acba-8b45dd5d26d9
+    group: '4103005114'
+    lib_id: Fukuoka_Miyako-135414
+    title: 消された一家  北九州・連続監禁殺人事件
+    author: 豊田 正義/著
+    publisher: 東京:新潮社
+    isbn: 4-10-300511-4
+    pubdate: '2005.11'
+    source: Fukuoka_Miyako
+  - id: 9a2ef61b-a3c6-4d19-8e3a-7a9fd13d109c
+    group: '4103005114'
+    lib_id: Saitama_Saitama-2060218
+    title: 消された一家-北九州・連続監禁殺人事件-
+    author: 豊田正義/著
+    publisher: 新潮社
+    isbn: 4-10-300511-4
+    pubdate: '2005.11'
+    source: Saitama_Saitama
+  - id: 16a7a270-d1b5-403b-9edf-1e709d3b9870
+    group: '4103005114'
+    lib_id: Aichi_Kitanagoya-B10907710
+    title: 消された一家
+    author: 豊田正義/著
+    publisher: 新潮社
+    isbn: 4-10-300511-4
+    pubdate: '2005.11'
+    source: Aichi_Kitanagoya
+  '4002600629':
+  - id: 65977811-a776-4fe3-98ed-5fd8bb8f4b9a
+    group: '4002600629'
+    lib_id: Osaka_Shijonawate-58639
+    title: 三文役者の死 正伝殿山秦司  同時代ライブラリー 62
+    author: 新藤 兼人/著
+    publisher: 岩波書店
+    isbn: '4002600629'
+    pubdate: '1991.01'
+    source: Osaka_Shijonawate
+  - id: fadeb012-be71-4596-8ee7-c40f85c26d18
+    group: '4002600629'
+    lib_id: Tokyo_Bunkyo-B11317498
+    title: 三文役者の死 正伝殿山泰司    同時代ライブラリー - 62
+    author: 新藤兼人/著
+    publisher: 岩波書店
+    isbn: 4-00-260062-9
+    pubdate: '1991.3'
+    source: Tokyo_Bunkyo
+  - id: f43a9e28-002f-48f3-a70d-500a74a07737
+    group: '4002600629'
+    lib_id: Kanagawa_Yokosuka-B10778045
+    title: 三文役者の死 正伝殿山泰 [同時代ライブラリー] (62)
+    author: 新藤兼人∥著
+    publisher: 岩波書店
+    isbn: '4002600629'
+    pubdate: '1991'
+    source: Kanagawa_Yokosuka
+  '4000803212':
+  - id: 0edb3446-aab5-44ee-92f6-1af0ba9dbf82
+    group: '4000803212'
+    lib_id: Oita_Kunisaki-456868
+    title: 世界ことわざ比較辞典
+    author: 日本ことわざ文化学会/編
+    publisher: 東京:岩波書店
+    isbn: '4000803212'
+    pubdate: '2020.03'
+    source: Oita_Kunisaki
+  - id: 34b33c35-fc16-448f-8782-8f4fa6d0e9fe
+    group: '4000803212'
+    lib_id: Nagasaki_Shinkamigoto-10075553
+    title: 世界ことわざ比較辞典
+    author: 日本ことわざ文化学会/編
+    publisher: 東京:岩波書店
+    isbn: '4000803212'
+    pubdate: '2020.03'
+    source: Nagasaki_Shinkamigoto
+  - id: ba09d4e3-c852-414d-83c5-00ffe62e26c1
+    group: '4000803212'
+    lib_id: Hyogo_Kato-10656453
+    title: 世界ことわざ比較辞典
+    author: 日本ことわざ文化学会/編
+    publisher: 東京:岩波書店
+    isbn: 978-4-00-080321-2
+    pubdate: '2020.03'
+    source: Hyogo_Kato
+  '4000113933':
+  - id: 5283df54-9e3c-4950-9325-e8dc0fb61e0a
+    group: '4000113933'
+    lib_id: Osaka_Pref-10021400378968
+    title: 岩波講座教育変革への展望 3 変容する子どもの関係
+    author: 佐藤/学‖編集委員
+    publisher: 岩波書店
+    isbn: 978-4-00-011393-9
+    pubdate: '2016.7'
+    source: Osaka_Pref
+  - id: 0dad7458-6815-43f8-877d-f43277472a28
+    group: '4000113933'
+    lib_id: Gifu_Pref-1190145895
+    title: 岩波講座教育変革への展望 3
+    author: 佐藤 学/編集委員
+    publisher: 岩波書店
+    isbn: 978-4-00-011393-9
+    pubdate: '2016.7'
+    source: Gifu_Pref
+  - id: d6fd8467-41f9-438d-a1bd-c7a09427106a
+    group: '4000113933'
+    lib_id: Akita_Pref-1009920413959
+    title: 岩波講座教育変革への展望 3 変容する子どもの関係
+    author: 佐藤 学/編集委員
+    publisher: 岩波書店
+    isbn: 4-00-011393-9
+    pubdate: 2016/07
+    source: Akita_Pref
+  '4003001931':
+  - id: e1941616-e47e-4c80-9e96-0912b5d4d644
+    group: '4003001931'
+    lib_id: Fukuoka_Yanagawa-1160727
+    title: 今昔物語集 本朝部中 岩波文庫
+    author: 池上 洵一/編
+    publisher: 東京:岩波書店
+    isbn: 4-00-300193-1
+    pubdate: '2001.07'
+    source: Fukuoka_Yanagawa
+  - id: 794d9512-7fcd-49f5-9559-e2ba26edd1c4
+    group: '4003001931'
+    lib_id: Osaka_Yao-1100176322
+    title: 今昔物語集
+    author: 池上 洵一/編
+    publisher: 岩波書店
+    isbn: 4-00-300193-1
+    pubdate: '2001.7'
+    source: Osaka_Yao
+  - id: 354f8d64-f7f7-479e-ae8d-22a9f7dd01af
+    group: '4003001931'
+    lib_id: Tokyo_Toshima-103091
+    title: 今昔物語集 本朝部中(岩波文庫)
+    author: 池上洵一/編
+    publisher: 岩波書店
+    isbn: 4-00-300193-1
+    pubdate: '2001.07'
+    source: Tokyo_Toshima
+  '4062189755':
+  - id: 65e1419a-120c-4385-a413-ed12b498897a
+    group: '4062189755'
+    lib_id: Aichi_Ichinomiya-10402871
+    title: '言語起源論の系譜 '
+    author: 互 盛央/著
+    publisher: 東京:講談社
+    isbn: '4062189755'
+    pubdate: '2014.05'
+    source: Aichi_Ichinomiya
+  - id: fc613ebf-b903-4718-8a98-48bacd372ffb
+    group: '4062189755'
+    lib_id: Saitama_Saitama-441586
+    title: 言語起源論の系譜
+    author: 互盛央/著
+    publisher: 講談社
+    isbn: 978-4-06-218975-0
+    pubdate: '2014.05'
+    source: Saitama_Saitama
+  - id: e7b0a7ed-392c-45b6-b5e2-185a0f1e963e
+    group: '4062189755'
+    lib_id: Tokyo_Tachikawa-1467295
+    title: 言語起源論の系譜
+    author: 互盛央/著
+    publisher: 講談社
+    isbn: 978-4-06-218975-0
+    pubdate: '2014.05'
+    source: Tokyo_Tachikawa
+  '4048838237':
+  - id: 50950995-9e17-4424-8370-3ace5afd0554
+    group: '4048838237'
+    lib_id: Saitama_Hasuda-37079
+    title: 何をやっても癒されない
+    author: 春日 武彦/著
+    publisher: 東京:角川書店
+    isbn: '4048838237'
+    pubdate: '2003.05'
+    source: Saitama_Hasuda
+  - id: 81a6d482-fdc1-4f26-831a-cb6fd6011199
+    group: '4048838237'
+    lib_id: Tokyo_Shinagawa-1100826988
+    title: 何をやっても癒されない
+    author: 春日 武彦/著
+    publisher: 角川書店
+    isbn: 4-04-883823-7
+    pubdate: '2003.5'
+    source: Tokyo_Shinagawa
+  - id: 65a30f34-1ac1-424e-8e61-eb75168d8a12
+    group: '4048838237'
+    lib_id: Tokyo_Akiruno-290807
+    title: 何をやっても癒されない
+    author: 春日 武彦
+    publisher: 角川書店
+    isbn: 978-4-04-883823-8
+    pubdate: '200305'
+    source: Tokyo_Akiruno
+  '4001130076':
+  - id: e0e624b4-bf9b-417a-a0bf-3911e6dff7b8
+    group: '4001130076'
+    lib_id: Tokyo_Kodaira-396606
+    title: 三銃士 下 改版
+    author: A.デューマ/作
+    publisher: 東京:岩波書店
+    isbn: '4001130076'
+    pubdate: '1980'
+    source: Tokyo_Kodaira
+  - id: c118fe9c-ecfb-43d1-8ad6-7444b0210b68
+    group: '4001130076'
+    lib_id: Shizuoka_Susono-11800
+    title: 三銃士 下 改版
+    author: A.デューマ/作
+    publisher: 東京:岩波書店
+    isbn: '4001130076'
+    pubdate: '1980'
+    source: Shizuoka_Susono
+  - id: e47b567b-a3a8-4e7b-8b99-88a33db20b89
+    group: '4001130076'
+    lib_id: Chiba_Yachiyo-B11524400
+    title: 三銃士 下
+    author: A.デューマ/作
+    publisher: 岩波書店
+    isbn: 4-00-113007-6
+    pubdate: '1980'
+    source: Chiba_Yachiyo
+  '4041033713':
+  - id: aa6e8fe4-dced-44bd-b220-3a6d960043f0
+    group: '4041033713'
+    lib_id: Tokyo_Taito-3-0002719398
+    title: 最後の晩ごはん 〔6〕
+    author: 椹野 道流
+    publisher: KADOKAWA
+    isbn: 978-4-04-103371-5
+    pubdate: '2016.5'
+    source: Tokyo_Taito
+  - id: dd17c530-952d-45da-90ac-1be176362a97
+    group: '4041033713'
+    lib_id: Hyogo_Takarazuka-621906
+    title: 最後の晩ごはん 〔6〕 旧友と焼きおにぎり
+    author: 椹野 道流/〔著〕
+    publisher: KADOKAWA
+    isbn: '4041033713'
+    pubdate: '2016.05'
+    source: Hyogo_Takarazuka
+  - id: b5c55ed9-b76e-4926-ac41-a64cb86c9fc3
+    group: '4041033713'
+    lib_id: Tokyo_Ome-243078
+    title: 最後の晩ごはん [6]
+    author: 椹野 道流/[著]
+    publisher: 東京:KADOKAWA
+    isbn: '4041033713'
+    pubdate: '2016.05'
+    source: Tokyo_Ome
+  '4004304288':
+  - id: c00d4efb-8d99-47e7-8b4a-f6ccb8fec151
+    group: '4004304288'
+    lib_id: Aichi_Kariya-B10379028
+    title: ぼくのドイツ文学講義
+    author: 池内紀/著
+    publisher: 岩波書店
+    isbn: 4-00-430428-8
+    pubdate: '1996.1'
+    source: Aichi_Kariya
+  - id: 3a27cba6-56cc-4bce-8913-2c265210ef7b
+    group: '4004304288'
+    lib_id: Saitama_Yoshikawa-669294
+    title: ぼくのドイツ文学講義 岩波新書 新赤版 428
+    author: 池内 紀/著
+    publisher: 東京:岩波書店
+    isbn: 4-00-430428-8
+    pubdate: '1996.01'
+    source: Saitama_Yoshikawa
+  - id: b7e6257d-3cb4-44ae-98d8-ec003479652b
+    group: '4004304288'
+    lib_id: Hyogo_Kamigori-3307
+    title: ぼくのドイツ文学講義 岩波新書 新赤版 428
+    author: 池内 紀/著
+    publisher: 東京:岩波書店
+    isbn: 4-00-430428-8
+    pubdate: '1996.01'
+    source: Hyogo_Kamigori
+  '4022506768':
+  - id: f2032393-111f-4297-828b-95ecf33b428f
+    group: '4022506768'
+    lib_id: Aichi_Nishio-B10274244
+    title: 三谷幸喜のありふれた生活 8
+    author: 三谷 幸喜∥著
+    publisher: 朝日新聞出版
+    isbn: 978-4-02-250676-4
+    pubdate: '2009.12'
+    source: Aichi_Nishio
+  - id: f803264d-62f3-4428-ab55-5aa5b174bad5
+    group: '4022506768'
+    lib_id: Ibaraki_Bando-1422214
+    title: 三谷幸喜のありふれた生活 8 復活の日
+    author: 三谷 幸喜/著
+    publisher: 東京:朝日新聞出版
+    isbn: 978-4-02-250676-4
+    pubdate: '2009.12'
+    source: Ibaraki_Bando
+  - id: ad02be25-fc70-4449-b241-644ce16f6012
+    group: '4022506768'
+    lib_id: Fukuoka_Buzen-77821
+    title: 三谷幸喜のありふれた生活 8
+    author: 三谷 幸喜/著
+    publisher: 朝日新聞出版
+    isbn: 978-4-02-250676-4
+    pubdate: '200912'
+    source: Fukuoka_Buzen
+  '4003751035':
+  - id: 03f63c09-398a-48e6-8a6a-0133911d1556
+    group: '4003751035'
+    lib_id: Kanagawa_Hiratsuka-001517608
+    title: 自由への道 3(岩波文庫 37−508−3)
+    author: サルトル作 海老坂武訳 澤田直訳
+    publisher: 岩波書店
+    isbn: '9784003751039'
+    pubdate: '2009'
+    source: Kanagawa_Hiratsuka
+  - id: 9c4eef2f-d9b2-447b-a2c0-4b47311c9d4c
+    group: '4003751035'
+    lib_id: Kanagawa_Oiso-252082
+    title: 自由への道 3 (岩波文庫)
+    author: サルトル
+    publisher: 岩波書店
+    isbn: 978-4-00-375103-9
+    pubdate: '2009'
+    source: Kanagawa_Oiso
+  - id: fc8a7e2c-0800-4758-bfe7-d67de711b1ea
+    group: '4003751035'
+    lib_id: Hyogo_Sayo-789294
+    title: 自由への道 3 岩波文庫 37-508-3
+    author: サルトル/作
+    publisher: 東京:岩波書店
+    isbn: 978-4-00-375103-9
+    pubdate: '2009.12'
+    source: Hyogo_Sayo
+  '4030165001':
+  - id: cbed7330-4df7-4447-9a63-e9e9aa1a7e1f
+    group: '4030165001'
+    lib_id: Osaka_Daito-20371687
+    title: 少女たちの学級日誌  1944-1945年
+    author: 吉村 文成/解説
+    publisher: 東京:偕成社
+    isbn: 978-4-03-016500-7
+    pubdate: '2015.08'
+    source: Osaka_Daito
+  - id: dde7368a-fb7a-4a22-a521-51dda408b67a
+    group: '4030165001'
+    lib_id: Shiga_Nagahama-B10520070
+    title: 少女たちの学級日誌 1944-1945年
+    author: 吉村文成/解説
+    publisher: 偕成社
+    isbn: 978-4-03-016500-7
+    pubdate: '2015.8'
+    source: Shiga_Nagahama
+  - id: 4dfe0835-ab76-4742-9ba0-f82ed0b05d64
+    group: '4030165001'
+    lib_id: Tottori_Kurayoshi-B10312762
+    title: 少女たちの学級日誌 1944-1945年
+    author: 吉村 文成∥解説
+    publisher: 偕成社
+    isbn: 9784-03-016500-7
+    pubdate: '2015.8'
+    source: Tottori_Kurayoshi
+  '4022737298':
+  - id: 25e33660-a468-4f8b-93f7-d7420fd9eec6
+    group: '4022737298'
+    lib_id: Shiga_Omihachiman-10633893
+    title: 理系脳で考える AI時代に生き残る人の条件
+    author: 成毛 眞/著
+    publisher: 東京:朝日新聞出版
+    isbn: '4022737298'
+    pubdate: '2017.08'
+    source: Shiga_Omihachiman
+  - id: 5918f3a8-d54d-4fc0-9f28-eb9ad27bf266
+    group: '4022737298'
+    lib_id: Kumamoto_Minamata-109418
+    title: 理系脳で考える AI時代に生き残る人の条件
+    author: 成毛 真/著
+    publisher: 東京:朝日新聞出版
+    isbn: 978-4-02-273729-8
+    pubdate: '2017.08'
+    source: Kumamoto_Minamata
+  - id: 9488ea88-054d-4ec2-a3cf-289d167622b8
+    group: '4022737298'
+    lib_id: Gumma_Ora-00000558824
+    title: 理系脳で考える
+    author: 成毛 眞∥著
+    publisher: 朝日新聞出版
+    isbn: 4-02-273729-8
+    pubdate: ''
+    source: Gumma_Ora
+  '4093870276':
+  - id: 0f03a6c3-c59d-44b6-a9dd-9705a8e4a36e
+    group: '4093870276'
+    lib_id: Gumma_Shibukawa-00000053163
+    title: 雪のアルバム
+    author: 三浦 綾子|著
+    publisher: 小学館
+    isbn: '4093870276'
+    pubdate: ''
+    source: Gumma_Shibukawa
+  - id: b3d7fe6b-6f8f-4e49-9307-1c5b9979b7b3
+    group: '4093870276'
+    lib_id: Tokyo_Hinode-184561
+    title: 雪のアルバム
+    author: 三浦綾子/著
+    publisher: 小学館
+    isbn: '4093870276'
+    pubdate: '1986.12'
+    source: Tokyo_Hinode
+  - id: e776c240-bc14-4ef1-ac92-670b8ce927b3
+    group: '4093870276'
+    lib_id: Tokyo_Suginami-1000000974322
+    title: 雪のアルバム
+    author: 三浦 綾子/著
+    publisher: 小学館
+    isbn: 4-09-387027-6
+    pubdate: 1986/12
+    source: Tokyo_Suginami
+  '4000070118':
+  - id: 2e1d962a-9bc4-4684-a59c-a5a3cabe448a
+    group: '4000070118'
+    lib_id: Tokyo_Ome-347421
+    title: ガリア戦記
+    author: カエサル/著
+    publisher: 東京:岩波書店
+    isbn: '4000070118'
+    pubdate: '1991.01'
+    source: Tokyo_Ome
+  - id: b1094b19-1a64-4754-8f85-624863fd77e3
+    group: '4000070118'
+    lib_id: Aichi_Toyohashi-1100929882
+    title: ガリア戦記
+    author: カエサル/著
+    publisher: 岩波書店
+    isbn: 4-00-007011-8
+    pubdate: '1991.1'
+    source: Aichi_Toyohashi
+  - id: 7da59357-8be6-46c1-829c-d0292962e891
+    group: '4000070118'
+    lib_id: Aichi_Higashiura-B10043278
+    title: ガリア戦記
+    author: カエサル/著
+    publisher: 岩波書店
+    isbn: 4-00-007011-8
+    pubdate: '1991.1'
+    source: Aichi_Higashiura
+  400091703X:
+  - id: c522e11f-a7c4-4485-bb2b-e464240ff83c
+    group: 400091703X
+    lib_id: Special_Nichibun-TW00084122
+    title: 自由民権運動とその思想
+    author: 遠山茂樹著
+    publisher: 岩波書店
+    isbn: 400091703X
+    pubdate: '1991.12'
+    source: Special_Nichibun
+  - id: 88e48d6f-6af3-4541-ac05-51ef85081425
+    group: 400091703X
+    lib_id: Special_Rekihaku_K-100000130796
+    title: 自由民権運動とその思想
+    author: 遠山茂樹著
+    publisher: 岩波書店
+    isbn: 400091703X
+    pubdate: '1991'
+    source: Special_Rekihaku_K
+  - id: 4b76d498-a58f-4c2a-8dcb-0385c7b012d7
+    group: 400091703X
+    lib_id: Yamaguchi_Pref-5010217904
+    title: 遠山茂樹著作集 第3巻 自由民権運動とその思想
+    author: 遠山/茂樹‖著
+    publisher: 岩波書店
+    isbn: 4-00-091703-X
+    pubdate: '1991.12'
+    source: Yamaguchi_Pref
+  '4000021583':
+  - id: a34daf9e-7b73-4161-9bb7-dc67d06d3cf6
+    group: '4000021583'
+    lib_id: Saitama_Soka-1255196
+    title: マルクスと息子たち
+    author: ジャック・デリダ/〔著〕
+    publisher: 東京:岩波書店
+    isbn: 4-00-002158-3
+    pubdate: '2004.01'
+    source: Saitama_Soka
+  - id: 49d568ee-2d29-4aa9-ad32-b05e1171a6eb
+    group: '4000021583'
+    lib_id: Tokyo_Nakano-145357
+    title: マルクスと息子たち
+    author: ジャック・デリダ/[著]
+    publisher: 東京:岩波書店
+    isbn: 4-00-002158-3
+    pubdate: '2004.01'
+    source: Tokyo_Nakano
+  - id: 6666b8a8-af26-401e-88b4-3cae2f816c77
+    group: '4000021583'
+    lib_id: Tokyo_Shinagawa-1100897902
+    title: マルクスと息子たち
+    author: ジャック・デリダ/[著]
+    publisher: 岩波書店
+    isbn: 4-00-002158-3
+    pubdate: '2004.1'
+    source: Tokyo_Shinagawa
+  '4000225359':
+  - id: c87bfd53-c1a0-49b7-bf41-9f3ffbe18725
+    group: '4000225359'
+    lib_id: Nagano_Matsumoto-102663
+    title: 境界線の政治学
+    author: 杉田 敦/著
+    publisher: 東京:岩波書店
+    isbn: '4000225359'
+    pubdate: '2005.02'
+    source: Nagano_Matsumoto
+  - id: aaf2ccfa-d51b-4f71-a56e-58829cf58750
+    group: '4000225359'
+    lib_id: Miyagi_Osaki-253366
+    title: 境界線の政治学
+    author: 杉田 敦/著
+    publisher: 東京:岩波書店
+    isbn: 4-00-022535-9
+    pubdate: '2005.02'
+    source: Miyagi_Osaki
+  - id: d8575f99-8ee1-436c-9d82-9b95327807f6
+    group: '4000225359'
+    lib_id: Kagoshima_Kagoshima-B11400889
+    title: 境界線の政治学
+    author: 杉田 敦/著
+    publisher: 岩波書店
+    isbn: 4-00-022535-9
+    pubdate: '2005.2'
+    source: Kagoshima_Kagoshima
+  '4000106716':
+  - id: 17ecc7fd-cfaa-4e93-a2b1-4e8679e943ae
+    group: '4000106716'
+    lib_id: Tokyo_Arakawa-3-0000740183
+    title: 岩波講座日本文学史 第1巻 文学の誕生より8世紀まで
+    author: ''
+    publisher: 岩波書店
+    isbn: 4-00-010671-6
+    pubdate: '1995.12'
+    source: Tokyo_Arakawa
+  - id: 3138ff70-cf50-4431-b3b7-bac37b24c998
+    group: '4000106716'
+    lib_id: Saitama_Kazo-249713
+    title: 岩波講座日本文学史 第1巻 文学の誕生より8世紀まで
+    author: ''
+    publisher: 東京:岩波書店
+    isbn: '4000106716'
+    pubdate: '1995.12'
+    source: Saitama_Kazo
+  - id: 34cbbdc2-3886-434e-baa0-b85aa25f8e2d
+    group: '4000106716'
+    lib_id: Tokyo_Kodaira-550753
+    title: 岩波講座日本文学史 第1巻 文学の誕生より8世紀まで
+    author: ''
+    publisher: 東京:岩波書店
+    isbn: '4000106716'
+    pubdate: '1995.12'
+    source: Tokyo_Kodaira
+  '4005004121':
+  - id: 0c9ba782-98fe-400e-a969-959bf912e1cc
+    group: '4005004121'
+    lib_id: Tokyo_Komae-196388
+    title: ゾウの歩んできた道 岩波ジュニア新書 412
+    author: 小原 秀雄/著
+    publisher: 東京:岩波書店
+    isbn: '4005004121'
+    pubdate: '2002.10'
+    source: Tokyo_Komae
+  - id: 96ae336f-c0bb-4340-882e-c7da81826a97
+    group: '4005004121'
+    lib_id: Nara_Tawaramoto-80524
+    title: ゾウの歩んできた道 岩波ジュニア新書 412
+    author: 小原 秀雄/著
+    publisher: 東京:岩波書店
+    isbn: '4005004121'
+    pubdate: '2002.10'
+    source: Nara_Tawaramoto
+  - id: e40e7bd8-4fe4-4efa-b886-5ac156a0c972
+    group: '4005004121'
+    lib_id: Aomori_Mutsu-276139
+    title: ゾウの歩んできた道 岩波ジュニア新書 412
+    author: 小原 秀雄/著
+    publisher: 東京:岩波書店
+    isbn: 4-00-500412-1
+    pubdate: '2002.10'
+    source: Aomori_Mutsu
+  '4003220331':
+  - id: 64f3fe99-a4c6-4800-825e-5c3454e5feaa
+    group: '4003220331'
+    lib_id: Kanagawa_Fujisawa-907912
+    title: カンタベリー物語-完訳-下(岩波文庫)
+    author: チョーサー/作 桝井迪夫/訳
+    publisher: 岩波書店
+    isbn: 4-00-322033-1
+    pubdate: '1995.01'
+    source: Kanagawa_Fujisawa
+  - id: 372af473-7be3-4bf3-8b4e-5242356602df
+    group: '4003220331'
+    lib_id: Chiba_Abiko-1009510002539
+    title: カンタベリー物語 下 完訳 岩波文庫
+    author: チョーサー/作
+    publisher: 岩波書店
+    isbn: 4-00-322033-1
+    pubdate: 1995/01
+    source: Chiba_Abiko
+  - id: 7eee1f90-e999-4efa-854f-d0ca3cfc4dc4
+    group: '4003220331'
+    lib_id: Tokyo_Nerima-B11586480
+    title: カンタベリー物語  下  完訳   [岩波文庫]
+    author: チョーサー/作
+    publisher: 岩波書店
+    isbn: 4-00-322033-1
+    pubdate: '1995.1'
+    source: Tokyo_Nerima
+  '4041045991':
+  - id: 783ccaca-f58c-49a5-b1ee-1faf1e2e5c14
+    group: '4041045991'
+    lib_id: Yamaguchi_Hagi-1010798
+    title: 月華の神剣 〔2〕 書き下ろし長篇時代小説
+    author: 牧 秀彦/〔著〕
+    publisher: 東京:KADOKAWA
+    isbn: '4041045991'
+    pubdate: '2017.09'
+    source: Yamaguchi_Hagi
+  - id: 9cc6076a-8bb5-4160-90f8-98ceb0115e9c
+    group: '4041045991'
+    lib_id: Kanagawa_Kawasaki-002952697
+    title: 月華の神剣−書き下ろし長篇時代小説−〔2〕(角川文庫 時−ま36−12) 薩長動
+    author: 牧秀彦/〔著〕
+    publisher: KADOKAWA
+    isbn: '9784041045992'
+    pubdate: '2017'
+    source: Kanagawa_Kawasaki
+  - id: e7164b7f-f95d-4e5f-9ba5-d1feac6674f3
+    group: '4041045991'
+    lib_id: Chiba_Chiba-1000801608197
+    title: 月華の神剣 [2]【角川文庫 時-ま36-12】 書き下ろし長篇時代小説 薩長動乱
+    author: 牧 秀彦/[著]
+    publisher: KADOKAWA
+    isbn: 978-4-04-104599-2
+    pubdate: 2017/09
+    source: Chiba_Chiba
+  '4046315334':
+  - id: 2ca0c2ad-725a-45e1-8fec-9e2ed761ef12
+    group: '4046315334'
+    lib_id: Yamaguchi_Kudamatsu-3-0001042842
+    title: ドリトル先生の最後の冒険
+    author: ヒュー ロフティング
+    publisher: KADOKAWA
+    isbn: 9784-04-631533-5
+    pubdate: '2015.11'
+    source: Yamaguchi_Kudamatsu
+  - id: daa3c4f2-5f5c-4a16-8a97-09a1e68635b3
+    group: '4046315334'
+    lib_id: Nagano_Ina-2028597
+    title: ドリトル先生の最後の冒険 新訳
+    author: ヒュー・ロフティング/作
+    publisher: 東京:KADOKAWA
+    isbn: 978-4-04-631533-5
+    pubdate: '2015.11'
+    source: Nagano_Ina
+  - id: 262e068b-9097-4a10-bef3-542081861717
+    group: '4046315334'
+    lib_id: Chiba_Sodegaura-1943131
+    title: ドリトル先生の最後の冒険 新訳
+    author: ヒュー・ロフティング/作
+    publisher: 東京:KADOKAWA
+    isbn: 978-4-04-631533-5
+    pubdate: '2015.11'
+    source: Chiba_Sodegaura
+  '4000085387':
+  - id: 29402d5a-39db-45f7-a7e4-0a274dc7e1e9
+    group: '4000085387'
+    lib_id: Nagano_Omachi-70887
+    title: 大航海時代叢書 第2期 18  イギリスの航海と植民 2
+    author: ハクルート/〔ほか著〕
+    publisher: 東京:岩波書店
+    isbn: 4-00-008538-7
+    pubdate: '1985.09'
+    source: Nagano_Omachi
+  - id: 3e61f016-48dd-4acf-a93b-cc5ffad0e98d
+    group: '4000085387'
+    lib_id: Hyogo_Miki-345163
+    title: イギリスの航海と植民 2 大航海時代叢書第2期 18
+    author: ハクルート バーロー レーン/著
+    publisher: 岩波書店
+    isbn: '4000085387'
+    pubdate: '1994'
+    source: Hyogo_Miki
+  - id: 1f230234-4f55-44ee-b9e3-986a161dc19a
+    group: '4000085387'
+    lib_id: Tokyo_Edogawa-847354
+    title: 大航海時代叢書 第2期 18 イギリスの航海と植民
+    author: ''
+    publisher: 岩波書店
+    isbn: 978-4-00-008538-0
+    pubdate: '198509'
+    source: Tokyo_Edogawa
+  '4103037318':
+  - id: fc514fe5-09ce-4eed-92b6-d0138d83409b
+    group: '4103037318'
+    lib_id: Nagano_Ina-869902
+    title: 将軍様の鉄道 北朝鮮鉄道事情
+    author: 国分 隼人/著
+    publisher: 東京:新潮社
+    isbn: 978-4-10-303731-6
+    pubdate: '2007.01'
+    source: Nagano_Ina
+  - id: 4eda114f-f6e9-421a-84ff-6950090d8404
+    group: '4103037318'
+    lib_id: Toyama_Nanto-289895
+    title: 将軍様の鉄道 北朝鮮鉄道事情
+    author: 国分隼人‖著
+    publisher: 新潮社
+    isbn: 4-10-303731-6
+    pubdate: '2007.01'
+    source: Toyama_Nanto
+  - id: 552586b5-e7bb-4d52-9e26-6f90cc5bb312
+    group: '4103037318'
+    lib_id: Osaka_Hirakata-5084257
+    title: 将軍様の鉄道 北朝鮮鉄道事情
+    author: 国分 隼人/著
+    publisher: 新潮社
+    isbn: 978-4-10-303731-6
+    pubdate: '2007.01'
+    source: Osaka_Hirakata
+  '4052048407':
+  - id: a2010097-abf8-47fc-bb2d-69e525230086
+    group: '4052048407'
+    lib_id: Saitama_Kumgaya-1691346
+    title: のりもの (4・5・6歳のふしぎクイズ)
+    author: ''
+    publisher: 学研プラス
+    isbn: 978-4-05-204840-1
+    pubdate: 2018/07
+    source: Saitama_Kumgaya
+  - id: afe40e47-df0e-4f88-be52-d172e8598d1f
+    group: '4052048407'
+    lib_id: Nagasaki_Pref-1000002671858
+    title: のりもの 4・5・6歳のふしぎクイズ
+    author: ''
+    publisher: 学研プラス
+    isbn: 9784-05-204840-1
+    pubdate: 2018/07
+    source: Nagasaki_Pref
+  - id: 6cdf081d-ad93-4d58-a50a-8cb7e0b5868f
+    group: '4052048407'
+    lib_id: Hyogo_Kobe-PV7200578804-PV7200578804
+    title: のりもの
+    author: ''
+    publisher: 学研プラス
+    isbn: '9784052048401'
+    pubdate: '2018'
+    source: Hyogo_Kobe
+  '4000066684':
+  - id: b3979e98-e6c0-457c-b8f2-00638e40b5c6
+    group: '4000066684'
+    lib_id: Nara_Ikoma-1415890
+    title: ヒマラヤを越えた花々 (自然史の窓)
+    author: 大場 秀章
+    publisher: 岩波書店
+    isbn: 978-4-00-006668-6
+    pubdate: 1999/06
+    source: Nara_Ikoma
+  - id: 8e86800c-a157-4626-b8c1-8b6f0005421e
+    group: '4000066684'
+    lib_id: Tokyo_Hamura-890022
+    title: ヒマラヤを越えた花々  自然史の窓
+    author: 大場秀章/著
+    publisher: 東京:岩波書店
+    isbn: 4-00-006668-4
+    pubdate: '1999.06'
+    source: Tokyo_Hamura
+  - id: 76a0628f-1c2c-4eef-8b75-2f4f0d9a9a92
+    group: '4000066684'
+    lib_id: Kanagawa_Chigasaki-1148512
+    title: ヒマラヤを越えた花々 (自然史の窓)
+    author: 大場 秀章
+    publisher: 岩波書店
+    isbn: 978-4-00-006668-6
+    pubdate: 1999/06
+    source: Kanagawa_Chigasaki
+  '4000024574':
+  - id: 5c442805-7e8d-41cf-8100-64ce4ab35a38
+    group: '4000024574'
+    lib_id: Nagano_Suwa_Wide-1649151
+    title: 倫理の復権 ロールズ・ソクラテス・レヴィナス
+    author: 岩田/靖夫‖著
+    publisher: 岩波書店
+    isbn: '4000024574'
+    pubdate: '1994.04'
+    source: Nagano_Suwa_Wide
+  - id: 36e29d5b-58f2-4395-9956-b228c008b30b
+    group: '4000024574'
+    lib_id: Tokyo_Hachioji-B11387150
+    title: 倫理の復権 ( ロールズ ・ソクラテス・レヴィナス)
+    author: 岩田靖夫/著
+    publisher: 岩波書店
+    isbn: 4-00-002457-4
+    pubdate: '1994.4'
+    source: Tokyo_Hachioji
+  - id: 50029ce6-4115-4be0-831e-719bc0f83fc7
+    group: '4000024574'
+    lib_id: Nara_Ikoma-1145582
+    title: 倫理の復権 ロールズ・ソクラテス・レヴィナス
+    author: 岩田 靖夫
+    publisher: 岩波書店
+    isbn: 978-4-00-002457-0
+    pubdate: 1994/04
+    source: Nara_Ikoma
+  '4040822420':
+  - id: 8f712c84-df81-4a08-a2e5-088e8a049917
+    group: '4040822420'
+    lib_id: Osaka_Suita-1102572807
+    title: 世界史の大逆転
+    author: 佐藤 優/[著]
+    publisher: KADOKAWA
+    isbn: 978-4-04-082242-6
+    pubdate: '2019.2'
+    source: Osaka_Suita
+  - id: 18fc928a-f810-4f71-af2e-03d1ad137ce2
+    group: '4040822420'
+    lib_id: Saitama_Kasukabe-10601119
+    title: 世界史の大逆転 角川新書 K-250
+    author: 佐藤 優/[著]
+    publisher: 東京:KADOKAWA
+    isbn: 978-4-04-082242-6
+    pubdate: '2019.02'
+    source: Saitama_Kasukabe
+  - id: f0f1ff66-0376-4a2d-b7a5-74f8e6881d44
+    group: '4040822420'
+    lib_id: Hyogo_Kobe-PV7200603759-PV7200603759
+    title: '世界史の大逆転 : 国際情勢のルールが変わった'
+    author: 佐藤優, 宮家邦彦[著]
+    publisher: KADOKAWA
+    isbn: '9784040822426'
+    pubdate: '2019'
+    source: Hyogo_Kobe
+  '4043647123':
+  - id: 9be65fd5-777d-4afd-8e46-4b6337811730
+    group: '4043647123'
+    lib_id: Tokyo_Akishima-1101639136
+    title: テンペスト 第2巻 夏雲 い51-12
+    author: 池上 永一/[著]
+    publisher: 角川書店
+    isbn: 9784-04-364712-5
+    pubdate: '2010.9'
+    source: Tokyo_Akishima
+  - id: dcb675cb-1360-4ada-a736-239da5680f7b
+    group: '4043647123'
+    lib_id: Tokyo_Shinjuku-0650149146
+    title: テンペスト 第2巻;夏雲
+    author: 池上永一
+    publisher: 角川書店
+    isbn: 978-4-04-364712-5
+    pubdate: '2010.09'
+    source: Tokyo_Shinjuku
+  - id: 7b9e753e-6232-44af-8db4-9d0d69a2996e
+    group: '4043647123'
+    lib_id: Kagoshima_Kanoya-1557662
+    title: テンペスト 第2巻 角川文庫 い51-12
+    author: 池上 永一/著
+    publisher: 東京:角川書店
+    isbn: 4-04-364712-5
+    pubdate: '2010.09'
+    source: Kagoshima_Kanoya
+  '4000258486':
+  - id: 3b5c4183-f988-4581-9cfc-8274219bf4d9
+    group: '4000258486'
+    lib_id: Saitama_Fujimino-B13244059
+    title: トマス・グラバーの生涯
+    author: マイケル・ガーデナ/著
+    publisher: 岩波書店
+    isbn: 978-4-00-025848-7
+    pubdate: '2012.6'
+    source: Saitama_Fujimino
+  - id: 99b78ddc-dba4-4908-b00f-5a7222c416bc
+    group: '4000258486'
+    lib_id: Tokyo_Ota-003125517
+    title: トマス・グラバーの生涯−大英帝国の周縁にて−
+    author: マイケル・ガーデナ著 村里好俊訳 杉浦裕子訳
+    publisher: 岩波書店
+    isbn: '9784000258487'
+    pubdate: '2012'
+    source: Tokyo_Ota
+  '4052006615':
+  - id: e60ff792-b578-47b8-be30-988c50aff257
+    group: '4052006615'
+    lib_id: Kagoshima_Kagoshima-1004610004132
+    title: スピード (クロスセクション図鑑)
+    author: クリス・グリッグ/絵
+    publisher: 学研
+    isbn: 4-05-200661-5
+    pubdate: 1996/02
+    source: Kagoshima_Kagoshima
+  - id: 82170891-b072-4eb4-97e6-e211d009d302
+    group: '4052006615'
+    lib_id: Kumamoto_Aso-93720
+    title: スピード しくみがわかる!ひみつがわかる!
+    author: クリス・グリッグ/絵
+    publisher: 東京:学研
+    isbn: 4-05-200661-5
+    pubdate: '1996.02'
+    source: Kumamoto_Aso
+  '4088743822':
+  - id: b0bdba02-ff35-413e-ab55-9b33a2faf47b
+    group: '4088743822'
+    lib_id: Yamaguchi_Iwakuni-391867
+    title: ONE PIECE 巻46 ジャンプ・コミックス
+    author: 尾田 栄一郎/著
+    publisher: 東京:集英社
+    isbn: '4088743822'
+    pubdate: '2007.07'
+    source: Yamaguchi_Iwakuni
+  - id: 208a6c71-9425-45b4-b4e6-e000032b7b4f
+    group: '4088743822'
+    lib_id: Yamaguchi_Shimonoseki-001-1286199
+    title: ONE PIECE/巻46/ジャンプ・コミックス
+    author: 尾田/栄一郎‖著
+    publisher: 集英社
+    isbn: 978-4-08-874382-0
+    pubdate: '2007.07'
+    source: Yamaguchi_Shimonoseki
+  '4046313242':
+  - id: 89b576b4-043e-4e9e-9b15-9ac7d2dc169f
+    group: '4046313242'
+    lib_id: Saitama_Kumgaya-929212
+    title: サトミちゃんちの1男子 ネオ里見八犬伝 1 (角川つばさ文庫)
+    author: 矢立 肇
+    publisher: 角川書店
+    isbn: 978-4-04-631324-9
+    pubdate: 2013/08
+    source: Saitama_Kumgaya
+  - id: e5431f06-21d3-415c-8a2c-caba8de62ca7
+    group: '4046313242'
+    lib_id: Hyogo_Ashiya-122184591
+    title: サトミちゃんちの1男子 1−ネオ里見八犬伝
+    author: 矢立肇
+    publisher: 角川書店
+    isbn: 978-4-04-631324-9
+    pubdate: '2013.08'
+    source: Hyogo_Ashiya
+  '4022506881':
+  - id: b6c81b2c-8211-4534-bfc2-82d6567a16dd
+    group: '4022506881'
+    lib_id: Chiba_Inzai-1101425386
+    title: かーかん、はあい 2 子どもと本と私
+    author: 俵 万智/著
+    publisher: 朝日新聞出版
+    isbn: 978-4-02-250688-7
+    pubdate: '2010.1'
+    source: Chiba_Inzai
+  - id: 9eac0f7a-bdb8-4ea0-b24c-648ad13ec965
+    group: '4022506881'
+    lib_id: Nagano_Ina-1386639
+    title: かーかん、はあい 2 子どもと本と私
+    author: 俵 万智/著
+    publisher: 東京:朝日新聞出版
+    isbn: 978-4-02-250688-7
+    pubdate: '2010.01'
+    source: Nagano_Ina
+  '4102175016':
+  - id: 0a41ff19-4bf7-4a9b-bf1d-07316ec607b9
+    group: '4102175016'
+    lib_id: Nagasaki_Sasebo-B10242458
+    title: 若き詩人への手紙・若き女性への手紙 [新潮文庫]
+    author: リルケ/著
+    publisher: 新潮社
+    isbn: 4-10-217501-6
+    pubdate: '1979'
+    source: Nagasaki_Sasebo
+  - id: 226984d3-b962-49ac-be47-e87975fe494d
+    group: '4102175016'
+    lib_id: Tokyo_Katsushika-001712383
+    title: 若き詩人への手紙・若き女性への手紙 改版(新潮文庫 リ−1−1)
+    author: リルケ〔著〕 高安国世訳
+    publisher: 新潮社
+    isbn: '9784102175019'
+    pubdate: '2007'
+    source: Tokyo_Katsushika
+  '4000047817':
+  - id: 2d88ca39-1142-4f22-96b3-3c65ba292019
+    group: '4000047817'
+    lib_id: Aichi_Toyota-1009310560762
+    title: 家事労働と資本主義 (岩波現代選書 112)
+    author: B.ドゥーデン/著
+    publisher: 岩波書店
+    isbn: 4-00-004781-7
+    pubdate: 1986/10
+    source: Aichi_Toyota
+  - id: 21633713-53c6-4fa4-a254-c2b1e286f6c3
+    group: '4000047817'
+    lib_id: Chiba_Kashiwa-1005962
+    title: 家事労働と資本主義 (岩波現代選書)
+    author: B.ドゥーデン
+    publisher: 岩波書店
+    isbn: 978-4-00-004781-4
+    pubdate: '1986'
+    source: Chiba_Kashiwa
+  '4022569611':
+  - id: a9de86b7-ccda-4c8c-bd8b-c1e5ee157df8
+    group: '4022569611'
+    lib_id: Fukui_Pref-1103484107
+    title: 蒼ざめた街
+    author: 藤田宜永∥著[フジタ,ヨシナガ]
+    publisher: 朝日新聞社
+    isbn: 4-02-256961-1
+    pubdate: '1996.7'
+    source: Fukui_Pref
+  - id: a24421a6-44d5-4960-b196-cb59ccd22d00
+    group: '4022569611'
+    lib_id: Saitama_Ina-57416
+    title: 蒼ざめた街 モダン東京
+    author: 藤田 宜永/著
+    publisher: 東京:朝日新聞社
+    isbn: '4022569611'
+    pubdate: '1996.07'
+    source: Saitama_Ina
+  '4004316588':
+  - id: 858f18a5-2e42-46c1-9035-920f5356d5f0
+    group: '4004316588'
+    lib_id: Chiba_Sodegaura-1910590
+    title: 日中漂流  グローバル・パワーはどこへ向かうか
+    author: 毛里 和子/著
+    publisher: 東京:岩波書店
+    isbn: 978-4-00-431658-9
+    pubdate: '2017.04'
+    source: Chiba_Sodegaura
+  - id: 3634b57b-bc35-4fbc-a892-a46feb0927c6
+    group: '4004316588'
+    lib_id: Hiroshima_Fuchushi-221575
+    title: 日中漂流 グローバル・パワーはどこへ向かうか (岩波新書 新赤版)
+    author: 毛里 和子
+    publisher: 岩波書店
+    isbn: 978-4-00-431658-9
+    pubdate: '2017'
+    source: Hiroshima_Fuchushi
+  400340095X:
+  - id: 15f62d0b-4608-4a47-9ee9-221215a95a2a
+    group: 400340095X
+    lib_id: Saitama_Fujimi-537806
+    title: アメリカのデモクラシー 第2巻下 岩波文庫 34-009-5
+    author: トクヴィル/著
+    publisher: 東京:岩波書店
+    isbn: 978-4-00-340095-1
+    pubdate: '2008.05'
+    source: Saitama_Fujimi
+  - id: 14bc41aa-3517-4bb5-8b6a-0f5b0e979bc8
+    group: 400340095X
+    lib_id: Kanagawa_Ninomiya-745752
+    title: アメリカのデモクラシー 第2巻下(岩波文庫 34-009-5)
+    author: トクヴィル/著 松本礼二/訳
+    publisher: 岩波書店
+    isbn: 978-4-00-340095-1
+    pubdate: '2008.05'
+    source: Kanagawa_Ninomiya
+  '4000917374':
+  - id: 28964e56-3aa8-4184-8d1f-060b8309981a
+    group: '4000917374'
+    lib_id: Aichi_Nagakute-B11152108
+    title: 荷風全集 第17巻
+    author: 永井/壯吉∥著
+    publisher: 岩波書店
+    isbn: 4-00-091737-4
+    pubdate: '1994.6'
+    source: Aichi_Nagakute
+  - id: 5e56fbcf-0cb6-402f-892d-e1ea1bcf45ad
+    group: '4000917374'
+    lib_id: Tokyo_Hino-1001000226708
+    title: 荷風全集 第17巻
+    author: 永井 壯吉/著
+    publisher: 岩波書店
+    isbn: 4-00-091737-4
+    pubdate: 1994/06
+    source: Tokyo_Hino
+  '4061984365':
+  - id: 7b281d7d-f978-4898-8051-4051d189bcb1
+    group: '4061984365'
+    lib_id: Yamaguchi_Pref-1000310988
+    title: メタモルフォーシス ギリシア変身物語集
+    author: アントーニーヌス・リーベラーリス‖[著]
+    publisher: 講談社
+    isbn: 4-06-198436-5
+    pubdate: '2006.3'
+    source: Yamaguchi_Pref
+  - id: 3c893b02-8bc0-4c3f-bf97-d22ec1ff9414
+    group: '4061984365'
+    lib_id: Tokyo_Chofu-1356009
+    title: メタモルフォーシス-ギリシア変身物語集-(講談社文芸文庫 リA1)
+    author: アントーニーヌス・リーベラーリス〔著〕 安村典子訳
+    publisher: 講談社
+    isbn: 4-06-198436-5
+    pubdate: '2006.03'
+    source: Tokyo_Chofu
+  '4000912208':
+  - id: d6e6dc3c-3d20-40fe-81ab-e42bed7d181f
+    group: '4000912208'
+    lib_id: Osaka_Habikino-108797
+    title: 鴎外全集 第20巻
+    author: 森 鴎外
+    publisher: 岩波書店
+    isbn: 978-4-00-091220-4
+    pubdate: '1988'
+    source: Osaka_Habikino
+  - id: fce1b07f-d188-455d-a403-b88b2444656d
+    group: '4000912208'
+    lib_id: Yamaguchi_Pref-5010175218
+    title: 鷗外全集 第20巻
+    author: 森/林太郎‖著
+    publisher: 岩波書店
+    isbn: 4-00-091220-8
+    pubdate: '1988'
+    source: Yamaguchi_Pref
+  '4022509023':
+  - id: 9ae6ef3a-15d4-48f8-832d-cfa64033a413
+    group: '4022509023'
+    lib_id: Hyogo_Ashiya-114551914
+    title: スイーツ断面図鑑−おいしさの秘密がわかる
+    author: 猫井登
+    publisher: 朝日新聞出版
+    isbn: 978-4-02-250902-4
+    pubdate: '2011.09'
+    source: Hyogo_Ashiya
+  - id: 09bbc583-0dc9-4440-9dd3-b6b8e5a6e455
+    group: '4022509023'
+    lib_id: Fukui_Sabae-1301102
+    title: スイーツ断面図鑑 おいしさの秘密がわかる
+    author: 猫井 登/著
+    publisher: 東京:朝日新聞出版
+    isbn: 978-4-02-250902-4
+    pubdate: '2011.09'
+    source: Fukui_Sabae
+  '4002601234':
+  - id: ced57841-2cef-4bc3-9536-c931c62d97b2
+    group: '4002601234'
+    lib_id: Saitama_Sayama-276698
+    title: 現代教育の思想と構造  同時代ライブラリー 123
+    author: 堀尾 輝久/著
+    publisher: 東京:岩波書店
+    isbn: 4-00-260123-4
+    pubdate: '1992.09'
+    source: Saitama_Sayama
+  - id: 7fbea648-e5d6-433c-86ba-833832829a15
+    group: '4002601234'
+    lib_id: Osaka_Sakai-1000000164653
+    title: 現代教育の思想と構造 (同時代ライブラリー 123)
+    author: 堀尾 輝久/著
+    publisher: 岩波書店
+    isbn: 4-00-260123-4
+    pubdate: 1992/09
+    source: Osaka_Sakai
+  '4041290104':
+  - id: 9bf92072-cdad-4501-9945-e3e3dd079c6b
+    group: '4041290104'
+    lib_id: Chiba_Matsudo-1201072
+    title: 春いくたび
+    author: ''
+    publisher: ''
+    isbn: 978-4-04-129010-1
+    pubdate: ''
+    source: Chiba_Matsudo
+  - id: c144f1d8-1b45-4b66-b5cb-bce0d634cab1
+    group: '4041290104'
+    lib_id: Tokyo_Chiyoda-1115027095
+    title: 春いくたび 角川文庫 や44-1
+    author: 山本 周五郎/[著]
+    publisher: 角川書店
+    isbn: 9784-04-129010-1
+    pubdate: '2008.12'
+    source: Tokyo_Chiyoda
+  '4091273300':
+  - id: 50c2444c-b0a3-475e-a15c-bc6438ff519f
+    group: '4091273300'
+    lib_id: Osaka_Ibaraki-1110036278
+    title: 名探偵コナン 90
+    author: 青山 剛昌
+    publisher: 小学館
+    isbn: 9784-09-127330-7
+    pubdate: '2016'
+    source: Osaka_Ibaraki
+  - id: 403fe584-fe29-4674-bc3f-dfe66116c41b
+    group: '4091273300'
+    lib_id: Tokyo_Koto-B15271693
+    title: 名探偵コナン VOLUME90  [少年サンデーコミックス]
+    author: 青山剛昌/著
+    publisher: 小学館
+    isbn: 978-4-09-127330-7
+    pubdate: '2016.8'
+    source: Tokyo_Koto
+  '4035282502':
+  - id: 7e6ae41f-0ddd-4581-b90a-0f32dc8b1122
+    group: '4035282502'
+    lib_id: Okayama_Hayashima-11681
+    title: 黒ねこサンゴロウ 5 霧の灯台
+    author: 竹下 文子/作
+    publisher: 東京:偕成社
+    isbn: 4-03-528250-2
+    pubdate: '1994.12'
+    source: Okayama_Hayashima
+  - id: aeee2ca1-8bc6-44fa-9c76-e97998522841
+    group: '4035282502'
+    lib_id: Fukushima_Koriyama-811836
+    title: 黒ねこサンゴロウ 5  霧の燈台
+    author: 竹下 文子/作
+    publisher: 東京:偕成社
+    isbn: 4-03-528250-2
+    pubdate: '1994.12'
+    source: Fukushima_Koriyama
+  '4022505273':
+  - id: ae282d6f-2a2c-49bb-9748-571245617f89
+    group: '4022505273'
+    lib_id: Saitama_Sayama-1924826
+    title: サザエさんをさがして その4  サザエさんパンダを見に行く
+    author: 朝日新聞be編集グループ/編
+    publisher: 東京:朝日新聞出版
+    isbn: 978-4-02-250527-9
+    pubdate: '2009.01'
+    source: Saitama_Sayama
+  - id: e109bc43-f67f-48d5-90b3-5802f19798e9
+    group: '4022505273'
+    lib_id: Aichi_Tahara-B10811269
+    title: サザエさんパンダを見に行く
+    author: 朝日新聞be編集グループ/編
+    publisher: 朝日新聞出版
+    isbn: 978-4-02-250527-9
+    pubdate: '2009.1'
+    source: Aichi_Tahara
+  404873282X:
+  - id: b5e50b35-6f7e-402f-bfd1-f1ad60546166
+    group: 404873282X
+    lib_id: Aichi_Konan-B10164743
+    title: 龍馬 3
+    author: 津本陽/著
+    publisher: 角川書店
+    isbn: 4-04-873282-X
+    pubdate: '2001.8'
+    source: Aichi_Konan
+  - id: c27aa800-092e-4ca9-a131-5d681258045d
+    group: 404873282X
+    lib_id: Saitama_Kumgaya-95206
+    title: 龍馬 3 海軍篇
+    author: 津本 陽
+    publisher: 角川書店
+    isbn: 978-4-04-873282-6
+    pubdate: 2001/08
+    source: Saitama_Kumgaya
+  '4048736809':
+  - id: 267b9302-ee61-49df-bc96-8e98ad52bfa4
+    group: '4048736809'
+    lib_id: Nara_Nara-468768
+    title: 受命
+    author: 帚木 蓬生
+    publisher: 角川書店
+    isbn: 978-4-04-873680-0
+    pubdate: '2006'
+    source: Nara_Nara
+  - id: 93f1d000-bbfe-444a-9f96-647e446180fb
+    group: '4048736809'
+    lib_id: Ehime_Ozu-10052593
+    title: 受命 Calling
+    author: 帚木 蓬生/著
+    publisher: 東京:角川書店
+    isbn: 4-04-873680-9
+    pubdate: '2006.06'
+    source: Ehime_Ozu
+  '4000071432':
+  - id: 53cbeed5-20f1-4e92-8fd0-8365b7174d37
+    group: '4000071432'
+    lib_id: Shizuoka_Susono-62656
+    title: 上田敏全訳詩集 ワイド版岩波文庫 143
+    author: 上田 敏/[訳]
+    publisher: 東京:岩波書店
+    isbn: 4-00-007143-2
+    pubdate: '1994.08'
+    source: Shizuoka_Susono
+  - id: 3b3e9da8-6926-4ac9-9634-5d40b641a427
+    group: '4000071432'
+    lib_id: Saitama_Shiki-236161
+    title: 上田敏全訳詩集 ワイド版岩波文庫 143
+    author: 上田 敏/[訳]
+    publisher: 東京:岩波書店
+    isbn: 4-00-007143-2
+    pubdate: '1994.08'
+    source: Saitama_Shiki
+  '4062186926':
+  - id: 7a3d3d27-d85b-45dc-8e21-3cbbbea4b685
+    group: '4062186926'
+    lib_id: Kanagawa_Hadano-519679
+    title: もし僕がいま25歳なら、こんな50のやりたいことがある。
+    author: 松浦弥太郎/著
+    publisher: 東京:講談社
+    isbn: 978-4-06-218692-6
+    pubdate: '2013.11'
+    source: Kanagawa_Hadano
+  - id: cce74d86-ca73-4231-a279-241d753504d1
+    group: '4062186926'
+    lib_id: Kanagawa_Hadano-3-0002108753
+    title: もし僕がいま25歳なら、こんな50のやりたいことがある。
+    author: 松浦弥太郎
+    publisher: 講談社
+    isbn: 978-4-06-218692-6
+    pubdate: '2013.11'
+    source: Kanagawa_Hadano
+  '4040667077':
+  - id: 3ae9c319-98a1-43ee-84d1-5e6ce128862d
+    group: '4040667077'
+    lib_id: Miyagi_Sendai-1102179770
+    title: ' なつめさんちの新しいのになつかしいアンティークな部屋づくり'
+    author: なつめ/著
+    publisher: KADOKAWA
+    isbn: 9784-04-066707-2
+    pubdate: '2014.4'
+    source: Miyagi_Sendai
+  - id: 1605851c-5820-4d59-aae9-6e622a9dfc47
+    group: '4040667077'
+    lib_id: Aichi_Nagoya-1001410005557
+    title: なつめさんちの新しいのになつかしいアンティークな部屋づくり
+    author: なつめ/著
+    publisher: KADOKAWA
+    isbn: 978-4-04-066707-2
+    pubdate: '2014.4'
+    source: Aichi_Nagoya
+  '4000078232':
+  - id: 874da1f0-15ec-4d77-8c47-743863a10754
+    group: '4000078232'
+    lib_id: Tokyo_Setagaya-002768781
+    title: 山を読む(自然景観の読み方 3)
+    author: 小疇尚著
+    publisher: 岩波書店
+    isbn: 4-00-007823-2
+    pubdate: '1991'
+    source: Tokyo_Setagaya
+  - id: ce9def5e-9f08-4f72-ad81-5d5984681bbe
+    group: '4000078232'
+    lib_id: Tokyo_Edogawa-935844
+    title: 山を読む (自然景観の読み方)
+    author: 小疇 尚
+    publisher: 岩波書店
+    isbn: 978-4-00-007823-8
+    pubdate: '199107'
+    source: Tokyo_Edogawa
+  '4035280100':
+  - id: 00c40cc8-042b-4ffb-b093-43e250862731
+    group: '4035280100'
+    lib_id: Oita_Nakatsu-731667
+    title: わたしが妹だったとき
+    author: 佐野 洋子/著
+    publisher: 東京:偕成社
+    isbn: '4035280100'
+    pubdate: '1982.11'
+    source: Oita_Nakatsu
+  - id: dbcf36af-7d9e-4f8c-acff-3d04e77258d2
+    group: '4035280100'
+    lib_id: Saitama_Arashiyama-149571
+    title: わたしが妹だったとき
+    author: 佐野 洋子/著
+    publisher: 東京:偕成社
+    isbn: '4035280100'
+    pubdate: '1982.11'
+    source: Saitama_Arashiyama
+  '4004315859':
+  - id: 84745eb0-3256-4f5b-9371-37d212eb7d2f
+    group: '4004315859'
+    lib_id: Kumamoto_Yamaga-266903
+    title: 日本にとって沖縄とは何か 岩波新書 新赤版 1585
+    author: 新崎 盛暉/著
+    publisher: 東京:岩波書店
+    isbn: '4004315859'
+    pubdate: '2016.01'
+    source: Kumamoto_Yamaga
+  - id: ae4f2009-b684-464c-af0b-766134fe48f7
+    group: '4004315859'
+    lib_id: Tokyo_Ome-T16004692
+    title: 日本にとって沖縄とは何か 岩波新書 新赤版
+    author: 新崎 盛暉/著
+    publisher: 岩波書店
+    isbn: 978-4-00-431585-8
+    pubdate: '2016'
+    source: Tokyo_Ome
+  '4000074490':
+  - id: 24ba82ed-7980-4ccf-a99c-4ef6e6578019
+    group: '4000074490'
+    lib_id: Fukuoka_Chikushino-1163333
+    title: 日本の動物はいつどこからきたのか 動物地理学の挑戦
+    author: 京都大学総合博物館/編
+    publisher: 東京:岩波書店
+    isbn: '4000074490'
+    pubdate: '2005.08'
+    source: Fukuoka_Chikushino
+  - id: 03627ec6-4c82-4294-9dd5-fb898f823b28
+    group: '4000074490'
+    lib_id: Hiroshima_Mihara-B10156643
+    title: 日本の動物はいつどこからきたのか
+    author: ''
+    publisher: ''
+    isbn: 4-00-007449-0
+    pubdate: '2005.8'
+    source: Hiroshima_Mihara
+  '4035030805':
+  - id: 32ebf901-460e-45e9-9399-4305e21c4a16
+    group: '4035030805'
+    lib_id: Osaka_Ibaraki-1100166282
+    title: ナイチンゲール 改訂版
+    author: 山主 敏子/著
+    publisher: 偕成社
+    isbn: 4-03-503080-5
+    pubdate: '1989'
+    source: Osaka_Ibaraki
+  - id: 7bd09679-73ee-4cd6-a16f-f2573a0ccbd4
+    group: '4035030805'
+    lib_id: Tochigi_Shimotsuke-00000288379
+    title: ナイチンゲール 8
+    author: 山主 敏子∥著
+    publisher: 偕成社
+    isbn: 4-03-503080-5
+    pubdate: ''
+    source: Tochigi_Shimotsuke
+  '4041717132':
+  - id: 3dff6068-3d6e-41b2-95a0-4b79488f0958
+    group: '4041717132'
+    lib_id: Osaka_Hirakata-4954507
+    title: 飢え 角川文庫 11470
+    author: 群 ようこ/著
+    publisher: 角川書店
+    isbn: 4-04-171713-2
+    pubdate: '2000.04'
+    source: Osaka_Hirakata
+  - id: 0cc34b1b-967e-429e-b7fa-873f562de73f
+    group: '4041717132'
+    lib_id: Saitama_Misato-541062
+    title: 飢え 15cm 角川文庫
+    author: 群 ようこ‖著
+    publisher: 角川書店
+    isbn: 4-04-171713-2
+    pubdate: '2000.4'
+    source: Saitama_Misato
+  '4048732951':
+  - id: 681e729d-1346-466f-8ed3-5ab9a57b6491
+    group: '4048732951'
+    lib_id: Ibaraki_Tsuchiura-188675
+    title: 彼岸の奴隷 Evil ecstasy
+    author: 小川 勝己/著
+    publisher: 東京:角川書店
+    isbn: 4-04-873295-1
+    pubdate: '2001.05'
+    source: Ibaraki_Tsuchiura
+  - id: e01522a8-6152-46f7-8315-3236b46a58d2
+    group: '4048732951'
+    lib_id: Tochigi_Kanuma-962654
+    title: 彼岸の奴隷  Evil ecstasy
+    author: 小川 勝己/著
+    publisher: 東京:角川書店
+    isbn: 4-04-873295-1
+    pubdate: '2001.05'
+    source: Tochigi_Kanuma
+  '4052043316':
+  - id: e3d1a624-4564-42e8-89fc-52a2a8f03c9b
+    group: '4052043316'
+    lib_id: Kanagawa_Yamato-1001000454208
+    title: モンスター大百科 不思議な怪物が大集合! 学研ミステリー百科 6 The Encyclopedia of Monsters 2
+    author: 宮本 幸枝/著
+    publisher: 学研プラス
+    isbn: 978-4-05-204331-4
+    pubdate: 2015/12
+    source: Kanagawa_Yamato
+  - id: 879a0050-ae42-4b27-9bb3-3703410a40c9
+    group: '4052043316'
+    lib_id: Hiroshima_Hiroshima-1110021377
+    title: モンスター大百科
+    author: 宮本 幸枝/著
+    publisher: 学研プラス
+    isbn: 9784-05-204331-4
+    pubdate: '2015.12'
+    source: Hiroshima_Hiroshima
+  400260179X:
+  - id: 6f4d3e69-7d63-4930-8ef2-36c95dbdf9f1
+    group: 400260179X
+    lib_id: Aichi_Higashiura-B10062136
+    title: 食と文化の謎
+    author: マーヴィン  ハリス∥著
+    publisher: 岩波書店
+    isbn: 4-00-260179-X
+    pubdate: '1994.3'
+    source: Aichi_Higashiura
+  - id: fa1f9fb1-488b-49ad-8aa6-df7aeb4c6f87
+    group: 400260179X
+    lib_id: Ibaraki_Tsuchiura-302613
+    title: 食と文化の謎 同時代ライブラリー 179
+    author: マーヴィン・ハリス/著
+    publisher: 東京:岩波書店
+    isbn: 4-00-260179-X
+    pubdate: '1994.03'
+    source: Ibaraki_Tsuchiura
+  '4033500200':
+  - id: 02942263-8f70-4075-9c97-81271886b86c
+    group: '4033500200'
+    lib_id: Kagoshima_Kagoshima-B12213099
+    title: こうえん
+    author: くりはらたかし/[作]
+    publisher: 偕成社
+    isbn: 978-4-03-350020-1
+    pubdate: '2020.5'
+    source: Kagoshima_Kagoshima
+  - id: 8cdaa331-81bd-49c6-9603-c930cf155575
+    group: '4033500200'
+    lib_id: Aichi_Kariya-B11901491
+    title: こうえん
+    author: くりはらたかし/[作]
+    publisher: 偕成社
+    isbn: 978-4-03-350020-1
+    pubdate: '2020.5'
+    source: Aichi_Kariya
+  '4042663036':
+  - id: 01777233-40da-44ef-8a09-5dd32610aadd
+    group: '4042663036'
+    lib_id: Ibaraki_Tsuchiura-300438
+    title: 天と地 アメリカ篇 上 角川文庫
+    author: レ・リ・ヘイスリップ/[著]
+    publisher: 東京:角川書店
+    isbn: 4-04-266303-6
+    pubdate: '1993.11'
+    source: Ibaraki_Tsuchiura
+  - id: dc629e68-b8d5-4401-aa71-c3f24e4f2966
+    group: '4042663036'
+    lib_id: Saitama_Yoshikawa-794582
+    title: 天と地 アメリカ篇 上 角川文庫
+    author: レ・リ・ヘイスリップ/[著]
+    publisher: 東京:角川書店
+    isbn: 4-04-266303-6
+    pubdate: '1993.11'
+    source: Saitama_Yoshikawa
+  '4092273029':
+  - id: 2e28c3f6-2082-4548-877a-40be4bd78c65
+    group: '4092273029'
+    lib_id: Tochigi_Utsunomiya-3-0016085381
+    title: 自分を守る!身近な危険  小学生のミカタ
+    author: 舟生 岳夫
+    publisher: 小学館
+    isbn: 978-4-09-227302-3
+    pubdate: '2019.3'
+    source: Tochigi_Utsunomiya
+  - id: 9d4b08e0-31ce-4ca4-9eb8-6221080de1d7
+    group: '4092273029'
+    lib_id: Aichi_Anjo-B12605627
+    title: 自分を守る!身近な危険 [小学生のミカタ]
+    author: 舟生岳夫/監修
+    publisher: 小学館
+    isbn: 978-4-09-227302-3
+    pubdate: '2019.3'
+    source: Aichi_Anjo
+  400112100X:
+  - id: 96b28ea6-a342-475f-a3d7-d8a15a400f7a
+    group: 400112100X
+    lib_id: Fukuoka_Dazaifu-B10255456
+    title: よろこびの日 <ワルシャワの少年時代> [ 岩波少年文庫 ] (2100)
+    author: I.B.シンガー/作
+    publisher: 岩波書店
+    isbn: 4-00-112100-X
+    pubdate: '1990.7'
+    source: Fukuoka_Dazaifu
+  - id: fba4a10e-4a28-416a-9924-bc224fac6350
+    group: 400112100X
+    lib_id: Saitama_Fujimi-615551
+    title: よろこびの日 ワルシャワの少年時代
+    author: I.B.シンガー/作
+    publisher: 東京:岩波書店
+    isbn: 4-00-112100-X
+    pubdate: '1990.07'
+    source: Saitama_Fujimi
+  '4054017371':
+  - id: 7087acd0-7de3-4ebc-a932-20ab5c6f082a
+    group: '4054017371'
+    lib_id: Nagano_Matsumoto-357520
+    title: 動物・ペットとふれあう仕事なり方完全ガイド 好きな仕事実現シリーズ
+    author: ''
+    publisher: 東京:学研
+    isbn: 4-05-401737-1
+    pubdate: '2002.11'
+    source: Nagano_Matsumoto
+  - id: 43e85c75-71bb-4b6a-ac48-825d95946fe1
+    group: '4054017371'
+    lib_id: Wakayama_Kinokawa-B10029153
+    title: 動物・ペットとふれあう仕事なり方完全ガイド
+    author: ''
+    publisher: 学研
+    isbn: 4-05-401737-1
+    pubdate: '2002.11'
+    source: Wakayama_Kinokawa
+  '4000221787':
+  - id: d770c350-8c00-468d-8f43-8c76ab872eeb
+    group: '4000221787'
+    lib_id: Tokyo_Ota-2799310
+    title: 医療経済学入門
+    author: 牛越博文/著
+    publisher: 岩波書店
+    isbn: 978-4-00-022178-8
+    pubdate: '2009.12'
+    source: Tokyo_Ota
+  - id: 7775fec4-d7f4-47f2-9f2e-f7ea774abe19
+    group: '4000221787'
+    lib_id: Tokyo_Machida-1000001441531
+    title: 医療経済学入門
+    author: 牛越博文/著
+    publisher: 岩波書店
+    isbn: 4-00-022178-7
+    pubdate: 2009/12
+    source: Tokyo_Machida
+  '4000240560':
+  - id: d626f519-9fcf-4ab6-b729-32c17c1389ec
+    group: '4000240560'
+    lib_id: Kagoshima_Pref-3000698008
+    title: 帝国と戦後の文化政策 舞台の上の日本像
+    author: 朴/祥美‖著
+    publisher: 岩波書店
+    isbn: 978-4-00-024056-7
+    pubdate: '2017.10'
+    source: Kagoshima_Pref
+  - id: 5fae34f7-c7eb-45e8-b233-ab62517af8e3
+    group: '4000240560'
+    lib_id: Okinawa_Pref-1101474637
+    title: 帝国と戦後の文化政策
+    author: 朴 祥美/著
+    publisher: 岩波書店
+    isbn: 9784-00-024056-7
+    pubdate: '2017.10'
+    source: Okinawa_Pref
+  '4003228332':
+  - id: c6df3955-c2ca-4ba4-8b2c-054d4ab0cab1
+    group: '4003228332'
+    lib_id: Aichi_Toyoake-B10023673
+    title: フォースター評論集 [岩波文庫]
+    author: フォースター/[著]
+    publisher: 岩波書店
+    isbn: 4-00-322833-2
+    pubdate: '1996.2'
+    source: Aichi_Toyoake
+  - id: c2d6238e-f58e-4f69-a538-e667677c4ee3
+    group: '4003228332'
+    lib_id: Tokyo_Higashiyamato-3-0000517123
+    title: <一般図書> フォースター評論集/岩波文庫/フォースター著/岩波書店/1996
+    author: ''
+    publisher: ''
+    isbn: 4-00-322833-2
+    pubdate: ''
+    source: Tokyo_Higashiyamato
+  '4034284501':
+  - id: 5c8f177e-9f1c-43ec-8b9a-fe6b36cca9a7
+    group: '4034284501'
+    lib_id: Tokyo_Shibuya-1100058249
+    title: 指先から知能をはぐくむおりがみ 5 いれものとぼうし
+    author: エキグチ クニオ/編・著
+    publisher: 偕成社
+    isbn: 4-03-428450-1
+    pubdate: '200103'
+    source: Tokyo_Shibuya
+  - id: de410af9-3deb-4fc9-a97a-66e97d517142
+    group: '4034284501'
+    lib_id: Tokyo_Inagi-1100835122
+    title: 指先から知能をはぐくむおりがみ 5
+    author: エキグチ クニオ/編・著
+    publisher: 偕成社
+    isbn: 4-03-428450-1
+    pubdate: '2001.3'
+    source: Tokyo_Inagi
+  '4046534249':
+  - id: dad3ed8b-3ec8-42d7-b26c-085d00f7c2f1
+    group: '4046534249'
+    lib_id: Chiba_Matsudo-1577078
+    title: 金正恩の北朝鮮独裁の深層
+    author: ''
+    publisher: KADOKAWA
+    isbn: 4-04-653424-8
+    pubdate: '2013.12'
+    source: Chiba_Matsudo
+  - id: 42fafb7c-7041-45a5-a128-9ac138d801db
+    group: '4046534249'
+    lib_id: Osaka_Kishiwada-10159253
+    title: 金正恩の北朝鮮独裁の深層 角川oneテーマ21 D-5
+    author: 黒田 勝弘/[著]
+    publisher: 東京:KADOKAWA
+    isbn: 978-4-04-653424-8
+    pubdate: '2013.12'
+    source: Osaka_Kishiwada
+  '4093874530':
+  - id: d2480702-c87f-4074-b3a4-e42950e71b0f
+    group: '4093874530'
+    lib_id: Tokyo_Mitaka-311333
+    title: 戦後政治の実像 舞台裏で何が決められたのか
+    author: 五十嵐 仁 著
+    publisher: 小学館
+    isbn: 4-09-387453-0
+    pubdate: '2003.8'
+    source: Tokyo_Mitaka
+  - id: 18856497-f85c-490a-9381-9cedb2990b13
+    group: '4093874530'
+    lib_id: Kanagawa_Ninomiya-358354
+    title: 戦後政治の実像-舞台裏で何が決められたのか-
+    author: 五十嵐仁/著
+    publisher: 小学館
+    isbn: 4-09-387453-0
+    pubdate: '2003.08'
+    source: Kanagawa_Ninomiya
+  '4022735562':
+  - id: 68152e84-4f7d-49e1-bfd4-784cfc29ad94
+    group: '4022735562'
+    lib_id: Saitama_Moroyama-10340031
+    title: 折れない自信をつくるシンプルな習慣 朝日新書 456
+    author: 心屋 仁之助/著
+    publisher: 東京:朝日新聞出版
+    isbn: 978-4-02-273556-0
+    pubdate: '2014.04'
+    source: Saitama_Moroyama
+  - id: 6f0651b0-d221-411a-9785-b43e827b49cb
+    group: '4022735562'
+    lib_id: Yamanashi_Minamialps-1027586
+    title: 折れない自信をつくるシンプルな習慣 朝日新書 456
+    author: 心屋 仁之助/著
+    publisher: 東京:朝日新聞出版
+    isbn: '4022735562'
+    pubdate: '2014.04'
+    source: Yamanashi_Minamialps
+  '4051046133':
+  - id: b49e61a2-9513-4dfc-aef9-dd607203de94
+    group: '4051046133'
+    lib_id: Shizuoka_Fuji-B10474770
+    title: ひとりできたねこ
+    author: 内田莉莎子/さく
+    publisher: 学研
+    isbn: 4-05-104613-3
+    pubdate: ''
+    source: Shizuoka_Fuji
+  - id: f8d7fd71-8e7a-44a3-b507-5f06d08df4f1
+    group: '4051046133'
+    lib_id: Aichi_Anjo-B10523194
+    title: ひとりできたねこ [新しい 日本の幼年童話 ]
+    author: 内田 莉莎子/さく
+    publisher: 学研
+    isbn: 4-05-104613-3
+    pubdate: '1983'
+    source: Aichi_Anjo
+  '4061983474':
+  - id: 006548e0-a35f-49bb-9ebd-dfd44a4a1dba
+    group: '4061983474'
+    lib_id: Osaka_Pref-10000001927891
+    title: 戦後短篇小説再発見 15 講談社文芸文庫 笑いの源泉
+    author: 講談社文芸文庫∥編
+    publisher: 講談社
+    isbn: 4-06-198347-4
+    pubdate: '2003.10'
+    source: Osaka_Pref
+  - id: 9101da6b-00a8-4781-baea-813bb1f620e0
+    group: '4061983474'
+    lib_id: Hyogo_Kobe-CT7000184801-PV7000172123
+    title: 笑いの源泉
+    author: 講談社文芸文庫編
+    publisher: 講談社文芸文庫
+    isbn: '9784061983472'
+    pubdate: 戦後短篇小説再発見:15
+    source: Hyogo_Kobe
+  '4000281593':
+  - id: 461d47ee-27da-4422-84a8-85100a552927
+    group: '4000281593'
+    lib_id: Shizuoka_Pref-1000810488791
+    title: 生活を哲学する 哲学塾
+    author: 長谷川 宏/著
+    publisher: 岩波書店
+    isbn: 978-4-00-028159-1
+    pubdate: 2008/09
+    source: Shizuoka_Pref
+  - id: 765ef608-12db-4b6e-afb3-6c79d6390dce
+    group: '4000281593'
+    lib_id: Miyagi_Sendai-1101483781
+    title: ' 生活を哲学する 哲学塾'
+    author: 長谷川 宏/著
+    publisher: 岩波書店
+    isbn: 9784-00-028159-1
+    pubdate: '2008.9'
+    source: Miyagi_Sendai
+  400007475X:
+  - id: 66aa9cbf-486f-4805-ab04-9ae0b2664cd2
+    group: 400007475X
+    lib_id: Saitama_Gyoda-838101
+    title: 伝説の算数教科書<緑表紙> 塩野直道の考えたこと
+    author: 松宮 哲夫/著
+    publisher: 東京:岩波書店
+    isbn: 978-4-00-007475-9
+    pubdate: '2007.09'
+    source: Saitama_Gyoda
+  - id: 1e80e127-5cc5-48d2-9a78-d0ce4fca9816
+    group: 400007475X
+    lib_id: Tokyo_Suginami-1000001616707
+    title: 伝説の算数教科書<緑表紙> 塩野直道の考えたこと
+    author: 松宮 哲夫/著
+    publisher: 岩波書店
+    isbn: 9784-00-007475-9
+    pubdate: 2007/09
+    source: Tokyo_Suginami
+  '4001145235':
+  - id: 7fe51c4f-a5ab-4c6b-a11e-3ab257899800
+    group: '4001145235'
+    lib_id: Aichi_Inazawa-605282
+    title: シャーロック・ホウムズ空き家の冒険 新版
+    author: コナン・ドイル/作
+    publisher: 東京:岩波書店
+    isbn: 4-00-114523-5
+    pubdate: '2000.10'
+    source: Aichi_Inazawa
+  - id: 00ca0526-893d-42cb-89fc-c590559b63be
+    group: '4001145235'
+    lib_id: Aichi_Nagoya-1009910048201
+    title: シャーロック・ホウムズ空き家の冒険 新版 (岩波少年文庫 523)
+    author: コナン・ドイル/作
+    publisher: 岩波書店
+    isbn: 4-00-114523-5
+    pubdate: '2000.10'
+    source: Aichi_Nagoya
+  '4046316497':
+  - id: 8dbb90d7-6792-4753-8815-391cf88ce06c
+    group: '4046316497'
+    lib_id: Tokyo_Koto-B15346799
+    title: らくがき☆ポリス 2  [角川つばさ文庫] (Aま4-2)
+    author: まひる/作
+    publisher: KADOKAWA
+    isbn: 978-4-04-631649-3
+    pubdate: '2017.2'
+    source: Tokyo_Koto
+  - id: 2c53bff1-163c-48a5-bf46-b3e1b52c0824
+    group: '4046316497'
+    lib_id: Osaka_Yao-1110307824
+    title: らくがき☆ポリス
+    author: まひる/作
+    publisher: KADOKAWA
+    isbn: 9784-04-631649-3
+    pubdate: '2017.2'
+    source: Osaka_Yao
+  '4022514116':
+  - id: e35f90a7-321c-4a31-ba77-5bb7561027f8
+    group: '4022514116'
+    lib_id: Miyagi_Kami-10272338
+    title: 豆大福と珈琲
+    author: 片岡 義男/著
+    publisher: 東京:朝日新聞出版
+    isbn: 978-4-02-251411-0
+    pubdate: '2016.09'
+    source: Miyagi_Kami
+  - id: 24a8a0f0-b8db-41e7-b90b-4f5889681230
+    group: '4022514116'
+    lib_id: Saitama_Tokigawa-202599
+    title: 豆大福と珈琲
+    author: 片岡 義男/著
+    publisher: 東京:朝日新聞出版
+    isbn: '4022514116'
+    pubdate: '2016.09'
+    source: Saitama_Tokigawa
+  '4040707958':
+  - id: 193a9702-aca1-401e-81e3-6c9122ded919
+    group: '4040707958'
+    lib_id: Fukui_Sakai-11935108
+    title: アドカレ! 戸山大学広告代理店の挑戦
+    author: 森 晶麿/〔著〕
+    publisher: 東京:KADOKAWA
+    isbn: 978-4-04-070795-2
+    pubdate: '2016.01'
+    source: Fukui_Sakai
+  - id: 6099dd9f-9c68-4822-a7b0-4d7078e46c8e
+    group: '4040707958'
+    lib_id: Kanagawa_Zama-B12411775
+    title: アドカレ! 戸山大学広告代理店の挑戦 [富士見L文庫] (も-1-1-1)
+    author: 森晶麿/[著]
+    publisher: KADOKAWA
+    isbn: 978-4-04-070795-2
+    pubdate: '2016.1'
+    source: Kanagawa_Zama
+  '4037447207':
+  - id: 9413be21-1304-433e-82d1-5a0e59995529
+    group: '4037447207'
+    lib_id: Kagoshima_Kagoshima-1005510006999
+    title: アリ・ババと四十人の盗賊 (アラビアン・ナイト)
+    author: 斉藤 洋/[訳]著
+    publisher: 偕成社
+    isbn: 4-03-744720-7
+    pubdate: 2005/02
+    source: Kagoshima_Kagoshima
+  - id: 3c9410ff-d239-4cbc-8294-972d74bb08f1
+    group: '4037447207'
+    lib_id: Mie_Yokkaichi-1101103519
+    title: アリ・ババと四十人の盗賊
+    author: 斉藤 洋/[訳]著
+    publisher: 偕成社
+    isbn: 4-03-744720-7
+    pubdate: '2005.2'
+    source: Mie_Yokkaichi
+  404604506X:
+  - id: 457880ff-257f-4b11-8a06-8ff941913661
+    group: 404604506X
+    lib_id: Nagano_Nagano-2605049
+    title: 有元葉子の料理教室 3  秋冬レシピ
+    author: 有元 葉子/著
+    publisher: 東京:KADOKAWA
+    isbn: 978-4-04-604506-5
+    pubdate: '2019.09'
+    source: Nagano_Nagano
+  - id: 417fc6ad-2d9d-4486-933c-db9821534015
+    group: 404604506X
+    lib_id: Iwate_Iwate-81689
+    title: 有元葉子の料理教室 3 秋冬レシピ
+    author: 有元 葉子/著
+    publisher: 東京:KADOKAWA
+    isbn: 978-4-04-604506-5
+    pubdate: '2019.09'
+    source: Iwate_Iwate
+  '4045909109':
+  - id: 08140375-b05a-4be9-90de-0e9d088eac7d
+    group: '4045909109'
+    lib_id: Chiba_Choshi-52755
+    title: 鑑賞中国の古典 10 伝習録
+    author: ''
+    publisher: 東京:角川書店
+    isbn: 4-04-590910-9
+    pubdate: '1988.03'
+    source: Chiba_Choshi
+  - id: 843559a5-a0ee-4a73-8e33-7e10aff94694
+    group: '4045909109'
+    lib_id: Yamaguchi_Pref-5010167730
+    title: 鑑賞中国の古典 10 伝習録
+    author: ''
+    publisher: 角川書店
+    isbn: 4-04-590910-9
+    pubdate: '1988.3'
+    source: Yamaguchi_Pref
+  '4062183501':
+  - id: 744c46a0-ea5c-48bc-9957-96e9c0211722
+    group: '4062183501'
+    lib_id: Osaka_Takatsuki-B11159806
+    title: 負けかたの極意
+    author: ''
+    publisher: 講談社
+    isbn: 978-4-06-218350-5
+    pubdate: '2013.5'
+    source: Osaka_Takatsuki
+  - id: 61f7054b-2286-4d51-9f0f-f0cfa0ca0ac8
+    group: '4062183501'
+    lib_id: Kanagawa_Yokosuka-B11660510
+    title: 負けかたの極意
+    author: 野村克也/著
+    publisher: 講談社
+    isbn: '9784062183505'
+    pubdate: '2013.5'
+    source: Kanagawa_Yokosuka
+  '4041072239':
+  - id: 1b18970d-eade-4f24-a034-c878afbca058
+    group: '4041072239'
+    lib_id: Tokyo_Kodaira-82151590
+    title: 聖母の共犯者 角川文庫 よ32-3
+    author: 吉川 英梨/[著]
+    publisher: 東京:KADOKAWA
+    isbn: '4041072239'
+    pubdate: '2018.11'
+    source: Tokyo_Kodaira
+  - id: d876bb95-2fa6-40d7-aac2-e2225da6997d
+    group: '4041072239'
+    lib_id: Saitama_Kawagoe-3595584
+    title: 聖母の共犯者 角川文庫 よ32-3
+    author: 吉川 英梨/[著]
+    publisher: 東京:KADOKAWA
+    isbn: 978-4-04-107223-3
+    pubdate: '2018.11'
+    source: Saitama_Kawagoe
+  '4023302163':
+  - id: 857e91b3-40c6-498c-bf86-b0d2479fcc28
+    group: '4023302163'
+    lib_id: Fukushima_Koriyama-284812
+    title: 麻原おっさん地獄
+    author: 田村 智/著
+    publisher: 東京:朝日新聞社
+    isbn: 4-02-330216-3
+    pubdate: '1996.02'
+    source: Fukushima_Koriyama
+  - id: d209e084-74ec-49a5-919b-fd517040e687
+    group: '4023302163'
+    lib_id: Fukuoka_Chikujo-3-0000045671
+    title: 麻原おっさん地獄/田村 智
+    author: 田村 智
+    publisher: 朝日新聞社出版局
+    isbn: 4-02-330216-3
+    pubdate: '1996'
+    source: Fukuoka_Chikujo
+  404631818X:
+  - id: db34c5e9-9c34-481e-a7cd-910780914e46
+    group: 404631818X
+    lib_id: Yamanashi_Koshu-1182344
+    title: 未来のミライ 角川つばさ文庫 Cほ1-4
+    author: 細田 守/作
+    publisher: 東京:KADOKAWA
+    isbn: 404631818X
+    pubdate: '2018.06'
+    source: Yamanashi_Koshu
+  - id: 645e7fd9-e6b3-4779-aa3a-c362e9079ec6
+    group: 404631818X
+    lib_id: Osaka_Izumisano-10283721
+    title: 未来のミライ
+    author: 細田/守‖作, ほか
+    publisher: KADOKAWA
+    isbn: 978-4-04-631818-3
+    pubdate: '2018.6'
+    source: Osaka_Izumisano
+  '4052048881':
+  - id: ef162b89-d820-4cc8-9a12-760c26969057
+    group: '4052048881'
+    lib_id: Fukuoka_Onojo-2042856
+    title: おどろき!変身する生き物 学研の図鑑LIVEビジュアルクイズ図鑑
+    author: ''
+    publisher: 東京:学研プラス
+    isbn: 978-4-05-204888-3
+    pubdate: '2018.07'
+    source: Fukuoka_Onojo
+  - id: 236f9cad-13e2-411d-a2d1-fef4cbba9195
+    group: '4052048881'
+    lib_id: Saitama_Tokigawa-210418
+    title: おどろき!変身する生き物 学研の図鑑LIVEビジュアルクイズ図鑑
+    author: ''
+    publisher: 東京:学研プラス
+    isbn: '4052048881'
+    pubdate: '2018.07'
+    source: Saitama_Tokigawa
+  '4061984934':
+  - id: 0efef7e1-6f2d-43d8-b4f5-1a5dd2edc0fc
+    group: '4061984934'
+    lib_id: Nara_Ikaruga-1050484
+    title: この三つのもの 講談社文芸文庫 さE6
+    author: 佐藤 春夫/〔著〕
+    publisher: 東京:講談社
+    isbn: '4061984934'
+    pubdate: '2007.10'
+    source: Nara_Ikaruga
+  - id: 903548b5-08aa-4f69-9b4a-c4cb01cb06a6
+    group: '4061984934'
+    lib_id: Tokyo_Katsushika-001333970
+    title: この三つのもの(講談社文芸文庫 さE6)
+    author: 佐藤春夫〔著〕
+    publisher: 講談社
+    isbn: '9784061984936'
+    pubdate: '2007'
+    source: Tokyo_Katsushika
+  406218155X:
+  - id: bb983eaa-758b-433a-8029-b7c52a5514c7
+    group: 406218155X
+    lib_id: Osaka_Hirakata-0211677885
+    title: 100歳じぃさん101歳ばぁさん−どっこい生きる100年の知恵
+    author: 吉田 信
+    publisher: 講談社
+    isbn: 978-4-06-218155-6
+    pubdate: '2012.12'
+    source: Osaka_Hirakata
+  - id: e229e577-c963-43e1-a2a7-88f56e26e319
+    group: 406218155X
+    lib_id: Tochigi_Nasukarasuyama-180439
+    title: 100歳じぃさん101歳ばぁさん
+    author: ''
+    publisher: 講談社
+    isbn: 4-06-218155-6
+    pubdate: '2012.12'
+    source: Tochigi_Nasukarasuyama
+  '4000039385':
+  - id: 77643f4b-aa27-4306-b917-3e72c8f934fc
+    group: '4000039385'
+    lib_id: Shiga_Kouga-954934
+    title: 子どもと教師のもつれ 教育相談から
+    author: 近藤 邦夫/著
+    publisher: 東京:岩波書店
+    isbn: 4-00-003938-5
+    pubdate: '1995.09'
+    source: Shiga_Kouga
+  - id: d8bc4684-83a4-4d90-a681-2095e4164079
+    group: '4000039385'
+    lib_id: Tokyo_Pref-1102214087
+    title: '[ 和図書 ] 子どもと教師のもつれ 教育相談から'
+    author: 近藤 邦夫/著
+    publisher: 岩波書店
+    isbn: 4-00-003938-5
+    pubdate: '1995.9'
+    source: Tokyo_Pref
+  '4000928325':
+  - id: 72219bdf-e1fb-4528-93c3-a9834ebdf500
+    group: '4000928325'
+    lib_id: Saitama_Ina-932819
+    title: 定本漱石全集 第12巻 倫敦消息
+    author: 夏目 金之助/著
+    publisher: 東京:岩波書店
+    isbn: 978-4-00-092832-8
+    pubdate: '2017.09'
+    source: Saitama_Ina
+  - id: 3611fa71-7b1b-4a85-b1d1-06761c0a4d78
+    group: '4000928325'
+    lib_id: Tokyo_Mitaka-2311011
+    title: 定本漱石全集 第12巻 小品
+    author: 夏目金之助/著
+    publisher: 岩波書店
+    isbn: 978-4-00-092832-8
+    pubdate: '2017.09'
+    source: Tokyo_Mitaka
+  '4062192411':
+  - id: ea0b18ee-c448-46a0-9bda-9fd36af3d6b6
+    group: '4062192411'
+    lib_id: Kagawa_Pref-1110251578
+    title: UV(ユーブイ)レジンの教科書 基礎がわかれば、デザインは無限大
+    author: a.k.b.+/著
+    publisher: 講談社
+    isbn: 978-4-06-219241-5
+    pubdate: '2014.11'
+    source: Kagawa_Pref
+  - id: 611df980-536c-4e87-a5fc-9388b5f99041
+    group: '4062192411'
+    lib_id: Kanagawa_Hiratsuka-2079579
+    title: UVレジンの教科書-基礎がわかれば、デザインは無限大-
+    author: a.k.b.+/著
+    publisher: 講談社
+    isbn: 978-4-06-219241-5
+    pubdate: '2014.11'
+    source: Kanagawa_Hiratsuka
+  '4022563079':
+  - id: bddcd713-9279-4180-aa22-20fe7e657b91
+    group: '4022563079'
+    lib_id: Kanagawa_Kamakura-B10139816
+    title: 古代史発掘 ’88~’90   [新遺跡カタログ]
+    author: アサヒグラフ編集部/編
+    publisher: 朝日新聞社
+    isbn: 4-02-256307-9
+    pubdate: '199106'
+    source: Kanagawa_Kamakura
+  - id: ffa1f2bd-9c27-45fe-924f-35ccc0695c0a
+    group: '4022563079'
+    lib_id: Kanagawa_Hayama-5132
+    title: 古代史発掘 ’88~90年
+    author: アサヒグラフ編集部/編
+    publisher: 朝日新聞社
+    isbn: '4022563079'
+    pubdate: '1991.06'
+    source: Kanagawa_Hayama
+  '4022506504':
+  - id: 432b84fc-d9c9-4183-a384-a2936dc87cc1
+    group: '4022506504'
+    lib_id: Tokyo_Setagaya-004761645
+    title: 雑草女に敵なし!−女性ADから教わったたくましく生きる極意−
+    author: 山田隆道著
+    publisher: 朝日新聞出版
+    isbn: '9784022506504'
+    pubdate: '2009'
+    source: Tokyo_Setagaya
+  - id: c31f4b38-1df5-4b5c-8cba-b1ee20b49dac
+    group: '4022506504'
+    lib_id: Tokyo_Katsushika-2009228
+    title: 雑草女に敵なし!-女性ADから教わったたくましく生きる極意-
+    author: 山田隆道/著
+    publisher: 朝日新聞出版
+    isbn: 978-4-02-250650-4
+    pubdate: '2009.11'
+    source: Tokyo_Katsushika
+  '4052000315':
+  - id: 16d07f4f-6c87-4787-8f93-1e7eae9d2a37
+    group: '4052000315'
+    lib_id: Saitama_Kumgaya-1253780
+    title: 生活科学級でできる飼育と栽培 アイウエオ順 8 みんなでそだてよう
+    author: ''
+    publisher: 学研
+    isbn: 978-4-05-200031-7
+    pubdate: 1993/04
+    source: Saitama_Kumgaya
+  - id: aa1bbe8b-51ed-4af7-ac52-d755d1889df7
+    group: '4052000315'
+    lib_id: Shizuoka_Fujinomiya-83818
+    title: 生活科学級でできる飼育と栽培-アイウエオ順-8 みんなでそだてよう-ジャガイモ〜トウモロコシ-
+    author: ''
+    publisher: 学研
+    isbn: 4-05-200031-5
+    pubdate: '1993.04'
+    source: Shizuoka_Fujinomiya
+  '4045744010':
+  - id: 8da0dc5f-1f74-41ee-9978-1f7ed0704c94
+    group: '4045744010'
+    lib_id: Tokyo_Koto-B11945548
+    title: 宮脇俊三鉄道紀行全集 1
+    author: 宮脇俊三/著
+    publisher: 角川書店
+    isbn: 4-04-574401-0
+    pubdate: '1998.12'
+    source: Tokyo_Koto
+  - id: 09d5efc3-48ac-480d-9c8e-0d1a3d37ec9f
+    group: '4045744010'
+    lib_id: Kanagawa_Sagamihara-434768
+    title: 宮脇俊三鉄道紀行全集 1 国内紀行
+    author: 宮脇 俊三
+    publisher: 角川書店
+    isbn: 978-4-04-574401-3
+    pubdate: '1998'
+    source: Kanagawa_Sagamihara
+  '4062187256':
+  - id: 4a0ab815-330f-47de-bcf5-da9346bfb9b8
+    group: '4062187256'
+    lib_id: Osaka_Izumisano-10014693
+    title: 園芸「コツ」の科学
+    author: 上田/善弘‖著
+    publisher: 講談社
+    isbn: 978-4-06-218725-1
+    pubdate: '2013.12'
+    source: Osaka_Izumisano
+  - id: 262976da-9a68-4d6b-aa17-c188ecbdafa7
+    group: '4062187256'
+    lib_id: Shizuoka_Kosai-205333
+    title: 園芸「コツ」の科学 植物栽培の「なぜ」がわかる
+    author: 上田善弘/著
+    publisher: 東京:講談社
+    isbn: '4062187256'
+    pubdate: '2013.12'
+    source: Shizuoka_Kosai
+  '4048725904':
+  - id: a7ea7a2c-c43a-426d-a114-c64c289ed133
+    group: '4048725904'
+    lib_id: Hiroshima_Pref-1100606912
+    title: 午後の死
+    author: ''
+    publisher: ''
+    isbn: 4-04-872590-4
+    pubdate: ''
+    source: Hiroshima_Pref
+  - id: 42da7cc5-4410-4aac-8ddd-3d92c5e885df
+    group: '4048725904'
+    lib_id: Gifu_Kani-B10405662
+    title: 午後の死
+    author: 森瑤子/著
+    publisher: 角川書店
+    isbn: 4-04-872590-4
+    pubdate: '1990.7'
+    source: Gifu_Kani
+  403726370X:
+  - id: 1dd43dd5-9da6-4f45-87de-86218feda866
+    group: 403726370X
+    lib_id: Saitama_Sayama-338506
+    title: 愛って、なあに?  わたしのひみつノート 1
+    author: ロイス=ロウリー/作
+    publisher: 東京:偕成社
+    isbn: 4-03-726370-X
+    pubdate: '1988.10'
+    source: Saitama_Sayama
+  - id: d1cb3df6-e96d-4da4-9757-ed4e260a1c89
+    group: 403726370X
+    lib_id: Yamaguchi_Hofu-111698
+    title: 愛って、なあに? わたしのひみつノート 1
+    author: ロイス=ロウリー/作
+    publisher: 東京:偕成社
+    isbn: 403726370X
+    pubdate: '1988.10'
+    source: Yamaguchi_Hofu
+  '4051028194':
+  - id: 988b9b47-6eb0-49e3-a8c5-147b072de138
+    group: '4051028194'
+    lib_id: Ibaraki_Hokota-3-0000016056
+    title: 大系世界の美術20
+    author: ''
+    publisher: 学研
+    isbn: 4-05-102819-4
+    pubdate: '1980'
+    source: Ibaraki_Hokota
+  - id: a14bf681-fe27-45ab-ada7-e1f8f933fd82
+    group: '4051028194'
+    lib_id: Nara_Ikoma-925855
+    title: 大系世界の美術 20 現代美術
+    author: ''
+    publisher: 学研
+    isbn: 978-4-05-102819-0
+    pubdate: '1980'
+    source: Nara_Ikoma
+  '4062191547':
+  - id: a279a1af-7dde-4ce8-9b3e-adc56ea72223
+    group: '4062191547'
+    lib_id: Miyagi_Osaki-897341
+    title: 埋れた牙
+    author: 堂場 瞬一/著
+    publisher: 東京:講談社
+    isbn: 978-4-06-219154-8
+    pubdate: '2014.10'
+    source: Miyagi_Osaki
+  - id: e5305ac1-2963-4ffb-b181-d4a44dcd6aa8
+    group: '4062191547'
+    lib_id: Niigata_Seiro-1190340
+    title: 埋れた牙
+    author: 堂場 瞬一/著
+    publisher: ''
+    isbn: 978-4-06-219154-8
+    pubdate: '2014.10'
+    source: Niigata_Seiro
+  '4048730274':
+  - id: ca30b5bf-47b2-4266-8a3e-6308580f2dfd
+    group: '4048730274'
+    lib_id: Aichi_Nagoya-1009710010792
+    title: 満天の蒼い森 若き日の宮沢賢治
+    author: 菅原千恵子/著
+    publisher: 角川書店
+    isbn: 4-04-873027-4
+    pubdate: '1997.04'
+    source: Aichi_Nagoya
+  - id: 15cc91f3-e743-4c8b-8091-d52f0c098622
+    group: '4048730274'
+    lib_id: Chiba_Noda-3-0000154108
+    title: 満天の蒼い森
+    author: 菅原  千恵子
+    publisher: 角川書店
+    isbn: 4-04-873027-4
+    pubdate: '199704'
+    source: Chiba_Noda
+  '4022289015':
+  - id: 85ee3967-7d37-4bba-84c1-37f91b3aa50c
+    group: '4022289015'
+    lib_id: Tottori_Nichinan-23214
+    title: 朝日新聞の用語の手引  最新版
+    author: 朝日新聞社用語幹事/編
+    publisher: 東京:朝日新聞社
+    isbn: 4-02-228901-5
+    pubdate: '1997.07'
+    source: Tottori_Nichinan
+  - id: 32ff2142-99ea-4e30-9f06-b5cf85fc1763
+    group: '4022289015'
+    lib_id: Akita_Yokote-186740
+    title: 朝日新聞の用語の手引 最新版
+    author: 朝日新聞社用語幹事/編
+    publisher: 東京:朝日新聞社
+    isbn: 4-02-228901-5
+    pubdate: '1997.07'
+    source: Akita_Yokote
+  405401724X:
+  - id: 3ab06241-b69a-4998-81ae-cd2105674534
+    group: 405401724X
+    lib_id: Saitama_Ina-176652
+    title: 角王 歴史群像新書
+    author: 三田 誠広/著
+    publisher: 東京:学研
+    isbn: 405401724X
+    pubdate: '2002.07'
+    source: Saitama_Ina
+  - id: dcf14daa-1820-4119-80e3-4d1cfdc7b683
+    group: 405401724X
+    lib_id: Shiga_Takashima-76461
+    title: 角王 歴史群像新書
+    author: 三田 誠広/著
+    publisher: 東京:学研
+    isbn: 4-05-401724-X
+    pubdate: '2002.07'
+    source: Shiga_Takashima
+  '4040673638':
+  - id: faa35bd3-3777-4348-8e5e-e0955519975b
+    group: '4040673638'
+    lib_id: Chiba_Funabashi-B11802629
+    title: ぼくはこうして生き残った! 5
+    author: ローレン・ターシス/著
+    publisher: KADOKAWA
+    isbn: 978-4-04-067363-9
+    pubdate: '2015.2'
+    source: Chiba_Funabashi
+  - id: ce78b8fd-1358-4a92-b17e-349664f7cac9
+    group: '4040673638'
+    lib_id: Yamaguchi_Shimonoseki-001-1000959107
+    title: ぼくはこうして生き残った!/5
+    author: ローレン・ターシス‖著
+    publisher: KADOKAWA
+    isbn: 978-4-04-067363-9
+    pubdate: '2015.02'
+    source: Yamaguchi_Shimonoseki
+  '4000296485':
+  - id: 3518383c-e58a-4911-80a6-8a47fb0bccc1
+    group: '4000296485'
+    lib_id: Tokyo_Kita-3-0002694985
+    title: 科学者の目、科学の芽 岩波科学ライブラリー
+    author: 岩波書店編集部
+    publisher: 岩波書店
+    isbn: 978-4-00-029648-9
+    pubdate: 2016.4(404)
+    source: Tokyo_Kita
+  - id: 8e10b9e2-8828-4dd9-8c04-7610d2b06125
+    group: '4000296485'
+    lib_id: Kochi_Pref-1120099659
+    title: 科学者の目、科学の芽
+    author: ''
+    publisher: ''
+    isbn: 9784-00-029648-9
+    pubdate: ''
+    source: Kochi_Pref
+  '4003382315':
+  - id: cfc0a790-40c5-438c-a7b1-5ac9c8f8ead2
+    group: '4003382315'
+    lib_id: Tokyo_Higashiyamato-3-0000282918
+    title: <一般図書> 神を観ることについて 他二篇/岩波文庫/クザーヌス,ニコラウス著/岩波書店/2001
+    author: ''
+    publisher: ''
+    isbn: 4-00-338231-5
+    pubdate: ''
+    source: Tokyo_Higashiyamato
+  - id: 63c081b0-d34f-4fac-a80e-8c4baff476e2
+    group: '4003382315'
+    lib_id: Osaka_Sakai-1000001405457
+    title: 神を観ることについて (岩波文庫) 他二篇
+    author: クザーヌス/著
+    publisher: 岩波書店
+    isbn: 4-00-338231-5
+    pubdate: 2001/07
+    source: Osaka_Sakai
+  '4022574429':
+  - id: 90c95720-f882-42d3-aa19-3fe4b2562371
+    group: '4022574429'
+    lib_id: Kyoto_Ayabe-71174
+    title: 臆病な医者
+    author: 南木 佳士/著
+    publisher: 東京:朝日新聞社
+    isbn: '4022574429'
+    pubdate: '1999.12'
+    source: Kyoto_Ayabe
+  - id: 19f94ae4-280c-4a1b-8743-3de430e292fc
+    group: '4022574429'
+    lib_id: Chiba_Matsudo-246346
+    title: 臆病な医者
+    author: ''
+    publisher: 朝日新聞社
+    isbn: 4-02-257442-9
+    pubdate: '1999.12'
+    source: Chiba_Matsudo
+  '4023310263':
+  - id: 5a3d1325-dba6-4785-8f16-16c9e2654df3
+    group: '4023310263'
+    lib_id: Hyogo_Taka-88714
+    title: 鈴木敏文の実践!行動経済学 経営学
+    author: 鈴木敏文/著
+    publisher: 東京:朝日新聞出版
+    isbn: '9784023310261'
+    pubdate: '2012.02'
+    source: Hyogo_Taka
+  - id: c782403c-81bb-47e9-8072-a4aed4cee365
+    group: '4023310263'
+    lib_id: Aichi_Obu-B10652276
+    title: 'スズキ トシフミ ノ ジッセン コウドウ ケイザイガク 鈴木敏文の実践!行動経済学   '
+    author: スズキ,トシフミ  鈴木敏文/著
+    publisher: アサヒ シンブン シュッパン  朝日新聞出版
+    isbn: 978-4-02-331026-1
+    pubdate: '2012.2'
+    source: Aichi_Obu
+  '4002601757':
+  - id: bfa24294-ac60-465b-b589-2f3f2dc7cab3
+    group: '4002601757'
+    lib_id: Kyoto_Joyo-751996
+    title: 神と新しい物理学
+    author: ポール・デイヴィス∥著
+    publisher: 岩波書店
+    isbn: 4-00-260175-7
+    pubdate: '1994.2'
+    source: Kyoto_Joyo
+  - id: 857bec60-f7af-42aa-9ea5-56ae110c5e72
+    group: '4002601757'
+    lib_id: Fukui_Sakai-15759
+    title: 神と新しい物理学 同時代ライブラリー 175
+    author: ポール・デイヴィス/著
+    publisher: 東京:岩波書店
+    isbn: 4-00-260175-7
+    pubdate: '1994.02'
+    source: Fukui_Sakai
+  '4032210403':
+  - id: ba5d302b-45e5-4ee4-9db9-197ff970a038
+    group: '4032210403'
+    lib_id: Hyogo_Kawanishi-697748
+    title: ピン・ポン・バス 2版
+    author: 竹下 文子/作
+    publisher: 東京:偕成社
+    isbn: 978-4-03-221040-8
+    pubdate: '2012.02'
+    source: Hyogo_Kawanishi
+  - id: 29888b0b-ddf4-47bd-89fa-59262adcfa74
+    group: '4032210403'
+    lib_id: Aichi_Inazawa-55317
+    title: ピン・ポン・バス
+    author: 竹下 文子/作
+    publisher: 東京:偕成社
+    isbn: '4032210403'
+    pubdate: '1996.10'
+    source: Aichi_Inazawa
+  '4034142502':
+  - id: a6a41ca2-5299-445e-8bcb-8f735026b003
+    group: '4034142502'
+    lib_id: Nagano_Iijima-91170
+    title: せんせい!これなあに? 5 なまえしらべずかん
+    author: ''
+    publisher: 東京:偕成社
+    isbn: 978-4-03-414250-9
+    pubdate: '2015.11'
+    source: Nagano_Iijima
+  - id: 6f22bc15-633e-4d93-80f9-a272031a6fa0
+    group: '4034142502'
+    lib_id: Tokyo_Suginami-1000010489478
+    title: せんせい!これなあに? 5 なまえしらべずかん おち葉
+    author: ''
+    publisher: 偕成社
+    isbn: 9784-03-414250-9
+    pubdate: 2015/11
+    source: Tokyo_Suginami
+  '4003101189':
+  - id: 6fe7ad28-8130-4d11-8482-e9ceeaee0175
+    group: '4003101189'
+    lib_id: Fukuoka_Dazaifu-B10137564
+    title: 文学評論 下  [岩波文庫]
+    author: 夏目 漱石/著
+    publisher: 岩波書店
+    isbn: 4-00-310118-9
+    pubdate: '1985.10'
+    source: Fukuoka_Dazaifu
+  - id: 05035ca9-11d7-41b4-a065-f072a917eb50
+    group: '4003101189'
+    lib_id: Tokyo_Edogawa-848112
+    title: 文学評論 下 改版(岩波文庫)
+    author: 夏目 漱石
+    publisher: 岩波書店
+    isbn: 978-4-00-310118-6
+    pubdate: '198510'
+    source: Tokyo_Edogawa
+  '4046003243':
+  - id: 38b0cfe7-a19d-472a-84b0-6b1667eff150
+    group: '4046003243'
+    lib_id: Saitama_Niiza-1804271
+    title: 日本経済の真相 2014年度版 消費増税でどうなる?-やっぱり「経済ニュース」はウソをつく!-
+    author: 高橋洋一/著
+    publisher: KADOKAWA
+    isbn: 978-4-04-600324-9
+    pubdate: '2014.05'
+    source: Saitama_Niiza
+  - id: 52804abe-f152-484d-981e-7d638a1b45e1
+    group: '4046003243'
+    lib_id: Aomori_Aomori-1000930265
+    title: 日本経済の真相 2014年度版 消費増税でどうなる?
+    author: 高橋/洋一‖著
+    publisher: KADOKAWA
+    isbn: 978-4-04-600324-9
+    pubdate: '2014.5'
+    source: Aomori_Aomori
+  '4102161155':
+  - id: 666c9480-ef80-4349-a0fc-e4412d4e9bff
+    group: '4102161155'
+    lib_id: Saitama_Pref-1123389390
+    title: 盗まれた独立宣言 上巻 ( 新潮文庫 ア-5-15 )
+    author: ジェフリー・アーチャー/〔著〕
+    publisher: 新潮社
+    isbn: 4-10-216115-5
+    pubdate: '1993.9'
+    source: Saitama_Pref
+  - id: 5c06c990-5b6b-4fdf-8e46-1c54eb433bb9
+    group: '4102161155'
+    lib_id: Tokyo_Meguro-B11210462
+    title: 盗まれた独立宣言  上巻 [新潮文庫]
+    author: J・アーチャー/[著] 永井淳/訳
+    publisher: 新潮社
+    isbn: 4-10-216115-5
+    pubdate: '1993.9'
+    source: Tokyo_Meguro
+  '4048739891':
+  - id: ad151e02-8cf4-4995-a33d-53efee64f243
+    group: '4048739891'
+    lib_id: Nara_Tawaramoto-356099
+    title: Xサバイヴ 2 都市伝説ゲーム
+    author: 上甲 宣之/著
+    publisher: 東京:角川書店
+    isbn: '4048739891'
+    pubdate: '2009.10'
+    source: Nara_Tawaramoto
+  - id: 070594c6-fffa-486f-828a-9083df23561b
+    group: '4048739891'
+    lib_id: Chiba_Narita-1001700459
+    title: Xサバイヴ,2,都市伝説ゲーム
+    author: 上甲宣之/著[ジョウコウ,ノブユキ]
+    publisher: 角川書店[カドカワ ショテン]
+    isbn: 978-4-04-873989-4
+    pubdate: '2009.10'
+    source: Chiba_Narita
+  '4022563087':
+  - id: 01e53e45-fce9-476b-a20d-cc0b69de0c02
+    group: '4022563087'
+    lib_id: Osaka_Pref-10000000017303
+    title: 南米大陸
+    author: 関野/吉晴∥著
+    publisher: 朝日新聞社
+    isbn: 4-02-256308-7
+    pubdate: '1991.7'
+    source: Osaka_Pref
+  - id: 6473f5db-8c3c-4d5e-a0d2-c5f914a46a4f
+    group: '4022563087'
+    lib_id: Saga_Pref-1100969259
+    title: 南米大陸
+    author: 関野 吉晴/著
+    publisher: 朝日新聞社
+    isbn: 4-02-256308-7
+    pubdate: '1991.7'
+    source: Saga_Pref
+  '4051037908':
+  - id: a8eb6354-e27e-4e88-b924-b32789079cf5
+    group: '4051037908'
+    lib_id: Chiba_Oamishirasato-530625
+    title: 小学なぜなぜふしぎサイエンス 20 学研絵とき科学シリーズ
+    author: ''
+    publisher: 東京:学研
+    isbn: 4-05-103790-8
+    pubdate: '1990.03'
+    source: Chiba_Oamishirasato
+  - id: 6f39c81b-b398-497b-96bb-0ee90b670522
+    group: '4051037908'
+    lib_id: Kanagawa_Chigasaki-1037413
+    title: 小学なぜなぜふしぎサイエンス 20 のりもののふしぎ(学研絵とき科学シリーズ)
+    author: ''
+    publisher: 学研
+    isbn: 978-4-05-103790-1
+    pubdate: 1990/03
+    source: Kanagawa_Chigasaki
+  '4092436025':
+  - id: ae56f468-2652-42f1-80b2-267672fed1fd
+    group: '4092436025'
+    lib_id: Yamanashi_Koshu-31430
+    title: めたねこムーニャン 創作童話
+    author: 山中 恒/作
+    publisher: 東京:小学館
+    isbn: '4092436025'
+    pubdate: '1989.12'
+    source: Yamanashi_Koshu
+  - id: 14f59d3f-d655-49c3-b862-d058ba247c7d
+    group: '4092436025'
+    lib_id: Saitama_Saitama-669547
+    title: めたねこムーニャン(創作童話)
+    author: 山中恒/作 石坂啓/絵
+    publisher: 小学館
+    isbn: 4-09-243602-5
+    pubdate: '1989.12'
+    source: Saitama_Saitama
+  '4000249541':
+  - id: 03a6107a-849b-4ec4-bdf5-2e12122856c9
+    group: '4000249541'
+    lib_id: Wakayama_Pref-1102738888
+    title: 環(めぐ)りの海
+    author: 琉球新報/著
+    publisher: 岩波書店
+    isbn: 9784-00-024954-6
+    pubdate: '2015.2'
+    source: Wakayama_Pref
+  - id: ef6d296e-f545-4c01-97ef-390f7b12e823
+    group: '4000249541'
+    lib_id: Shiga_Omihachiman-10384178
+    title: 環(めぐ)りの海 竹島と尖閣国境地域からの問い
+    author: 琉球新報/著
+    publisher: 東京:岩波書店
+    isbn: '4000249541'
+    pubdate: '2015.02'
+    source: Shiga_Omihachiman
+  '4037918900':
+  - id: f8f7a091-1ca2-4b23-b7d8-bd1a98695aaf
+    group: '4037918900'
+    lib_id: Aichi_Toyota-1000000516016
+    title: くまのプーさん (ディズニーアニメ小説版 89)
+    author: A.A.ミルン/原作
+    publisher: 偕成社
+    isbn: 9784-03-791890-3
+    pubdate: 2011/09
+    source: Aichi_Toyota
+  - id: 9e46acf4-1b09-486f-b1cc-f80aa5128eaf
+    group: '4037918900'
+    lib_id: Saitama_Sayama-2271259
+    title: くまのプーさん ディズニーアニメ小説版 89
+    author: A.A.ミルン/原作
+    publisher: 東京:偕成社
+    isbn: 978-4-03-791890-3
+    pubdate: '2011.09'
+    source: Saitama_Sayama
+  '4093881804':
+  - id: 5646f320-bac1-4a15-a5da-7307126ce3ba
+    group: '4093881804'
+    lib_id: Tokyo_Tachikawa-1081188
+    title: ママより女-母より妻、妻より女のフランス 女より妻、妻より母の日本-
+    author: ドラ・トーザン/著
+    publisher: 小学館
+    isbn: 978-4-09-388180-7
+    pubdate: '2011.03'
+    source: Tokyo_Tachikawa
+  - id: 2b407bf1-5c1b-43e4-858a-482b39f6bad9
+    group: '4093881804'
+    lib_id: Wakayama_Wakayama-1009991669830
+    title: ママより女
+    author: ドラ・トーザン/著
+    publisher: 小学館
+    isbn: 9784-09-388180-7
+    pubdate: 2011/03
+    source: Wakayama_Wakayama
+  '4000039377':
+  - id: 69b7067d-cbac-441d-883e-b0c0e8d65cfc
+    group: '4000039377'
+    lib_id: Tokyo_Machida-1000000335131
+    title: 親の発達心理学 今、よい親とはなにか 子どもと教育
+    author: 柏木 恵子/著
+    publisher: 岩波書店
+    isbn: 4-00-003937-7
+    pubdate: 1995/09
+    source: Tokyo_Machida
+  - id: 0f56d9dd-d98a-49eb-86cb-42786ab891c5
+    group: '4000039377'
+    lib_id: Osaka_Habikino-346968
+    title: 親の発達心理学 今、よい親とはなにか (シリーズ子どもと教育 教育をふかめる)
+    author: 柏木 恵子
+    publisher: 岩波書店
+    isbn: 978-4-00-003937-6
+    pubdate: '1995'
+    source: Osaka_Habikino
+  '4022950498':
+  - id: 8d95f12d-929d-4874-82b2-69902851b119
+    group: '4022950498'
+    lib_id: Tokyo_Mitaka-2942603
+    title: 俳句は入門できる 朝日新書 742
+    author: 長嶋 有 著
+    publisher: 朝日新聞出版
+    isbn: 978-4-02-295049-9
+    pubdate: '2019.12'
+    source: Tokyo_Mitaka
+  - id: 6cf09cd3-d7b3-4e0f-a10c-72362b9ad7df
+    group: '4022950498'
+    lib_id: Nara_Yamatotakada-261568
+    title: 俳句は入門できる 朝日新書 742
+    author: 長嶋 有/著
+    publisher: 東京:朝日新聞出版
+    isbn: 978-4-02-295049-9
+    pubdate: '2019.12'
+    source: Nara_Yamatotakada
+  '4041089522':
+  - id: ab03e281-d9b5-4a64-a342-b4a072212d92
+    group: '4041089522'
+    lib_id: Tokyo_Hachioji-B13152296
+    title: 北の海の冒険者 [マジック・ツリーハウス]
+    author: メアリー・ポープ・オズボーン/著
+    publisher: KADOKAWA
+    isbn: 978-4-04-108952-1
+    pubdate: '2020.1'
+    source: Tokyo_Hachioji
+  - id: d847d994-ab89-4b5b-a44c-ac2b186905c3
+    group: '4041089522'
+    lib_id: Okayama_Setouchi-B10908211
+    title: 北の海の冒険者 [マジック・ツリーハウス] (47)
+    author: メアリー・ポープ・オズボーン/著
+    publisher: KADOKAWA
+    isbn: 978-4-04-108952-1
+    pubdate: '2020.1'
+    source: Okayama_Setouchi
+  '4039205103':
+  - id: f1c4f950-83d5-4cc9-937d-0fd8e3dec88f
+    group: '4039205103'
+    lib_id: Saitama_Sayama-51055612
+    title: 漢字の本 小学1年生  となえておぼえる
+    author: 下村 昇/著
+    publisher: 東京:偕成社
+    isbn: 978-4-03-920510-0
+    pubdate: '2019.02'
+    source: Saitama_Sayama
+  - id: a425ab1c-44be-48d7-9e56-6593aeb5e9c1
+    group: '4039205103'
+    lib_id: Ibaraki_Yuki-3-0000613967
+    title: 漢字の本 小学1年生  /となえておぼえる
+    author: 下村 昇
+    publisher: 偕成社
+    isbn: 9784-03-920510-0
+    pubdate: '2019'
+    source: Ibaraki_Yuki
+  '4093883890':
+  - id: bdad50c3-31e4-46dd-853d-44d5108dbacc
+    group: '4093883890'
+    lib_id: Tokyo_Itabashi-1000040410288
+    title: いい覚悟で生きる がん哲学外来から広がる言葉の処方箋
+    author: 樋野 興夫/著
+    publisher: 小学館
+    isbn: 978-4-09-388389-4
+    pubdate: 2014/11
+    source: Tokyo_Itabashi
+  - id: d0094ede-fa50-40bc-8878-442fe5ec247e
+    group: '4093883890'
+    lib_id: Saitama_Kazo-10552628
+    title: いい覚悟で生きる  がん哲学外来から広がる言葉の処方箋
+    author: 樋野 興夫/著
+    publisher: 東京:小学館
+    isbn: 978-4-09-388389-4
+    pubdate: '2014.11'
+    source: Saitama_Kazo
+  '4005000878':
+  - id: 257d7f73-885d-4373-864f-0233166aade8
+    group: '4005000878'
+    lib_id: Aichi_Nagakute-B10071194
+    title: 恐竜はなぜ滅んだか 中生代のなぞ
+    author: 小畠/郁生∥著
+    publisher: 岩波書店
+    isbn: 4-00-500087-8
+    pubdate: '1984.12'
+    source: Aichi_Nagakute
+  - id: 00aae6f9-ee90-4bb4-ba4c-18afe186f6a1
+    group: '4005000878'
+    lib_id: Saitama_Shiki-165704
+    title: 恐竜はなぜ滅んだか 中生代のなぞ
+    author: 小畠 郁生/著
+    publisher: 東京:岩波書店
+    isbn: 4-00-500087-8
+    pubdate: '1984.12'
+    source: Saitama_Shiki
+  '4041366054':
+  - id: 32fec579-32af-46b6-8e7d-9dca321b2008
+    group: '4041366054'
+    lib_id: Kanagawa_Zama-B10126420
+    title: 少女地獄 B [角川文庫]
+    author: 夢野 久作∥著・作
+    publisher: 角川書店
+    isbn: '4041366054'
+    pubdate: '1985'
+    source: Kanagawa_Zama
+  - id: 223e97df-9e0f-4fa2-b8e2-7e046dc9ad0d
+    group: '4041366054'
+    lib_id: Osaka_Kishiwada-275695
+    title: 少女地獄 角川文庫
+    author: 夢野 久作/[著]
+    publisher: 東京:角川書店
+    isbn: 4-04-136605-4
+    pubdate: '1976.11'
+    source: Osaka_Kishiwada
+  '4046513144':
+  - id: d6b0af1d-526f-4638-a687-bc904327e6ca
+    group: '4046513144'
+    lib_id: Nagano_Nagano-1116084
+    title: 現代芸術を学ぶ 失われた身体を求めて
+    author: 京都造形芸術大学/編
+    publisher: ''
+    isbn: 4-04-651314-4
+    pubdate: '1999.05'
+    source: Nagano_Nagano
+  - id: fac6f0a8-c710-4cd3-bc11-abf29a92ef7b
+    group: '4046513144'
+    lib_id: Osaka_Settu-118870
+    title: 現代芸術を学ぶ 失われた身体を求めて
+    author: ''
+    publisher: 東京:角川書店
+    isbn: 4-04-651314-4
+    pubdate: '1999.05'
+    source: Osaka_Settu
+  '4003101146':
+  - id: d22c2cb4-45f4-4274-b9d1-cd66b8f64768
+    group: '4003101146'
+    lib_id: Aichi_Handa-B10124523
+    title: 明暗 改版   [岩波文庫]
+    author: ''
+    publisher: 岩波書店
+    isbn: 4-00-310114-6
+    pubdate: '1990.4'
+    source: Aichi_Handa
+  - id: 9713f149-60a9-44a4-a20f-59000a505186
+    group: '4003101146'
+    lib_id: Saitama_Iruma-202138
+    title: 明暗 改版(岩波文庫 緑)
+    author: 夏目漱石著
+    publisher: 岩波書店
+    isbn: 978-4-00-310114-8
+    pubdate: '1990'
+    source: Saitama_Iruma
+  '4022733683':
+  - id: b837d686-25d7-4b27-820f-8a179cf52515
+    group: '4022733683'
+    lib_id: Saitama_Kounosu-249494
+    title: 大切な人の「こころの病」に気づく
+    author: 日本精神科看護技術協会∥著
+    publisher: 朝日新聞出版
+    isbn: 978-4-02-273368-9
+    pubdate: '2010.11'
+    source: Saitama_Kounosu
+  - id: 42c47fe0-dbe1-49fa-bfc2-c2480caafc4b
+    group: '4022733683'
+    lib_id: Saitama_Kasukabe-10112689
+    title: 大切な人の「こころの病」に気づく  朝日新書 268
+    author: 日本精神科看護技術協会/著
+    publisher: 東京:朝日新聞出版
+    isbn: 978-4-02-273368-9
+    pubdate: '2010.11'
+    source: Saitama_Kasukabe
+  '4062175762':
+  - id: 3d7bb09d-7a23-416a-8c2e-a0972bd35aed
+    group: '4062175762'
+    lib_id: Chiba_Yachiyo-B11263546
+    title: 比較で読み解く中国人とインド人
+    author: 富坂聰/著
+    publisher: 講談社
+    isbn: 978-4-06-217576-0
+    pubdate: '2012.10'
+    source: Chiba_Yachiyo
+  - id: 3de5534f-1d04-46ad-9f08-4f81564f2963
+    group: '4062175762'
+    lib_id: Ibaraki_Pref-1001002099127
+    title: 比較で読み解く中国人とインド人
+    author: 富坂 聰/著
+    publisher: 講談社
+    isbn: 978-4-06-217576-0
+    pubdate: 2012/10
+    source: Ibaraki_Pref
+  '4102134050':
+  - id: 0d87815a-e214-463c-af24-439b491e07f0
+    group: '4102134050'
+    lib_id: Miyagi_Sendai-1104102576
+    title: ' 緋色の研究 新潮文庫'
+    author: コナン・ドイル/[著]
+    publisher: 新潮社
+    isbn: 4-10-213405-0
+    pubdate: '1995'
+    source: Miyagi_Sendai
+  - id: 9ec0a671-b925-408a-9e56-cfcc9fdb3132
+    group: '4102134050'
+    lib_id: Ibaraki_Yuki-3-0000076511
+    title: 緋色の研究
+    author: コナン・ドイル
+    publisher: 新潮社
+    isbn: 4-10-213405-0
+    pubdate: '1995'
+    source: Ibaraki_Yuki
+  '4092303629':
+  - id: 97ba71ef-4774-447b-84df-7ccb5d9324ed
+    group: '4092303629'
+    lib_id: Yamaguchi_Shunan-2333430
+    title: '学校生活応援ブック '
+    author: 入門百科+編集部/編
+    publisher: 東京:小学館
+    isbn: '4092303629'
+    pubdate: '2014.03'
+    source: Yamaguchi_Shunan
+  - id: 6506ed4d-20b1-4f89-b9fc-d66724b8b91a
+    group: '4092303629'
+    lib_id: Fukushima_Shirakawa-B10693785
+    title: 学校生活応援ブック 友情がもっ
+    author: 入門百科+編集部∥編
+    publisher: 小学館
+    isbn: 978-4-09-230362-1
+    pubdate: '2014'
+    source: Fukushima_Shirakawa
+  '4000928287':
+  - id: e7f5f411-b6d4-4019-a53a-9481fc2b6113
+    group: '4000928287'
+    lib_id: Gifu_Hashima-410158
+    title: 定本漱石全集 第8巻 行人
+    author: 夏目 金之助/著
+    publisher: 東京:岩波書店
+    isbn: '4000928287'
+    pubdate: '2017.07'
+    source: Gifu_Hashima
+  - id: 6c1bc31f-e5aa-4aab-b15f-306b01dda73a
+    group: '4000928287'
+    lib_id: Chiba_Abiko-1000000546970
+    title: 定本漱石全集 第8巻 行人
+    author: 夏目 金之助/著
+    publisher: 岩波書店
+    isbn: 9784-00-092828-1
+    pubdate: 2017/07
+    source: Chiba_Abiko
+  400003863X:
+  - id: 6c16bc48-78ef-4446-815f-ee3ab2958480
+    group: 400003863X
+    lib_id: Akita_Yokote-25374
+    title: 柿本人麻呂 岩波新書評伝選
+    author: 北山 茂夫/著
+    publisher: 東京:岩波書店
+    isbn: 4-00-003863-X
+    pubdate: '1994.11'
+    source: Akita_Yokote
+  - id: ac1231a2-1d1c-4f8f-ae0a-1c950c78ab8d
+    group: 400003863X
+    lib_id: Tokyo_Chofu-344779
+    title: 柿本人麻呂(岩波新書評伝選)
+    author: 北山茂夫著
+    publisher: 岩波書店
+    isbn: 4-00-003863-X
+    pubdate: '1994.11'
+    source: Tokyo_Chofu
+  '4022511869':
+  - id: 816e4809-2b20-46d7-aee9-a91afbd9e5d2
+    group: '4022511869'
+    lib_id: Hokkaido_Pref-1100000507784
+    title: 認知症とわたしたち
+    author: 朝日新聞取材班‖著
+    publisher: 朝日新聞出版
+    isbn: 978-4-02-251186-7
+    pubdate: '2014.6'
+    source: Hokkaido_Pref
+  - id: 282d529e-2832-41ac-bcc6-3114a435d1f9
+    group: '4022511869'
+    lib_id: Shizuoka_Kikugawa-10067188
+    title: 認知症とわたしたち
+    author: 朝日新聞取材班/著
+    publisher: ''
+    isbn: 978-4-02-251186-7
+    pubdate: '2014.06'
+    source: Shizuoka_Kikugawa
+  '4041002923':
+  - id: 852639e5-3367-47e9-b293-ef57f1b0281a
+    group: '4041002923'
+    lib_id: Tokyo_Nakano-805468
+    title: 天地明察 下 (角川文庫)
+    author: 冲方 丁
+    publisher: 角川書店
+    isbn: 978-4-04-100292-6
+    pubdate: '2012'
+    source: Tokyo_Nakano
+  - id: c0c7a92b-1f82-40ca-ab01-f795cb7c4266
+    group: '4041002923'
+    lib_id: Tokyo_Tachikawa-1148232
+    title: 天地明察 下(角川文庫 う20-7)
+    author: 冲方丁/[著]
+    publisher: 角川書店
+    isbn: 978-4-04-100292-6
+    pubdate: '2012.05'
+    source: Tokyo_Tachikawa
+  '4003412486':
+  - id: 19b5a8f3-6ff0-4481-818c-839895c0b927
+    group: '4003412486'
+    lib_id: Tokyo_Bunkyo-B11055636
+    title: 賃銀・価格および利潤 岩波文庫  改版
+    author: カール・マルクス/著
+    publisher: 岩波書店
+    isbn: 4-00-341248-6
+    pubdate: '1981.8'
+    source: Tokyo_Bunkyo
+  - id: 14ff0a63-f123-4752-9fa6-a47d87d3f4db
+    group: '4003412486'
+    lib_id: Tokyo_Inagi-1101111414
+    title: 賃銀・価格および利潤
+    author: カール・マルクス/著
+    publisher: 岩波書店
+    isbn: 4-00-341248-6
+    pubdate: '2007.4'
+    source: Tokyo_Inagi
+  '4002707903':
+  - id: 9d89063b-7863-4072-b100-2d6c6aad3282
+    group: '4002707903'
+    lib_id: Tokyo_Koganei-B11392320
+    title: いまこそ考えたい生活保障のしくみ [岩波ブックレット] (No.790)
+    author: 大沢真理/著
+    publisher: 岩波書店
+    isbn: 978-4-00-270790-7
+    pubdate: '2010.9'
+    source: Tokyo_Koganei
+  - id: 2dc6d4c8-5ec6-464c-b2be-8d9ebf7d1224
+    group: '4002707903'
+    lib_id: Saitama_Niiza-1376384
+    title: いまこそ考えたい生活保障のしくみ(岩波ブックレット No.790)
+    author: 大沢真理/著
+    publisher: 岩波書店
+    isbn: 978-4-00-270790-7
+    pubdate: '2010.09'
+    source: Saitama_Niiza
+  '4023312207':
+  - id: 979962a0-befe-44f9-83e2-964664626c60
+    group: '4023312207'
+    lib_id: Saitama_Saitama-368149
+    title: セブンプレミアム進化論-なぜ安売りしなくても売れるのか-
+    author: 緒方知行/著 田口香世/著
+    publisher: 朝日新聞出版
+    isbn: 978-4-02-331220-3
+    pubdate: '2013.09'
+    source: Saitama_Saitama
+  - id: 4192bff7-6f55-4703-b970-a28ce44f9209
+    group: '4023312207'
+    lib_id: Tokyo_Shinjuku-886208
+    title: セブンプレミアム進化論 なぜ安売りしなくても売れるのか
+    author: 緒方 知行/著
+    publisher: 東京:朝日新聞出版
+    isbn: '4023312207'
+    pubdate: '2013.09'
+    source: Tokyo_Shinjuku
+  '4048729675':
+  - id: 0fa11a46-94fa-4038-90a6-9905d7524416
+    group: '4048729675'
+    lib_id: Nara_Tenri-90779
+    title: 王将たちの謝肉祭
+    author: 内田 康夫/著
+    publisher: 東京:角川書店
+    isbn: 4-04-872967-5
+    pubdate: '1996.06'
+    source: Nara_Tenri
+  - id: 53c13807-9dc2-4799-84bf-33117681b71a
+    group: '4048729675'
+    lib_id: Gifu_Ogaki-B10218570
+    title: 王将たちの謝肉祭
+    author: ''
+    publisher: 角川書店
+    isbn: 4-04-872967-5
+    pubdate: '1996.6'
+    source: Gifu_Ogaki
+  '4043931069':
+  - id: f90cfe7a-43a4-4409-b41a-3ec8c891b90c
+    group: '4043931069'
+    lib_id: Chiba_Tateyama-301261
+    title: 宵闇迫れば 妻は、くノ一 6
+    author: 風野 真知雄/著
+    publisher: 角川書店
+    isbn: 4-04-393106-4
+    pubdate: '2009.12'
+    source: Chiba_Tateyama
+  - id: 46c0bdca-5bb5-40df-8a19-b4098763354e
+    group: '4043931069'
+    lib_id: Nara_Nara-1475997
+    title: 宵闇迫れば (角川文庫 妻は、くノ一)
+    author: 風野 真知雄
+    publisher: 角川書店
+    isbn: 978-4-04-393106-4
+    pubdate: '2009'
+    source: Nara_Nara
+  '4000076655':
+  - id: 6b527c2c-c2a0-4e6c-8a4d-cf13cb0df74e
+    group: '4000076655'
+    lib_id: Tokyo_Hamura-825287
+    title: 人工知能とはなにか New Science Age 15
+    author: 白井 良明/著
+    publisher: 岩波書店
+    isbn: 4-00-007665-5
+    pubdate: '1985'
+    source: Tokyo_Hamura
+  - id: b1784f6e-682e-4349-b67a-99605cc84745
+    group: '4000076655'
+    lib_id: Nagano_Nagano-770973
+    title: 人工知能とはなにか  New science age 15
+    author: 白井 良明/著
+    publisher: 東京:岩波書店
+    isbn: 4-00-007665-5
+    pubdate: '1985.12'
+    source: Nagano_Nagano
+  '4093884269':
+  - id: 191a2b76-0f45-48e5-b5dc-aca8b4b54cbf
+    group: '4093884269'
+    lib_id: Chiba_Abiko-1000000332384
+    title: 神社のおしえ
+    author: 神田明神/編著
+    publisher: 小学館
+    isbn: 9784-09-388426-6
+    pubdate: 2015/05
+    source: Chiba_Abiko
+  - id: e8c86a1f-772c-43dd-8360-09c89bb8678c
+    group: '4093884269'
+    lib_id: Toyama_Kurobe-3-0000232133
+    title: 神社のおしえ
+    author: 神田明神
+    publisher: 小学館
+    isbn: 9784-09-388426-6
+    pubdate: '2015.5'
+    source: Toyama_Kurobe
+  '4093886377':
+  - id: 71a4e173-2203-4052-ad45-23c4dfca560d
+    group: '4093886377'
+    lib_id: Kagoshima_Satsumasendai-B10778980
+    title: がんに生きる
+    author: なかにし礼/著
+    publisher: 小学館
+    isbn: 978-4-09-388637-6
+    pubdate: '2018.12'
+    source: Kagoshima_Satsumasendai
+  - id: 7b97b217-27b3-4f33-b103-d803c8fb4eb0
+    group: '4093886377'
+    lib_id: Aichi_Anjo-B12574857
+    title: がんに生きる
+    author: なかにし礼/著
+    publisher: 小学館
+    isbn: 978-4-09-388637-6
+    pubdate: '2018.12'
+    source: Aichi_Anjo
+  '4038500705':
+  - id: d14f5fa6-439b-4853-a8be-b7368939adf2
+    group: '4038500705'
+    lib_id: Saitama_Warabi-45438
+    title: 二十四の瞳 偕成社文庫 4007
+    author: 壷井栄/著
+    publisher: 偕成社
+    isbn: 4-03-850070-5
+    pubdate: '1998.11'
+    source: Saitama_Warabi
+  - id: ac95d4df-a08a-42c1-95f0-88ec51abaad4
+    group: '4038500705'
+    lib_id: Tokyo_Hino-1002000286908
+    title: 二十四の瞳 (偕成社文庫 4007) 改訂2版
+    author: 壺井 栄/著
+    publisher: 偕成社
+    isbn: 4-03-850070-5
+    pubdate: 1995/05
+    source: Tokyo_Hino
+  '4061920731':
+  - id: b27fbbb1-4e35-4525-93be-1d44e3d996a3
+    group: '4061920731'
+    lib_id: Yamaguchi_Kudamatsu-3-0000055131
+    title: 枕草子
+    author: 田中 澄江
+    publisher: 講談社
+    isbn: 4-06-192073-1
+    pubdate: '1989'
+    source: Yamaguchi_Kudamatsu
+  - id: ebf09637-1ba1-45f9-91e9-6d7f4ce43a35
+    group: '4061920731'
+    lib_id: Osaka_Moriguchi-107563
+    title: 枕草子 (古典の旅)
+    author: 田中 澄江
+    publisher: 講談社
+    isbn: 978-4-06-192073-6
+    pubdate: '1989'
+    source: Osaka_Moriguchi
+  '4000072692':
+  - id: c1551c53-f9ff-4859-b16d-e4ee1ddca015
+    group: '4000072692'
+    lib_id: Aichi_Anjo-B10380538
+    title: 出家とその弟子 [ワイド版岩波文庫]
+    author: 倉田 百三/作
+    publisher: 岩波書店
+    isbn: 4-00-007269-2
+    pubdate: '200605'
+    source: Aichi_Anjo
+  - id: 605526e2-cc97-43e1-8262-eb0b3729f158
+    group: '4000072692'
+    lib_id: Tokyo_Chiyoda-1105801799
+    title: 出家とその弟子 ワイド版岩波文庫 269
+    author: 倉田 百三/作
+    publisher: 岩波書店
+    isbn: 4-00-007269-2
+    pubdate: '2006.5'
+    source: Tokyo_Chiyoda
+  '4003357213':
+  - id: 258431f9-0833-4ba7-9a81-55123a2ad6b3
+    group: '4003357213'
+    lib_id: Tokyo_Higashiyamato-3-0000955716
+    title: <一般図書> 蛇儀礼/岩波文庫 青 572-1/ヴァールブルク,アビ・M.著/岩波書店/2008
+    author: ''
+    publisher: ''
+    isbn: 978-4-00-335721-7
+    pubdate: ''
+    source: Tokyo_Higashiyamato
+  - id: 4e89067d-08ce-48d1-9b4f-b63990a8fb4f
+    group: '4003357213'
+    lib_id: Osaka_Takatsuki-B10703724
+    title: 蛇儀礼 [岩波文庫] (33-572-1)
+    author: ヴァールブルク/著
+    publisher: 岩波書店
+    isbn: 978-4-00-335721-7
+    pubdate: '2008.11'
+    source: Osaka_Takatsuki
+  '4046316705':
+  - id: 41340f5e-279a-41c5-8f39-7b17bfd55976
+    group: '4046316705'
+    lib_id: Nagano_Iida-10698587
+    title: 超吉ガール 5  絶交・超凶で大ピンチ!?の巻
+    author: 遠藤 まり/作
+    publisher: 東京:KADOKAWA
+    isbn: 978-4-04-631670-7
+    pubdate: '2017.02'
+    source: Nagano_Iida
+  '4000268325':
+  - id: c07039f6-8ce4-4da1-b3c1-15380c75682e
+    group: '4000268325'
+    lib_id: Tokyo_Arakawa-3-0001528106
+    title: アジア新世紀 2 歴史
+    author: 青木保
+    publisher: 岩波書店
+    isbn: 4-00-026832-5
+    pubdate: '2003.1'
+    source: Tokyo_Arakawa
+  '4103042710':
+  - id: cab109a1-a2fe-4d59-af46-8133a35c4cc7
+    group: '4103042710'
+    lib_id: Hyogo_Kamigori-36384
+    title: 美智子さまの恋文
+    author: 橋本 明/著
+    publisher: 東京:新潮社
+    isbn: 978-4-10-304271-6
+    pubdate: '2007.03'
+    source: Hyogo_Kamigori
+  '4000265555':
+  - id: 3e7a67f0-15e5-45af-a605-8599d36e77e4
+    group: '4000265555'
+    lib_id: Osaka_Kawachinagano-116448
+    title: 20世紀の定義 5 新コペルニクス的転回
+    author: 樺山 紘一/[ほか]編集委員
+    publisher: 東京:岩波書店
+    isbn: 4-00-026555-5
+    pubdate: '2001.03'
+    source: Osaka_Kawachinagano
+  402257836X:
+  - id: bb0e1c5d-f39d-44ce-a9ee-7ba86b8a8ba0
+    group: 402257836X
+    lib_id: Aichi_Tahara-B10243035
+    title: 怒涛の厄年
+    author: ''
+    publisher: 朝日新聞社
+    isbn: 4-02-257836-X
+    pubdate: '2003.4'
+    source: Aichi_Tahara
+  '4023309516':
+  - id: 4421a7cc-1bcd-493b-a718-8e1a04c3fa50
+    group: '4023309516'
+    lib_id: Tokyo_Shibuya-1840919
+    title: かなしみはちからに 心にしみる宮沢賢治の
+    author: 宮沢 賢治
+    publisher: 朝日新聞出版
+    isbn: 9784-02-330951-7
+    pubdate: '201106'
+    source: Tokyo_Shibuya
+  '4022647310':
+  - id: 13286ce0-6642-4432-b735-97d6b932f5a5
+    group: '4022647310'
+    lib_id: Osaka_Sakai-1007000376465
+    title: 相棒 season11中 (朝日文庫 い68-26)
+    author: 輿水 泰弘/ほか脚本
+    publisher: 朝日新聞出版
+    isbn: 9784-02-264731-3
+    pubdate: 2014/01
+    source: Osaka_Sakai
+  '4033370307':
+  - id: 2c99805b-6f99-4234-9716-f13f7f937ef7
+    group: '4033370307'
+    lib_id: Tochigi_Nasukarasuyama-4053
+    title: ひょうたんめん
+    author: ''
+    publisher: 偕成社
+    isbn: 4-03-337030-7
+    pubdate: '1984.11'
+    source: Tochigi_Nasukarasuyama
+  '4062177080':
+  - id: 9e885619-152a-434f-8372-9ac5c07dad04
+    group: '4062177080'
+    lib_id: Hokkaido_Asahikawa-2032388
+    title: 小さくてもいちばんの会社 日本人のモノサシを変える64社
+    author: 坂本 光司/著
+    publisher: 東京:講談社
+    isbn: 978-4-06-217708-5
+    pubdate: '2012.07'
+    source: Hokkaido_Asahikawa
+  '4093872309':
+  - id: ec1b83cc-f9c8-4354-b2d2-5585f7cc9b3d
+    group: '4093872309'
+    lib_id: Saitama_Fujimi-905426
+    title: バリアフリーの生活カタログ
+    author: E&Cプロジェクト/編
+    publisher: 東京:小学館
+    isbn: 4-09-387230-9
+    pubdate: '1997.11'
+    source: Saitama_Fujimi
+  '4048961411':
+  - id: 15cb4bf3-8067-4d2b-b493-c74cea7f9c14
+    group: '4048961411'
+    lib_id: Tokyo_Chofu-2580965
+    title: 家庭教室
+    author: 伊東歌詞太郎/著
+    publisher: KADOKAWA
+    isbn: 978-4-04-896141-7
+    pubdate: '2018.05'
+    source: Tokyo_Chofu
+  '4040699858':
+  - id: 1c463ffd-88d8-462f-a2af-0689a80218c0
+    group: '4040699858'
+    lib_id: Aichi_Kitanagoya-B12040424
+    title: 写真探索釣魚1400種図鑑
+    author: 小西英人/著
+    publisher: KADOKAWA
+    isbn: 978-4-04-069985-1
+    pubdate: '2018.6'
+    source: Aichi_Kitanagoya
+  '4000285963':
+  - id: 507704e1-8fcc-42d7-bbed-3d3b6fe8efb2
+    group: '4000285963'
+    lib_id: Tokyo_Sumida-2740162
+    title: 日本の外交 第6巻 日本外交の再構築
+    author: 井上寿一/[ほか]編集委員
+    publisher: 岩波書店
+    isbn: 978-4-00-028596-4
+    pubdate: '2013.10'
+    source: Tokyo_Sumida
+  '4035212806':
+  - id: e0cce6c7-3e56-49b5-8c3d-a8308cdff01f
+    group: '4035212806'
+    lib_id: Chiba_Sammu-B10078967
+    title: とびたて!竜の子ダンド
+    author: ''
+    publisher: 偕成社
+    isbn: 4-03-521280-6
+    pubdate: '2002.11'
+    source: Chiba_Sammu
+  '4041046017':
+  - id: 5f60bcf1-8e58-47ca-b426-1cc5135887ab
+    group: '4041046017'
+    lib_id: Aomori_Hachinohe-1095893
+    title: パイルドライバー PILEDRIVER
+    author: 長崎 尚志/著
+    publisher: 東京:KADOKAWA
+    isbn: 978-4-04-104601-2
+    pubdate: '2016.09'
+    source: Aomori_Hachinohe
+  404872407X:
+  - id: e885e4a4-5da0-49d1-978a-e2b0e1d247e6
+    group: 404872407X
+    lib_id: Saitama_Honjo-3-0000188327
+    title: ' 黒いドレスの女'
+    author: ''
+    publisher: ''
+    isbn: 4-04-872407-X
+    pubdate: ''
+    source: Saitama_Honjo
+  '4031120400':
+  - id: 9a3a0ef5-df04-422c-9ddb-0105b977d52a
+    group: '4031120400'
+    lib_id: Shizuoka_Yaizu-592578
+    title: えんやら りんごの木 松谷みよ子あかちゃんのわらべうた 4
+    author: 松谷 みよ子/文
+    publisher: 東京:偕成社
+    isbn: '4031120400'
+    pubdate: '1978.08'
+    source: Shizuoka_Yaizu
+  '4022560363':
+  - id: 5c4c30d9-2d98-446c-91b9-4da87eb0d97f
+    group: '4022560363'
+    lib_id: Nara_Pref-4762
+    title: 吉野ケ里 邪馬台国が見えてきた
+    author: アサヒグラフ編
+    publisher: 朝日新聞社
+    isbn: '4022560363'
+    pubdate: '1989'
+    source: Nara_Pref
+  '4000040979':
+  - id: 809abf99-ea26-43e9-8757-5d5ff5fbb134
+    group: '4000040979'
+    lib_id: Yamagata_Pref-1100232425
+    title: ' 場所'
+    author: 管 啓次郎/[ほか]著
+    publisher: 岩波書店
+    isbn: 4-00-004097-9
+    pubdate: '1991.2'
+    source: Yamagata_Pref
+  '4047034975':
+  - id: 762c33f1-50ab-41ce-8659-360ddd333247
+    group: '4047034975'
+    lib_id: Kyoto_Fukuchiyama-186403
+    title: 日本の「宗教」はどこへいくのか 角川選書 497
+    author: 山折 哲雄/著
+    publisher: 東京:角川学芸出版
+    isbn: 978-4-04-703497-6
+    pubdate: '2011.11'
+    source: Kyoto_Fukuchiyama
+  '4001108178':
+  - id: a5ddedfe-7b34-4ee8-aa0b-79a8ee186b20
+    group: '4001108178'
+    lib_id: Nara_Tenri-6645
+    title: たのしい川べ ヒキガエルの冒険
+    author: ケネス・グレーアム/作
+    publisher: 東京:岩波書店
+    isbn: 4-00-110817-8
+    pubdate: '1963.11'
+    source: Nara_Tenri
+  '4000284711':
+  - id: a4f58572-d793-4a04-8880-a8828791d934
+    group: '4000284711'
+    lib_id: Ishikawa_Pref-1100000497530
+    title: ジェンダー社会科学の可能性, 第1巻 かけがえのない個から
+    author: ''
+    publisher: 岩波書店
+    isbn: 978-4-00-028471-4
+    pubdate: '2011.10'
+    source: Ishikawa_Pref
+  '4041063582':
+  - id: 3443641c-3f10-4e86-a673-e97d38853f4e
+    group: '4041063582'
+    lib_id: Tokyo_Shinagawa-1120380809
+    title: 江戸の御庭番
+    author: 藤井 邦夫/[著]
+    publisher: KADOKAWA
+    isbn: 9784-04-106358-3
+    pubdate: '2017.12'
+    source: Tokyo_Shinagawa
+  '4000030280':
+  - id: e0190465-4472-4819-bb4c-ae9d6da52457
+    group: '4000030280'
+    lib_id: Kagoshima_Pref-9410275697
+    title: ふぞろいの林檎たちへ 岩波ブックレット No.88
+    author: 山田/太一‖[著]
+    publisher: 岩波書店
+    isbn: 4-00-003028-0
+    pubdate: '1987.5'
+    source: Kagoshima_Pref
+  '4031027303':
+  - id: af6313b9-3677-46fa-a930-0907895627b9
+    group: '4031027303'
+    lib_id: Niigata_Uonuma-275875
+    title: おふろ あけて・あけてえほん
+    author: 新井 洋行/作・絵
+    publisher: 東京:偕成社
+    isbn: 978-4-03-102730-4
+    pubdate: '2009.10'
+    source: Niigata_Uonuma

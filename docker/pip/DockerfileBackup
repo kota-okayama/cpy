@@ -1,0 +1,23 @@
+
+FROM k1z3/mkl-tensorflow:20250312.23-c12.6-p3.12.3-t2.19.0-MKL
+# Ubuntu 24.04.1 LTS
+# Python 3.12.3
+# Cuda 12.6
+
+# ===== The following are not executed by GitHub Actions. =====
+
+# Other python packages
+COPY docker/pip/__required.txt ./
+RUN pip install --break-system-packages -r __required.txt
+
+# ubuntuユーザーのUIDとGIDを変更
+ARG UID=1000
+ARG GID=1000
+RUN usermod -u $UID ubuntu && \
+    groupmod -g $GID ubuntu
+
+WORKDIR /home/ubuntu/workspace
+COPY docker/pip/docker-entrypoint.sh /usr/local/bin
+USER ubuntu
+RUN mkdir -p /home/ubuntu/workspace
+ENTRYPOINT ["docker-entrypoint.sh"]

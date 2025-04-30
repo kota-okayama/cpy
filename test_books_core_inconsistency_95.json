@@ -1,0 +1,43 @@
+{
+  "version": "3.1",
+  "type": "RESULT",
+  "id": "1fa7d9dc-8fc1-4fde-a76d-668fa782de7c",
+  "summary": {
+    "type": "RESULT",
+    "num_of_record": 0,
+    "num_of_groups(correct)": 0,
+    "num_of_groups(inference)": 0,
+    "config_match": null,
+    "config_mismatch": null,
+    "crowdsourcing_count": 0,
+    "f1(pair)": "0.00000",
+    "precision(pair)": "0.00000",
+    "recall(pair)": "0.00000",
+    "complete(group)": 0,
+    "precision(group)": 0,
+    "recall(group)": 0,
+    "complete_group": "[]"
+  },
+  "group": [],
+  "evaluation_history": [
+    {
+      "iteration": 0,
+      "f1_pair": 0.0,
+      "precision_pair": 0.0,
+      "recall_pair": 0.0,
+      "complete_group": 0.0,
+      "num_groups": 0
+    },
+    {
+      "iteration": 10,
+      "f1_pair": 0.0,
+      "precision_pair": 0.0,
+      "recall_pair": 0.0,
+      "complete_group": 0.0,
+      "num_groups": 0
+    }
+  ],
+  "human_accuracy": 0.95,
+  "strategy": "core_inconsistency",
+  "processing_time_seconds": 0.058812
+}

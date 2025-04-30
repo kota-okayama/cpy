@@ -1,0 +1,409 @@
+<form id="form" method="POST" action="/task_assignments/{{task_assignment_id}}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <input type="hidden" name="callback_url" value="{{callback_url}}" />
+  <input type="hidden" name="pair" value="{{dataitem[1]}},{{dataitem[6]}}" />
+  <input type="hidden" name="result_group" value="binary" />
+
+  <div class="content">
+
+    <h2 class="title">書誌データ統合タスク</h2>
+
+    {% if params.notification_body is defined and params.notification_body|string|length > 0 %}
+    <div class="notification-wrapper">
+      <div class="notification-title">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail notification-icon">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        {{ params.notification_title }}
+      </div>
+      <div class="notification-body">{{ params.notification_body }}</div>
+    </div>
+    {% endif %}
+
+    <div class="question">質問: AとBの書誌は同じものですか？</div>
+
+    <table class="bib-data">
+      <tr>
+        <th></th>
+        <th>タイトル</th>
+        <th>著者名</th>
+        <th>出版社名</th>
+        <th>出版日</th>
+      </tr>
+      <tr>
+        <td>A</td>
+        <td>{{dataitem[2]}}</td>
+        <td>{{dataitem[3]}}</td>
+        <td>{{dataitem[4]}}</td>
+        <td>{{dataitem[5]}}</td>
+      </tr>
+      <tr>
+        <td>B</td>
+        <td>{{dataitem[7]}}</td>
+        <td>{{dataitem[8]}}</td>
+        <td>{{dataitem[9]}}</td>
+        <td>{{dataitem[10]}}</td>
+      </tr>
+    </table>
+
+    <div class="operation">
+      <button id="same-button" class="same" type="submit" name="result" value="1">同じもの</button>
+      <button id="not-same-button" class="not-same" type="submit" name="result" value="0">違うもの</button>
+    </div>
+
+    <a id="skip-anker" class="skip-anker" href="{{params.skip_callback_url}}">タスクをスキップする</a>
+
+    {% if params.counter is defined %}
+    <div class="counter">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send counter-icon">
+        <line x1="22" y1="2" x2="11" y2="13"></line>
+        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+      </svg>
+      <div class="counter-number-wrapper">
+        <span>{{params.counter_hidden}}</span>
+        <span>{{params.counter}}</span>
+      </div>
+    </div>
+    {% endif %}
+
+    <hr class="credit-hr">
+
+    <div class="credit">
+      <a href="https://fusioncomplab.org/" target="_blank" rel="noopener noreferrer">FusionCompLab</a>
+      <span>・</span>
+      <span>Crowd4U 2.0</span>
+      <span>・</span>
+      <a href="https://www.folklore.place/portfolio" target="_blank" rel="noopener noreferrer">Takahiro Koizumi,</a>
+      <a href="https://hiroyoshiito.github.io/" target="_blank" rel="noopener noreferrer">Hiroyoshi Ito,</a>
+      <span>Ryuji Yoshimoto,</span>
+      <span>Yukihiro Fukushima,</span>
+      <span>Takashi Harada</span>
+      <span>and</span>
+      <a href="https://fusioncomplab.org/people/atsuyuki/index-j.html" target="_blank" rel="noopener noreferrer">Atsuyuki Morishima</a>
+      <span>・</span>
+      <span>2023--2025</span>
+    </div>
+  </div>
+
+  <div class="bib-progress">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="36"
+      height="64"
+      viewBox="0 0 36 64"
+      fill="none"
+      stroke="white"
+      stroke-width="1"
+      class="bib-progress-icon"
+    >
+      <path d="M28.8175 55.2288C29.109 55.2288 29.3386 54.9804 29.3167 54.6898C29.2633 53.9821 29.2152 53.3004 29.1688 52.6429C29.1418 52.2599 29.1153 51.8852 29.0887 51.5183C29.0754 51.3337 28.9589 51.1708 28.7893 51.0967C20.5669 47.5062 14.934 46.1938 7.70465 49.0152C7.53014 49.0833 7.40805 49.2458 7.39159 49.4324C7.30299 50.4363 7.22767 51.5033 7.14723 52.6429C7.10081 53.3004 7.05269 53.9821 6.99932 54.6898C6.97741 54.9804 7.20705 55.2288 7.49852 55.2288L28.8175 55.2288Z" />
+      <path d="M8.53267 18.1728C8.24861 18.2239 8.05881 18.4988 8.12673 18.7793C9.04994 22.5918 10.9832 26.2703 15.758 29.0287C17.6325 29.9946 19.1431 29.9596 20.558 29.0287C27.8902 24.793 28.5219 19.5947 29.0849 11.7946C29.1074 11.4824 28.8406 11.2253 28.5308 11.2699C25.4089 11.7192 22.1367 12.8989 18.1574 14.6487C14.4316 16.5171 11.3468 17.6671 8.53267 18.1728Z" />
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M4.1582 57.614L32.1582 57.614L33.7483 57.614C33.9866 57.614 34.1918 57.7822 34.2386 58.016L35.0386 62.016C35.1005 62.3254 34.8638 62.614 34.5483 62.614L1.76805 62.614C1.45255 62.614 1.2159 62.3254 1.27775 62.016L2.0774 58.016C2.12413 57.7823 2.32935 57.614 2.5677 57.614H4.1582ZM29.3167 54.6898C29.3386 54.9804 29.109 55.2288 28.8175 55.2288L7.49852 55.2288C7.20705 55.2288 6.97741 54.9804 6.99932 54.6898C7.05269 53.9821 7.10081 53.3004 7.14723 52.6429C7.22767 51.5033 7.30299 50.4363 7.39159 49.4324C7.40805 49.2458 7.53014 49.0833 7.70465 49.0152C14.934 46.1938 20.5669 47.5062 28.7893 51.0967C28.9589 51.1708 29.0754 51.3337 29.0887 51.5183C29.1153 51.8852 29.1418 52.2599 29.1688 52.6429C29.2152 53.3004 29.2633 53.9821 29.3167 54.6898ZM15.758 29.0287C17.6325 29.9946 19.1431 29.9596 20.558 29.0287C27.8902 24.793 28.5219 19.5947 29.0849 11.7946C29.1074 11.4824 28.8406 11.2253 28.5308 11.2699C25.4089 11.7192 22.1367 12.8989 18.1574 14.6487C14.4316 16.5171 11.3468 17.6671 8.53267 18.1728C8.24861 18.2239 8.05881 18.4988 8.12673 18.7793C9.04994 22.5918 10.9832 26.2703 15.758 29.0287Z" />
+      <path d="M35.0386 1.21207C35.1005 0.902677 34.8638 0.614014 34.5483 0.614014H1.76805C1.45255 0.614014 1.2159 0.902646 1.27775 1.21203L2.0774 5.21203C2.12413 5.44576 2.32935 5.61401 2.5677 5.61401H4.1582H32.1582H33.7483C33.9866 5.61401 34.1918 5.44578 34.2386 5.21207L35.0386 1.21207Z" />
+      <path d="M4.1582 5.61401C5.13167 18.0963 4.6346 25.1717 14.4106 31.1691C14.7386 31.3703 14.7386 31.8577 14.4106 32.0589C4.6346 38.0563 5.13167 45.1318 4.1582 57.614M4.1582 5.61401H32.1582M4.1582 5.61401H2.5677C2.32935 5.61401 2.12413 5.44576 2.0774 5.21203L1.27775 1.21203C1.2159 0.902646 1.45255 0.614014 1.76805 0.614014H34.5483C34.8638 0.614014 35.1005 0.902677 35.0386 1.21207L34.2386 5.21207C34.1918 5.44578 33.9866 5.61401 33.7483 5.61401H32.1582M32.1582 5.61401C31.1847 18.0963 31.6818 25.1717 21.9058 31.1691C21.5778 31.3703 21.5778 31.8577 21.9058 32.0589C31.6818 38.0563 31.1847 45.1318 32.1582 57.614M32.1582 57.614L4.1582 57.614M32.1582 57.614L33.7483 57.614C33.9866 57.614 34.1918 57.7822 34.2386 58.016L35.0386 62.016C35.1005 62.3254 34.8638 62.614 34.5483 62.614L1.76805 62.614C1.45255 62.614 1.2159 62.3254 1.27775 62.016L2.0774 58.016C2.12413 57.7823 2.32935 57.614 2.5677 57.614H4.1582M15.758 29.0287C17.6325 29.9946 19.1431 29.9596 20.558 29.0287C27.8902 24.793 28.5219 19.5947 29.0849 11.7946C29.1074 11.4824 28.8406 11.2253 28.5308 11.2699C25.4089 11.7192 22.1367 12.8989 18.1574 14.6487C14.4316 16.5171 11.3468 17.6671 8.53267 18.1728C8.24861 18.2239 8.05881 18.4988 8.12673 18.7793C9.04994 22.5918 10.9832 26.2703 15.758 29.0287ZM29.1688 52.6429C29.2152 53.3004 29.2633 53.9821 29.3167 54.6898C29.3386 54.9804 29.109 55.2288 28.8175 55.2288L7.49852 55.2288C7.20705 55.2288 6.97741 54.9804 6.99932 54.6898C7.05269 53.9821 7.10081 53.3004 7.14723 52.6429C7.22767 51.5033 7.30299 50.4363 7.39159 49.4324C7.40805 49.2458 7.53014 49.0833 7.70465 49.0152C14.934 46.1938 20.5669 47.5062 28.7893 51.0967C28.9589 51.1708 29.0754 51.3337 29.0887 51.5183C29.1153 51.8852 29.1418 52.2599 29.1688 52.6429Z" />
+    </svg>
+  </div>
+
+</form>
+
+<style>
+html {
+  background: linear-gradient(-15deg, #f5edff, #f5ffff);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body {
+  background: none;
+}
+
+form {
+  position: relative;
+}
+
+.content {
+  font-family: 'BIZ UDPGothic';
+  margin-top: 20px;
+  padding: 0px 10px;
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 32px;
+}
+
+.content h2.title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #7030A0;
+  margin: 0;
+}
+
+.content .notification-wrapper {
+  box-sizing: border-box;
+
+  width: 100%;
+  max-width: 460px;
+  padding: 10px 20px;
+  border: solid 2px #f44;
+  background: #fff;
+  border-radius: 12px;
+  line-height: 1.4em;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.content .notification-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  gap: 6px;
+
+  color: #f44
+}
+
+.content .notification-body {
+  text-align: center;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.content .question {
+  font-size: 1.2rem;
+}
+
+.content .bib-data {
+  width: 100%;
+  max-width: 940px;
+  padding: 10px 15px;
+}
+
+.content .bib-data tr {
+  background: #D4D4FF;
+}
+
+.content .bib-data tr:nth-child(2n) {
+  background: #E6E6FF;
+}
+
+.content .bib-data tr th,
+.content .bib-data tr td {
+  padding: 10px;
+  border-radius: 0px;
+  border-right: 1px solid #fff5;
+}
+
+.content .bib-data tr th:last-child,
+.content .bib-data tr td:last-child {
+  border-right: none;
+}
+
+.content .bib-data tr td:first-child {
+  text-align: center;
+  font-weight: bold;
+  background: none;
+}
+
+.content .bib-data tr th {
+  text-align: center;
+  color: #fff;
+  background-color: #7030A0;
+}
+
+.content .operation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.content .operation .same,
+.content .operation .not-same {
+  width: 40vw;
+  max-width: 240px;
+  font-size: 1.2rem;
+  color: #fff;
+  background: #a8a8a8;
+  border: solid 1px #d0d0d0;
+  border-radius: 8px;
+  padding: 10px 20px;
+
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.content .operation .same:hover,
+.content .operation .same:focus {
+  outline: none;
+  background: #FF4040;
+}
+
+.content .operation .not-same:hover,
+.content .operation .not-same:focus {
+  outline: none;
+  background: #505AB4;
+}
+
+.submitted .content .operation .same,
+.submitted .content .operation .not-same:disabled {
+  background: #a8a8a8;
+  cursor: default;
+}
+
+.content .skip-anker {
+  font-size: 0.9em;
+  color: #888;
+}
+
+.content .counter {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  border: 2px solid #7030A0;
+  color: #7030A0;
+  stroke-width: 2;
+
+  border-radius: 18px;
+  padding: 4px 12px;
+  user-select: none;
+}
+
+.content .counter::before {
+  opacity: 0;
+  pointer-events: none;
+  font-size: 14px;
+
+  position: absolute;
+  top: -2.2em;
+  left: 50%;
+  width: max-content;
+  transform: translateX(-50%);
+  padding: 0.2em 0.5em;
+
+  border-radius: 6px;
+  transition: opacity 0.15s;
+
+  background-color: #fff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
+  content: '直近であなたが協力した書誌タスク数';
+}
+
+.content .counter:hover::before {
+  opacity: 1;
+}
+
+.content .counter-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.content .counter-number-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.content .counter-number-wrapper span:first-child {
+  opacity: 0.3;
+}
+
+.content .credit-hr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #888;
+  margin: 0;
+}
+
+.content .credit {
+  font-size: 0.7rem;
+  color: #888;
+  line-height: 2em;
+  text-align: center;
+  max-width: 1080px;
+
+  margin-bottom: 24px;
+}
+
+.content .credit a {
+  color: #888;
+}
+
+.bib-progress {
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 16px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.submitted .bib-progress {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(9deg);
+  }
+  25% {
+    transform: rotate(16deg);
+  }
+  30% {
+    transform: rotate(6deg);
+  }
+  35% {
+    transform: rotate(12deg);
+  }
+  40% {
+    transform: rotate(8deg);
+  }
+  45%, 100% {
+    transform: rotate(9deg);
+  }
+}
+
+.bib-progress-icon {
+  width: auto;
+  height: min(50vw, 50%);
+
+  filter: drop-shadow(3px 3px 5px #000);
+  pointer-events: none;
+}
+
+.submitted .bib-progress-icon {
+  animation: rotate 2s infinite linear;
+}
+</style>
+
+<script>
+  document.getElementById("form").addEventListener("submit", (event) => {
+    document.getElementById("form").classList.add("submitted");
+  });
+
+  document.getElementById("skip-anker").addEventListener("click", (event) => {
+    document.getElementById("form").classList.add("submitted");
+  });
+</script>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">

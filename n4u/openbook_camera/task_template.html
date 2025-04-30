@@ -1,0 +1,18 @@
+<form method="POST" action="/task_assignments/{{task_assignment_id}}">
+    <input type="hidden" name="callback_url" value="{{callback_url}}" />
+    <input type="hidden" name="result_group" value="standard" />
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="my-3">
+                    <label class="form-label" for="result">Parameter</label>
+                    <input class="form-control" name="result" id="parameter" required />
+                </div>
+                <div class="my-3">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

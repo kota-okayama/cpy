@@ -1,0 +1,23 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/pip/DockerfileBackup
+      args:
+        UID: ${UID:-1000}
+        GID: ${GID:-1000}
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    tty: true
+    volumes:
+      - type: bind
+        source: .
+        target: /home/ubuntu/workspace
+    command: sh -c "${CMD:-python start_project.py}"
+    # Build command
+    # -> docker compose build --build-arg UID="$(id -u)" --build-arg GID="$(id -g)" && CMD="pip freeze > docker/pip/requirements.txt" docker compose up

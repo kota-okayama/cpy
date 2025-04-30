@@ -1,0 +1,192 @@
+<form id="form" method="POST" action="/task_assignments/{{task_assignment_id}}">
+    <input type="hidden" name="callback_url" value="{{callback_url}}" />
+    <input type="hidden" name="pair" value="{{dataitem[1]}},{{dataitem[6]}}" />
+    <input type="hidden" name="result_group" value="binary" />
+  
+    <div class="content">
+  
+      <h2 class="title">書誌データ統合タスク</h2>
+  
+      <div class="question">タスクを移行しました。以下からご協力をお願いします</div>
+  
+      <a href="https://next.crowd4u.org/runs/91a13dea-d29d-4a72-b102-c3add4b99aed/get_task">https://next.crowd4u.org/runs/91a13dea-d29d-4a72-b102-c3add4b99aed/get_task</a>
+    </div>
+  </form>
+  
+  <style>
+  html {
+    background: linear-gradient(-15deg, #f5edff, #f5ffff);
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  
+  body {
+    background: none;
+  }
+  
+  form {
+    position: relative;
+  }
+  
+  .content {
+    font-family: 'BIZ UDPGothic';
+    margin-top: 20px;
+  
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    gap: 32px;
+  }
+  
+  .content .annotation {
+    color: #f44;
+    border: solid 1px #f44;
+    border-radius: 8px;
+    padding: 10px 25px;
+  
+    display: flex;
+  }
+  
+  .content h2.title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #7030A0;
+  
+    margin: 0;
+  }
+  
+  .content .question {
+    font-size: 1.2rem;
+  }
+  
+  .content .bib-data {
+    width: 100%;
+    max-width: 940px;
+    padding: 10px 15px;
+  }
+  
+  .content .bib-data tr {
+    background: #D4D4FF;
+  }
+  
+  .content .bib-data tr:nth-child(2n) {
+    background: #E6E6FF;
+  }
+  
+  .content .bib-data tr th,
+  .content .bib-data tr td {
+    padding: 10px;
+    border-radius: 0px;
+  }
+  
+  .content .bib-data tr td:first-child {
+    text-align: center;
+    font-weight: bold;
+    background: none;
+  }
+  
+  .content .bib-data tr th {
+    text-align: center;
+    color: #fff;
+    background-color: #7030A0;
+  }
+  
+  .content .operation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .content .same {
+    font-size: 1.2rem;
+    color: #fff;
+    background: #a8a8a8;
+    border: solid 1px #d0d0d0;
+    border-radius: 8px;
+    padding: 10px 20px;
+  
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  
+  .content .same:hover {
+    background: #FF4040;
+  }
+  
+  .bib-progress {
+    position: absolute;
+    top: -8px;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 16px);
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    pointer-events: none;
+  
+    opacity: 0;
+    transition: opacity 0.15s;
+  }
+  
+  .submitted .bib-progress {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(9deg);
+    }
+    25% {
+      transform: rotate(16deg);
+    }
+    30% {
+      transform: rotate(6deg);
+    }
+    35% {
+      transform: rotate(12deg);
+    }
+    40% {
+      transform: rotate(8deg);
+    }
+    45%, 100% {
+      transform: rotate(9deg);
+    }
+  }
+  
+  .bib-progress-icon {
+    width: auto;
+    height: 50%;
+  
+    filter: drop-shadow(3px 3px 5px #000);
+    pointer-events: none;
+  }
+  
+  .submitted .bib-progress-icon {
+    animation: rotate 2s infinite linear;
+  }
+  </style>
+  
+  <script>
+    document.getElementById("form").addEventListener("submit", (event) => {
+      event.preventDefault();
+  
+      document.getElementById("form").classList.add("submitted");
+      document.getElementById("same-button").disabled = true;
+      document.getElementById("not-same-button").disabled = true;
+  
+      document.getElementById("form").submit();
+    });
+  </script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+  

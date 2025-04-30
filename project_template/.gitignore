@@ -1,0 +1,27 @@
+# data
+!data_00.yaml
+!data_01.yaml
+!data_02.yaml
+!data_03.yaml
+!data_04.yaml
+!data_05.yaml
+!data_06.yaml
+!data_07.yaml
+!data_08.yaml
+!data_09.yaml
+
+!data_20.yaml
+!data_21.yaml
+!data_22.yaml
+!data_23.yaml
+!data_24.yaml
+!data_25.yaml
+!data_26.yaml
+!data_27.yaml
+!data_28.yaml
+!data_29.yaml
+
+# config
+!config.yaml
+!log.log
+!result.yaml

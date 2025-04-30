@@ -1,0 +1,26 @@
+cpuid==0.0.11
+cpuid_native==0.0.8
+psutil==7.0.0
+pynvml==12.0.0
+numpy
+matplotlib
+requests
+scikit-learn
+scipy
+pandas
+Levenshtein==0.27.1
+RapidFuzz==3.13.0
+Janome==0.5.0
+gpustat==1.1.1
+nvidia-ml-py==12.570.86
+tensorflow
+tensorboard
+keras
+h5py==3.13.0
+#faiss-cpu
+# GPUを使用する場合は以下のパッケージを使用（上記のfaiss-cpuはコメントアウト）
+faiss-gpu
+cupy-cuda12x  # システムのCUDAバージョンに合わせて変更してください
+
+# 以下は必要に応じてコメントを外してください
+# fasttext  # 通常のPyPIからインストールしたい場合 

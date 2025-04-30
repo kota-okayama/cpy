@@ -1,0 +1,15 @@
+{
+  "pyright.disableCompletion": true,
+  "pyright.disableDiagnostics": true,
+  "pyright.disableDocumentation": true,
+  "pyright.disableProgressNotifications": true,
+  "pyright.disableTaggedHints": true,  
+  "pyright.completion.snippetSupport": false,
+  "pyright.inlayHints.variableTypes": false,
+  "pyright.completion.importSupport": false,
+  "pyright.inlayHints.parameterTypes": false,
+  "pyright.inlayHints.functionReturnTypes": false,
+  "python.linting.enabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Path": "flake8"
+}

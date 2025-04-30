@@ -1,0 +1,20 @@
+altair
+autopep8
+black
+cupy-cuda12x  # depend on docker cuda driver
+cpuid
+flake8
+flake8-docstrings
+gpustat
+Janome
+keras
+matplotlib
+pandas
+Pillow
+pynvml
+pyyaml
+scipy
+scikit-learn
+tensorflow
+Levenshtein
+vl-convert-python

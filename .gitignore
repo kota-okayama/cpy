@@ -1,0 +1,63 @@
+__pycache__
+uploads
+results
+.cache
+.keras
+.local
+.bash_history
+.python_history
+.nv
+
+# log
+geckodriver.log
+
+# macOS
+._*
+.DS_Store
+
+# vim
+*/**/*.swp
+
+# pyenv
+.python-version
+
+# fasttext dict
+cc.en.300.bin
+cc.en.300.bin.gz
+cc.ja.300.bin
+cc.ja.300.bin.gz
+
+# model file
+model*.h5
+!model_kyoto.h5
+!model_japan.h5
+
+京都府内_ISBN同定.tsv
+
+# temporary file
+graph.npz
+collection.txt
+*.yaml
+*.yml
+.cupy
+!compose.yml
+
+# benchmark
+benchmark/**/*
+
+# project
+project/**/*
+start_project*.py
+
+# Fasttext cache
+.cache/**/*.ftv.npy
+
+# scripts
+**/*/create_project_for_verify.py
+**/*/create_n4u_answer.py
+**/*/init_config.py
+
+# 画像データ
+*.png
+
+log.log

@@ -516,8 +516,8 @@ def create_gpt_prompt(batch_data: Dict[str, Any]) -> str:
 あなたは書誌レコードの類似度を分析する専門家です。以下の書籍レコードの各ペア間の類似度を計算し、類似度スコア（0〜1）を返してください。
 
 類似度の計算では以下の要素を考慮してください：
-- タイトルの類似性（最も重要、重み付け: 70%）
-- 著者名の類似性（重み付け: 20%）
+- タイトルの類似性（最も重要、重み付け: 80%）
+- 著者名の類似性（重み付け: 10%）
 - 出版社の類似性（重み付け: 5%）
 - 出版年の類似性（重み付け: 5%）
 
@@ -573,8 +573,8 @@ def create_gpt_prompt_for_pairs(batch_data: Dict[str, Any]) -> str:
 あなたは書誌レコードの類似度を分析する専門家です。以下の書籍レコードのペア間の類似度を計算し、類似度スコア（0〜1）を返してください。
 
 類似度の計算では以下の要素を考慮してください：
-- タイトルの類似性（最も重要、重み付け: 70%）
-- 著者名の類似性（重み付け: 20%）
+- タイトルの類似性（最も重要、重み付け: 80%）
+- 著者名の類似性（重み付け: 10%）
 - 出版社の類似性（重み付け: 5%）
 - 出版年の類似性（重み付け: 5%）
 
@@ -1817,7 +1817,6 @@ async def human_in_the_loop_process(yaml_data: str,
                 os.makedirs(output_dir, exist_ok=True)
                 print(f"出力ディレクトリ {output_dir} を作成しました")
         
-            csv_file = f"{output_dir}/{output_prefix}_{strategy}_{int(human_accuracy*100)}_iterations.csv"
             iteration_log_file = f"{output_dir}/{output_prefix}_{strategy}_{int(human_accuracy*100)}_iter{iteration}.json"
             with open(iteration_log_file, 'w', encoding='utf-8') as f:
                 iteration_data = {
@@ -1833,11 +1832,107 @@ async def human_in_the_loop_process(yaml_data: str,
             print(f"反復{iteration}の情報を {iteration_log_file} に保存しました")
         
         # 5.1 矛盾するトリプルを検出
-        # 以下、既存の反復処理コード（変更なし）...
+        inconsistent_triplets = detect_inconsistent_triplets(similarity_pairs, representatives, threshold)
+        
+        if not inconsistent_triplets:
+            print("矛盾が見つかりません。処理を終了します。")
+            break
+
+        print(f"{len(inconsistent_triplets)}個の矛盾を検出しました")
+
+        # 5.2 サンプリング戦略に基づいてペアを選択
+        samples = []
+        
+        if strategy == 'core_inconsistency':
+            # 矛盾の核心ペアのみを選択（論文5.5.4節）
+            samples = extract_core_inconsistent_pairs(inconsistent_triplets, similarity_pairs, batch_size)
+            print(f"「一貫性の核心」戦略で{len(samples)}個のペアを選択")
+            
+        elif strategy == 'inconsistency':
+            # すべての矛盾トリプルから選択
+            for triplet_info in inconsistent_triplets[:min(batch_size // 3, len(inconsistent_triplets))]:
+                entity_a, entity_b, entity_c = triplet_info["triplet"]
+                
+                # 各トリプルからすべてのペアを追加
+                samples.append({
+                    "pair": (entity_a, entity_b),
+                    "triplet": triplet_info["triplet"],
+                    "inconsistency_score": triplet_info["inconsistency_score"]
+                })
+                samples.append({
+                    "pair": (entity_b, entity_c),
+                    "triplet": triplet_info["triplet"],
+                    "inconsistency_score": triplet_info["inconsistency_score"]
+                })
+                samples.append({
+                    "pair": (entity_a, entity_c),
+                    "triplet": triplet_info["triplet"],
+                    "inconsistency_score": triplet_info["inconsistency_score"]
+                })
+            
+            # 重複を除去
+            unique_samples = []
+            seen_pairs = set()
+            for sample in samples:
+                pair = tuple(sorted(sample["pair"]))
+                if pair not in seen_pairs:
+                    seen_pairs.add(pair)
+                    unique_samples.append(sample)
+            
+            samples = unique_samples[:batch_size]
+            print(f"「一貫性」戦略で{len(samples)}個のペアを選択")
+            
+        elif strategy == 'uncertainty':
+            # 不確実性に基づくサンプリング
+            uncertain_pairs = []
+            for sim in similarity_pairs:
+                score = sim["similarity_score"]
+                uncertainty = abs(score - 0.5)  # 0.5からの距離
+                uncertain_pairs.append({
+                    "pair": sim["cluster_pair"],
+                    "triplet": None,
+                    "uncertainty": uncertainty
+                })
+            
+            # 不確実性でソート（低い順＝より不確実）
+            uncertain_pairs.sort(key=lambda x: x["uncertainty"])
+            samples = uncertain_pairs[:batch_size]
+            print(f"「不確実性」戦略で{len(samples)}個のペアを選択")
+            
+        elif strategy == 'hybrid':
+            # F1スコアに基づいてサンプリング戦略を切り替え
+            current_f1 = float(metrics.get("f1(pair)", "0"))
+            
+            if current_f1 < 0.75:  # F1が低い場合は不確実性サンプリング
+                # 不確実性に基づくサンプリング
+                uncertain_pairs = []
+                for sim in similarity_pairs:
+                    score = sim["similarity_score"]
+                    uncertainty = abs(score - 0.5)  # 0.5からの距離
+                    uncertain_pairs.append({
+                        "pair": sim["cluster_pair"],
+                        "triplet": None,
+                        "uncertainty": uncertainty
+                    })
+                
+                uncertain_pairs.sort(key=lambda x: x["uncertainty"])
+                samples = uncertain_pairs[:batch_size]
+                print(f"「ハイブリッド：不確実性」戦略で{len(samples)}個のペアを選択 (F1={current_f1})")
+            else:  # F1が高い場合は一貫性の核心サンプリング
+                samples = extract_core_inconsistent_pairs(inconsistent_triplets, similarity_pairs, batch_size)
+                print(f"「ハイブリッド：一貫性の核心」戦略で{len(samples)}個のペアを選択 (F1={current_f1})")
+        
+        if not samples:
+            print("サンプリングするペアがありません。処理を終了します。")
+            break
         
         # 5.3 人間からのフィードバックをシミュレーション
         corrected_pairs = await simulate_human_feedback(
             samples, representatives, correct_labels, human_accuracy)
+        
+        print(f"人間からのフィードバック（精度: {human_accuracy}）:")
+        correct_answers = sum(1 for p in corrected_pairs if p["correct_answer"])
+        print(f"- 合計{len(corrected_pairs)}個のペアに回答 ({correct_answers}個が正解、精度: {correct_answers/len(corrected_pairs):.2f})")
         
         # 修正情報をログに記録（フラグが有効な場合）
         if log_iterations:
@@ -1846,8 +1941,26 @@ async def human_in_the_loop_process(yaml_data: str,
                 json.dump(corrected_pairs, f, ensure_ascii=False, indent=2)
             print(f"反復{iteration}の修正情報を {corrections_log_file} に保存しました")
         
-        # 5.4 類似度結果を更新（既存コード）...
+        # 5.4 類似度結果を更新
+        update_similarity_results(similarity_pairs, corrected_pairs)
         
+        # 5.5 クラスターを再構築
+        clusters, merge_decisions = create_clusters_from_matches(similarity_pairs, representatives, threshold)
+        
+        # 修正の結果をログに記録（フラグが有効な場合）
+        if log_iterations:
+            changes_log_file = f"{output_dir}/{output_prefix}_{strategy}_{int(human_accuracy*100)}_iter{iteration}_changes.json"
+            with open(changes_log_file, 'w', encoding='utf-8') as f:
+                changes_data = {
+                    "merge_decisions": merge_decisions,
+                    "clusters": {
+                        "count": len(clusters),
+                        "sizes": [len(cluster.get("all_records", [])) for cluster in clusters]
+                    }
+                }
+                json.dump(changes_data, f, ensure_ascii=False, indent=2)
+            print(f"反復{iteration}の変更情報を {changes_log_file} に保存しました")
+    
     # 最終評価
     output_groups = format_output_groups(clusters)
     final_metrics = calculate_output_metrics(output_groups, all_records)

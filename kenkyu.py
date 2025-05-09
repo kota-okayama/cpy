@@ -1296,7 +1296,7 @@ async def recalculate_similarities_with_trained_model(
 ) -> List[Dict[str, Any]]:
     """
     ファインチューニングされたモデルを使用してレコード間の類似度を再計算
-    個別処理方式（バッチサイズ=1）を使用
+    最適化されたバッチ処理と自動フォールバック機能付き
     """
     print(f"ファインチューニングされたモデル {fine_tuned_model} を使用して類似度を再計算中...")
     updated_similarities = []
@@ -1312,142 +1312,76 @@ async def recalculate_similarities_with_trained_model(
     total_pairs = len(all_pairs)
     print(f"再計算対象ペア総数: {total_pairs}")
     
-    # 処理ペア数を制限（必要に応じて）
-    # max_pairs = min(1000, total_pairs)  # 最大1000ペアに制限する場合
-    # all_pairs = all_pairs[:max_pairs]
-    # print(f"処理を {max_pairs} ペアに制限します")
+    # バッチサイズの設定 (まずは小さいサイズで試行)
+    batch_size = 3
     
-    # 処理カウンター
+    # 統計情報の初期化
     processed = 0
     successful = 0
     error_count = 0
     
-    # すべてのペアを個別に処理
-    for rep1, rep2 in all_pairs:
+    # バッチにペアを分割
+    pair_batches = [all_pairs[i:i+batch_size] for i in range(0, len(all_pairs), batch_size)]
+    print(f"バッチ数: {len(pair_batches)} (バッチサイズ: {batch_size})")
+    
+    # バッチサイズの自動調整フラグ
+    consecutive_errors = 0
+    max_consecutive_errors = 3
+    adaptive_batch_size = True
+    
+    # 各バッチを処理
+    for batch_idx, batch in enumerate(pair_batches):
         try:
-            # プロンプトを準備
-            prompt = f"""
-            以下の2つの書籍レコードが同じ本を指しているかどうかを判断し、類似度スコア（0～1）を返してください：
+            # バッチ処理を試行
+            batch_result, batch_processed, batch_successful = await process_batch(batch, fine_tuned_model, api_key)
             
-            レコード1:
-            タイトル: {rep1['title']}
-            著者: {rep1['author']}
-            出版社: {rep1.get('publisher', '不明')}
-            出版年: {rep1.get('pubdate', '不明')}
+            # バッチ処理結果とカウンターを更新
+            updated_similarities.extend(batch_result)
+            processed += batch_processed
+            successful += batch_successful
+            error_count += (batch_processed - batch_successful)
             
-            レコード2:
-            タイトル: {rep2['title']}
-            著者: {rep2['author']}
-            出版社: {rep2.get('publisher', '不明')}
-            出版年: {rep2.get('pubdate', '不明')}
-            
-            タイトルと著者の類似性、出版社と出版年情報を考慮して判断してください。
-            最後に「類似度: X.X」の形式でスコアを返してください。
-            """
-            
-            # API呼び出し
-            async with aiohttp.ClientSession() as session:
-                payload = {
-                    "model": fine_tuned_model,
-                    "messages": [
-                        {"role": "system", "content": "あなたは書誌レコードの類似度を分析する専門家です。"},
-                        {"role": "user", "content": prompt}
-                    ],
-                    "temperature": 0.0
-                }
+            # バッチサイズの自動調整 (成功率に基づく)
+            if adaptive_batch_size and batch_idx > 5:
+                success_rate = batch_successful / batch_processed if batch_processed > 0 else 0
                 
-                headers = {
-                    "Content-Type": "application/json",
-                    "Authorization": f"Bearer {api_key}"
-                }
+                if success_rate >= 0.9 and batch_size < 5 and consecutive_errors == 0:
+                    # 高い成功率ならバッチサイズを増加
+                    old_batch_size = batch_size
+                    batch_size = min(batch_size + 1, 5)
+                    if old_batch_size != batch_size:
+                        print(f"バッチ処理が安定しているため、バッチサイズを {old_batch_size} から {batch_size} に増加します")
+                        # 残りのバッチを再分割
+                        remaining_pairs = [pair for batch in pair_batches[batch_idx+1:] for pair in batch]
+                        pair_batches[batch_idx+1:] = [remaining_pairs[i:i+batch_size] for i in range(0, len(remaining_pairs), batch_size)]
+                        print(f"バッチ再分割: 残り {len(remaining_pairs)} ペアを {len(pair_batches) - (batch_idx+1)} バッチに再分割しました")
                 
-                async with session.post(
-                    "https://api.openai.com/v1/chat/completions", 
-                    json=payload, 
-                    headers=headers
-                ) as response:
-                    processed += 1
+                elif success_rate < 0.5 and batch_size > 1:
+                    # 低い成功率ならバッチサイズを減少
+                    consecutive_errors += 1
+                    if consecutive_errors >= max_consecutive_errors:
+                        old_batch_size = batch_size
+                        batch_size = max(1, batch_size - 1)
+                        if old_batch_size != batch_size:
+                            print(f"成功率が低いため、バッチサイズを {old_batch_size} から {batch_size} に減少します")
+                            # 残りのバッチを再分割
+                            remaining_pairs = [pair for batch in pair_batches[batch_idx+1:] for pair in batch]
+                            pair_batches[batch_idx+1:] = [remaining_pairs[i:i+batch_size] for i in range(0, len(remaining_pairs), batch_size)]
+                            print(f"バッチ再分割: 残り {len(remaining_pairs)} ペアを {len(pair_batches) - (batch_idx+1)} バッチに再分割しました")
+                            consecutive_errors = 0  # リセット
+                else:
+                    consecutive_errors = 0  # 問題なければリセット
                     
-                    if response.status != 200:
-                        error_text = await response.text()
-                        print(f"API呼び出しエラー ({processed}/{total_pairs}): {response.status} - {error_text}")
-                        error_count += 1
-                        
-                        # APIエラーの場合はデフォルト値を使用
-                        similarity = {
-                            "cluster_pair": [rep1["cluster_id"], rep2["cluster_id"]],
-                            "similarity_score": 0.5,  # デフォルト値
-                            "reason": f"APIエラー: {response.status}",
-                            "records": [
-                                {"cluster_id": rep1["cluster_id"], "title": rep1["title"], "author": rep1["author"]},
-                                {"cluster_id": rep2["cluster_id"], "title": rep2["title"], "author": rep2["author"]}
-                            ]
-                        }
-                        updated_similarities.append(similarity)
-                        
-                        # 判定結果も記録
-                        all_similarity_judgments.append({
-                            "record1": {
-                                "cluster_id": rep1["cluster_id"],
-                                "title": rep1["title"],
-                                "author": rep1["author"],
-                                "publisher": rep1.get("publisher", ""),
-                                "pubdate": rep1.get("pubdate", "")
-                            },
-                            "record2": {
-                                "cluster_id": rep2["cluster_id"],
-                                "title": rep2["title"],
-                                "author": rep2["author"],
-                                "publisher": rep2.get("publisher", ""),
-                                "pubdate": rep2.get("pubdate", "")
-                            },
-                            "similarity_score": 0.5,
-                            "reason": f"APIエラー: {response.status}",
-                            "model": fine_tuned_model
-                        })
-                        
-                        # レート制限に遭遇した可能性がある場合は一時停止
-                        if response.status in [429, 500, 503]:
-                            print(f"レート制限またはサーバーエラーのため、一時停止します...")
-                            await asyncio.sleep(5)  # 5秒待機
-                        
-                        continue
+            # 判定結果をall_similarity_judgmentsに追加
+            for similarity in batch_result:
+                rep1_idx = next((i for i, rep in enumerate(representatives) if rep["cluster_id"] == similarity["cluster_pair"][0]), None)
+                rep2_idx = next((i for i, rep in enumerate(representatives) if rep["cluster_id"] == similarity["cluster_pair"][1]), None)
+                
+                if rep1_idx is not None and rep2_idx is not None:
+                    rep1 = representatives[rep1_idx]
+                    rep2 = representatives[rep2_idx]
                     
-                    result = await response.json()
-                    successful += 1
-                    
-                    # 結果を処理
-                    response_content = result["choices"][0]["message"]["content"]
-                    
-                    # スコアを抽出
-                    score_match = re.search(r'類似度[:：]\s*(\d+\.\d+|\d+)', response_content)
-                    if not score_match:
-                        score_match = re.search(r'(\d+\.\d+|\d+)', response_content)
-                    
-                    if score_match:
-                        score = float(score_match.group(1))
-                        score = max(0.0, min(1.0, score))
-                    else:
-                        score = 0.5
-                    
-                    # 判定理由を抽出
-                    reason = response_content.strip()
-                    if len(reason) > 100:
-                        reason = reason[:97] + "..."
-                    
-                    # 類似度エントリを作成
-                    similarity = {
-                        "cluster_pair": [rep1["cluster_id"], rep2["cluster_id"]],
-                        "similarity_score": score,
-                        "reason": reason,
-                        "records": [
-                            {"cluster_id": rep1["cluster_id"], "title": rep1["title"], "author": rep1["author"]},
-                            {"cluster_id": rep2["cluster_id"], "title": rep2["title"], "author": rep2["author"]}
-                        ]
-                    }
-                    updated_similarities.append(similarity)
-                    
-                    # 判定結果も記録
+                    # すべての判定結果を記録
                     all_similarity_judgments.append({
                         "record1": {
                             "cluster_id": rep1["cluster_id"],
@@ -1463,77 +1397,172 @@ async def recalculate_similarities_with_trained_model(
                             "publisher": rep2.get("publisher", ""),
                             "pubdate": rep2.get("pubdate", "")
                         },
-                        "similarity_score": score,
-                        "reason": reason,
-                        "full_response": response_content,
+                        "similarity_score": similarity["similarity_score"],
+                        "reason": similarity["reason"],
                         "model": fine_tuned_model
                     })
+        
         except Exception as e:
-            print(f"ペア処理中にエラー ({processed}/{total_pairs}): {e}")
-            error_count += 1
+            print(f"バッチ {batch_idx+1}/{len(pair_batches)} の処理中にエラー: {e}")
+            import traceback
+            traceback.print_exc()
             
-            # 例外が発生した場合はデフォルト値を使用
-            similarity = {
-                "cluster_pair": [rep1["cluster_id"], rep2["cluster_id"]],
-                "similarity_score": 0.5,
-                "reason": f"処理エラー: {str(e)}",
-                "records": [
-                    {"cluster_id": rep1["cluster_id"], "title": rep1["title"], "author": rep1["author"]},
-                    {"cluster_id": rep2["cluster_id"], "title": rep2["title"], "author": rep2["author"]}
-                ]
-            }
-            updated_similarities.append(similarity)
+            # バッチサイズの自動調整 (例外発生時)
+            if adaptive_batch_size:
+                consecutive_errors += 1
+                if consecutive_errors >= max_consecutive_errors // 2:  # 例外はより深刻なため閾値を下げる
+                    old_batch_size = batch_size
+                    batch_size = max(1, batch_size - 1)
+                    if old_batch_size != batch_size:
+                        print(f"連続例外のため、バッチサイズを {old_batch_size} から {batch_size} に減少します")
+                        # 残りのバッチを再分割
+                        remaining_pairs = [pair for batch in pair_batches[batch_idx+1:] for pair in batch]
+                        pair_batches[batch_idx+1:] = [remaining_pairs[i:i+batch_size] for i in range(0, len(remaining_pairs), batch_size)]
+                        print(f"バッチ再分割: 残り {len(remaining_pairs)} ペアを {len(pair_batches) - (batch_idx+1)} バッチに再分割しました")
+                        consecutive_errors = 0  # リセット
             
-            # エラー時も判定結果を記録
-            all_similarity_judgments.append({
-                "record1": {
-                    "cluster_id": rep1["cluster_id"],
-                    "title": rep1["title"],
-                    "author": rep1["author"],
-                    "publisher": rep1.get("publisher", ""),
-                    "pubdate": rep1.get("pubdate", "")
-                },
-                "record2": {
-                    "cluster_id": rep2["cluster_id"],
-                    "title": rep2["title"],
-                    "author": rep2["author"],
-                    "publisher": rep2.get("publisher", ""),
-                    "pubdate": rep2.get("pubdate", "")
-                },
-                "similarity_score": 0.5,
-                "reason": f"処理エラー: {str(e)}",
-                "model": fine_tuned_model
-            })
+            # エラー時は個別処理でリカバリ
+            print(f"バッチ処理エラー - 個別処理に切り替えます")
+            for rep1, rep2 in batch:
+                try:
+                    result = await process_single_pair(rep1, rep2, fine_tuned_model, api_key)
+                    processed += 1
+                    
+                    if result:
+                        updated_similarities.append(result)
+                        successful += 1
+                        
+                        # 個別で成功した場合も判定結果に追加
+                        rep1_idx = next((i for i, rep in enumerate(representatives) if rep["cluster_id"] == result["cluster_pair"][0]), None)
+                        rep2_idx = next((i for i, rep in enumerate(representatives) if rep["cluster_id"] == result["cluster_pair"][1]), None)
+                        
+                        if rep1_idx is not None and rep2_idx is not None:
+                            rep1 = representatives[rep1_idx]
+                            rep2 = representatives[rep2_idx]
+                            
+                            all_similarity_judgments.append({
+                                "record1": {
+                                    "cluster_id": rep1["cluster_id"],
+                                    "title": rep1["title"],
+                                    "author": rep1["author"],
+                                    "publisher": rep1.get("publisher", ""),
+                                    "pubdate": rep1.get("pubdate", "")
+                                },
+                                "record2": {
+                                    "cluster_id": rep2["cluster_id"],
+                                    "title": rep2["title"],
+                                    "author": rep2["author"],
+                                    "publisher": rep2.get("publisher", ""),
+                                    "pubdate": rep2.get("pubdate", "")
+                                },
+                                "similarity_score": result["similarity_score"],
+                                "reason": result["reason"],
+                                "model": fine_tuned_model
+                            })
+                    else:
+                        error_count += 1
+                        # エラー時はデフォルト値を使用
+                        similarity = {
+                            "cluster_pair": [rep1["cluster_id"], rep2["cluster_id"]],
+                            "similarity_score": 0.5,  # デフォルト値
+                            "reason": "個別処理エラー",
+                            "records": [
+                                {"cluster_id": rep1["cluster_id"], "title": rep1["title"], "author": rep1["author"]},
+                                {"cluster_id": rep2["cluster_id"], "title": rep2["title"], "author": rep2["author"]}
+                            ]
+                        }
+                        updated_similarities.append(similarity)
+                        
+                        # エラー時もデフォルト値で記録
+                        all_similarity_judgments.append({
+                            "record1": {
+                                "cluster_id": rep1["cluster_id"],
+                                "title": rep1["title"],
+                                "author": rep1["author"],
+                                "publisher": rep1.get("publisher", ""),
+                                "pubdate": rep1.get("pubdate", "")
+                            },
+                            "record2": {
+                                "cluster_id": rep2["cluster_id"],
+                                "title": rep2["title"],
+                                "author": rep2["author"],
+                                "publisher": rep2.get("publisher", ""),
+                                "pubdate": rep2.get("pubdate", "")
+                            },
+                            "similarity_score": 0.5,  # デフォルト値
+                            "reason": "個別処理エラー",
+                            "model": fine_tuned_model
+                        })
+                except Exception as inner_e:
+                    print(f"ペア ({rep1['cluster_id']}, {rep2['cluster_id']}) の個別処理中にエラー: {inner_e}")
+                    error_count += 1
+                    processed += 1
+                    
+                    # 例外発生時もデフォルト値で対応
+                    similarity = {
+                        "cluster_pair": [rep1["cluster_id"], rep2["cluster_id"]],
+                        "similarity_score": 0.5,  # デフォルト値
+                        "reason": f"処理例外: {str(inner_e)[:50]}...",
+                        "records": [
+                            {"cluster_id": rep1["cluster_id"], "title": rep1["title"], "author": rep1["author"]},
+                            {"cluster_id": rep2["cluster_id"], "title": rep2["title"], "author": rep2["author"]}
+                        ]
+                    }
+                    updated_similarities.append(similarity)
+                    
+                    # 例外時もデフォルト値で記録
+                    all_similarity_judgments.append({
+                        "record1": {
+                            "cluster_id": rep1["cluster_id"],
+                            "title": rep1["title"],
+                            "author": rep1["author"],
+                            "publisher": rep1.get("publisher", ""),
+                            "pubdate": rep1.get("pubdate", "")
+                        },
+                        "record2": {
+                            "cluster_id": rep2["cluster_id"],
+                            "title": rep2["title"],
+                            "author": rep2["author"],
+                            "publisher": rep2.get("publisher", ""),
+                            "pubdate": rep2.get("pubdate", "")
+                        },
+                        "similarity_score": 0.5,  # デフォルト値
+                        "reason": f"処理例外: {str(inner_e)[:50]}...",
+                        "model": fine_tuned_model
+                    })
         
-        # 進捗を表示
-        if processed % 10 == 0 or processed == total_pairs:
-            progress = processed / total_pairs * 100
-            print(f"類似度再計算: {processed}/{total_pairs} ペア完了 ({progress:.1f}%) - 成功: {successful}, エラー: {error_count}")
+        # 進捗状況を表示
+        progress = (batch_idx + 1) / len(pair_batches) * 100
+        if batch_idx % 10 == 0 or batch_idx == len(pair_batches) - 1:
+            print(f"類似度再計算: バッチ {batch_idx+1}/{len(pair_batches)} 完了 ({progress:.1f}%) - "
+                  f"処理: {processed}/{total_pairs}, 成功: {successful}, エラー: {error_count}, "
+                  f"現在のバッチサイズ: {batch_size}")
         
-        # レート制限対策で小さな遅延を入れる
-        await asyncio.sleep(0.1)
-        
-        # 部分結果の保存（100ペアごと）
-        if processed % 100 == 0:
+        # バッチごとに部分結果を保存（100バッチごと）
+        if (batch_idx + 1) % 100 == 0 or batch_idx == len(pair_batches) - 1:
             try:
-                # 出力ディレクトリが存在しない場合は作成
                 if not os.path.exists(output_dir):
                     os.makedirs(output_dir, exist_ok=True)
                 
                 # 部分結果を保存
-                partial_file = f"{output_dir}/{output_prefix}_{strategy}_{int(human_accuracy*100)}_iter{iteration}_partial_{processed}.json"
+                partial_file = f"{output_dir}/{output_prefix}_{strategy}_{int(human_accuracy*100)}_iter{iteration}_partial_{batch_idx+1}.json"
                 with open(partial_file, 'w', encoding='utf-8') as f:
                     json.dump({
+                        "processed_batches": batch_idx + 1,
+                        "total_batches": len(pair_batches),
                         "processed_pairs": processed,
-                        "total_pairs": total_pairs,
                         "successful": successful,
                         "error_count": error_count,
-                        "similarities": updated_similarities,
-                        "judgments": all_similarity_judgments
+                        "current_batch_size": batch_size,
+                        "similarities_count": len(updated_similarities),
+                        "judgments_count": len(all_similarity_judgments)
                     }, f, ensure_ascii=False, indent=2)
                 print(f"部分結果を {partial_file} に保存しました")
             except Exception as e:
                 print(f"部分結果保存中にエラー: {e}")
+        
+        # レート制限対策のスリープ
+        await asyncio.sleep(0.1)
     
     # 結果をソート（類似度の高い順）
     updated_similarities.sort(key=lambda x: x["similarity_score"], reverse=True)
@@ -1575,10 +1604,229 @@ async def recalculate_similarities_with_trained_model(
     print(f"処理完了: {processed} ({processed/total_pairs*100:.1f}%)")
     print(f"成功: {successful} ({successful/total_pairs*100:.1f}%)")
     print(f"エラー: {error_count} ({error_count/total_pairs*100:.1f}%)")
+    print(f"最終バッチサイズ: {batch_size}")
     
     return updated_similarities
 
 
+# バッチ処理関数
+async def process_batch(batch: List[Tuple[Dict[str, Any], Dict[str, Any]]], 
+                       fine_tuned_model: str, 
+                       api_key: str) -> Tuple[List[Dict[str, Any]], int, int]:
+    """バッチでペアを処理する (改良版)"""
+    print(f"バッチ処理: {len(batch)}ペア")
+    batch_similarities = []
+    processed_count = 0
+    successful_count = 0
+    
+    # 重要な修正：バッチ内の各ペアを個別に処理
+    for rep1, rep2 in batch:
+        processed_count += 1
+        try:
+            # 各ペアごとのシステムメッセージとユーザーメッセージを作成
+            system_message = {"role": "system", "content": "あなたは書誌レコードの類似度を分析する専門家です。"}
+            
+            user_message = {"role": "user", "content": f"""
+            以下の2つの書籍レコードが同じ本を指しているかどうかを判断し、類似度スコア（0～1）を返してください：
+            
+            レコード1:
+            タイトル: {rep1['title']}
+            著者: {rep1['author']}
+            出版社: {rep1.get('publisher', '不明')}
+            出版年: {rep1.get('pubdate', '不明')}
+            
+            レコード2:
+            タイトル: {rep2['title']}
+            著者: {rep2['author']}
+            出版社: {rep2.get('publisher', '不明')}
+            出版年: {rep2.get('pubdate', '不明')}
+            
+            タイトルと著者の類似性、出版社と出版年情報を考慮して判断してください。
+            最後に「類似度: X.X」の形式でスコアを返してください。
+            """}
+            
+            # APIリクエストパラメータの作成
+            payload = {
+                "model": fine_tuned_model,
+                "messages": [system_message, user_message],
+                "temperature": 0.0  # 決定論的な出力
+            }
+            
+            headers = {
+                "Content-Type": "application/json",
+                "Authorization": f"Bearer {api_key}"
+            }
+            
+            # APIリクエストを送信
+            async with aiohttp.ClientSession() as session:
+                async with session.post(
+                    "https://api.openai.com/v1/chat/completions", 
+                    json=payload, 
+                    headers=headers
+                ) as response:
+                    if response.status != 200:
+                        error_text = await response.text()
+                        print(f"API呼び出しエラー: {response.status} - {error_text}")
+                        continue  # このペアをスキップして次へ
+                    
+                    result = await response.json()
+            
+            # レスポンスの処理
+            response_content = result["choices"][0]["message"]["content"]
+            
+            # スコアを抽出（複数パターンを試す）
+            score = 0.5  # デフォルト値
+            patterns = [
+                r'類似度[:：]\s*(\d+\.\d+|\d+)',  # 日本語パターン
+                r'similarity:?\s*(\d+\.\d+|\d+)',  # 英語パターン（大文字小文字を区別しない）
+                r'(\d+\.\d+)',  # 任意の小数点数字
+                r'(\d+)'  # 任意の整数
+            ]
+            
+            for pattern in patterns:
+                score_match = re.search(pattern, response_content, re.IGNORECASE)
+                if score_match:
+                    score = float(score_match.group(1))
+                    # 整数のみの場合は0-10スケールと仮定
+                    if pattern == r'(\d+)' and score > 1:
+                        score = score / 10
+                    break
+            
+            # 範囲内に収める
+            score = max(0.0, min(1.0, score))
+            
+            # 判定理由を抽出
+            reason = response_content.strip()
+            if len(reason) > 100:
+                reason = reason[:97] + "..."
+            
+            # 類似度エントリを作成
+            similarity = {
+                "cluster_pair": [rep1["cluster_id"], rep2["cluster_id"]],
+                "similarity_score": score,
+                "reason": reason,
+                "records": [
+                    {"cluster_id": rep1["cluster_id"], "title": rep1["title"], "author": rep1["author"]},
+                    {"cluster_id": rep2["cluster_id"], "title": rep2["title"], "author": rep2["author"]}
+                ]
+            }
+            batch_similarities.append(similarity)
+            successful_count += 1
+            
+        except Exception as e:
+            print(f"ペア処理中に例外が発生: {e}")
+            import traceback
+            traceback.print_exc()
+            # エラーが発生しても処理を続行
+    
+    return batch_similarities, processed_count, successful_count
+
+
+# 個別ペア処理関数
+async def process_single_pair(rep1: Dict[str, Any], 
+                             rep2: Dict[str, Any], 
+                             fine_tuned_model: str, 
+                             api_key: str) -> Optional[Dict[str, Any]]:
+    """単一ペアを個別に処理する"""
+    try:
+        # プロンプトを準備
+        system_message = {"role": "system", "content": "あなたは書誌レコードの類似度を分析する専門家です。"}
+        
+        user_message = {"role": "user", "content": f"""
+        以下の2つの書籍レコードが同じ本を指しているかどうかを判断し、類似度スコア（0～1）を返してください：
+        
+        レコード1:
+        タイトル: {rep1['title']}
+        著者: {rep1['author']}
+        出版社: {rep1.get('publisher', '不明')}
+        出版年: {rep1.get('pubdate', '不明')}
+        
+        レコード2:
+        タイトル: {rep2['title']}
+        著者: {rep2['author']}
+        出版社: {rep2.get('publisher', '不明')}
+        出版年: {rep2.get('pubdate', '不明')}
+        
+        タイトルと著者の類似性、出版社と出版年情報を考慮して判断してください。
+        最後に「類似度: X.X」の形式でスコアを返してください。
+        """}
+        
+        # 個別APIリクエスト
+        async with aiohttp.ClientSession() as session:
+            payload = {
+                "model": fine_tuned_model,
+                "messages": [system_message, user_message],
+                "temperature": 0.0
+            }
+            
+            headers = {
+                "Content-Type": "application/json",
+                "Authorization": f"Bearer {api_key}"
+            }
+            
+            print(f"個別ペア処理: {rep1['cluster_id']} と {rep2['cluster_id']}")
+            
+            async with session.post(
+                "https://api.openai.com/v1/chat/completions", 
+                json=payload, 
+                headers=headers,
+                timeout=30  # タイムアウト設定を追加
+            ) as response:
+                if response.status != 200:
+                    error_text = await response.text()
+                    print(f"個別API呼び出しエラー: {response.status} - {error_text}")
+                    return None
+                
+                result = await response.json()
+                
+                # レスポンス処理
+                response_content = result["choices"][0]["message"]["content"]
+                
+                # スコア抽出 - 複数のパターンを試す
+                score = 0.5  # デフォルト値
+                patterns = [
+                    r'類似度[:：]\s*(\d+\.\d+|\d+)',  # 日本語パターン
+                    r'similarity:?\s*(\d+\.\d+|\d+)',  # 英語パターン
+                    r'(\d+\.\d+)',                     # 任意の小数
+                    r'(\d+)'                           # 任意の整数
+                ]
+                
+                for pattern in patterns:
+                    score_match = re.search(pattern, response_content, re.IGNORECASE)
+                    if score_match:
+                        score = float(score_match.group(1))
+                        # 整数のみのパターンで検出した場合、0-10スケールと仮定
+                        if pattern == r'(\d+)' and int(score) > 1:
+                            score = score / 10
+                        break
+                
+                # 範囲内に収める
+                score = max(0.0, min(1.0, score))
+                
+                # 判定理由
+                reason = response_content.strip()
+                if len(reason) > 100:
+                    reason = reason[:97] + "..."
+                
+                # 類似度エントリ
+                similarity = {
+                    "cluster_pair": [rep1["cluster_id"], rep2["cluster_id"]],
+                    "similarity_score": score,
+                    "reason": reason,
+                    "records": [
+                        {"cluster_id": rep1["cluster_id"], "title": rep1["title"], "author": rep1["author"]},
+                        {"cluster_id": rep2["cluster_id"], "title": rep2["title"], "author": rep2["author"]}
+                    ]
+                }
+                
+                return similarity
+    except Exception as e:
+        print(f"個別ペア処理中に例外が発生: {e}")
+        import traceback
+        traceback.print_exc()
+        return None
+    
+    
 # Human-in-the-loop process with LLM learning
 async def human_in_the_loop_process_with_llm_learning(yaml_data: str, 
                                    api_key: str, 

@@ -373,40 +373,49 @@ async def process_requests_parallel(batch_requests: List[Dict[str, Any]], api_ke
     return results
 
 # Extract similarity results
-def extract_similarity_results(api_results: List[Dict[str, Any]], representatives: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """Extract and integrate similarity results from API responses"""
+def extract_similarity_results(api_results: List[Dict[str, Any]], 
+                           representatives: List[Dict[str, Any]],
+                           output_dir: str = "results",
+                           output_prefix: str = "result",
+                           strategy: str = "core_inconsistency",
+                           human_accuracy: float = 1.0) -> List[Dict[str, Any]]:
+    """APIレスポンスから類似度結果を抽出して統合"""
     all_similarities = []
+    
+    # すべての判定結果を記録するリスト
+    all_judgments = []
     
     for result in api_results:
         if "error" in result:
-            print(f"Skipping batch {result['batch_index']} results due to error: {result['error']}")
+            print(f"エラーのためバッチ {result['batch_index']} の結果をスキップ: {result['error']}")
             continue
         
         try:
-            # Extract similarity pairs from API response
+            # APIレスポンスから類似度ペアを抽出
             content = result["api_response"]["choices"][0]["message"]["content"]
             
-            # Sanitize JSON response
+            # JSONデータをサニタイズ
             sanitized_content = sanitize_json_response(content)
             
-            # Parse sanitized JSON
+            # サニタイズされたJSONをパース
             response_data = json.loads(sanitized_content)
             
             if "similarity_pairs" not in response_data:
-                print(f"Batch {result['batch_index']} response doesn't contain 'similarity_pairs'")
+                print(f"バッチ {result['batch_index']} のレスポンスに 'similarity_pairs' がありません")
                 continue
                         
-            # Map record IDs in the batch
+            # バッチ内のレコードIDマッピング
             batch_records = result["batch_data"]["records"]
             id_mapping = {i: record["id"] for i, record in enumerate(batch_records)}
             
-            # Convert and add similarity pairs
+            # 類似度ペアを変換して追加
             for pair_data in response_data["similarity_pairs"]:
                 local_ids = pair_data["pair"]
                 global_ids = [id_mapping[local_id] for local_id in local_ids]
                 
-                # Get original record information
+                # 元のレコード情報を取得
                 record_info = []
+                record_pairs = []
                 for cluster_id in global_ids:
                     for rep in representatives:
                         if rep["cluster_id"] == cluster_id:
@@ -418,20 +427,72 @@ def extract_similarity_results(api_results: List[Dict[str, Any]], representative
                                 "pubdate": rep["pubdate"],
                                 "original_cluster_id": rep.get("original_cluster_id", "")
                             })
+                            record_pairs.append(rep)
                             break
                 
-                # Add similarity information
-                all_similarities.append({
+                # 類似度情報を追加
+                similarity_entry = {
                     "cluster_pair": global_ids,
                     "similarity_score": pair_data["score"],
                     "reason": pair_data.get("reason", ""),
                     "records": record_info
-                })
+                }
+                all_similarities.append(similarity_entry)
+                
+                # 判定結果をすべて記録
+                if len(record_pairs) == 2:
+                    all_judgments.append({
+                        "record1": {
+                            "cluster_id": record_pairs[0]["cluster_id"],
+                            "title": record_pairs[0]["title"],
+                            "author": record_pairs[0]["author"],
+                            "publisher": record_pairs[0]["publisher"],
+                            "pubdate": record_pairs[0]["pubdate"]
+                        },
+                        "record2": {
+                            "cluster_id": record_pairs[1]["cluster_id"],
+                            "title": record_pairs[1]["title"],
+                            "author": record_pairs[1]["author"],
+                            "publisher": record_pairs[1]["publisher"],
+                            "pubdate": record_pairs[1]["pubdate"]
+                        },
+                        "similarity_score": pair_data["score"],
+                        "reason": pair_data.get("reason", ""),
+                        "model": "gpt-4o-mini" # 初期モデル
+                    })
         except Exception as e:
-            print(f"Error processing results for batch {result['batch_index']}: {e}")
+            print(f"バッチ {result['batch_index']} の結果処理中にエラーが発生: {e}")
     
-    # Sort by similarity score (descending)
+    # 類似度スコアで降順ソート
     all_similarities.sort(key=lambda x: x["similarity_score"], reverse=True)
+    
+    # すべての判定結果を保存
+    judgments_file = f"{output_dir}/{output_prefix}_{strategy}_{int(human_accuracy*100)}_initial_judgments.json"
+    print(f"初期判定ファイルのパス: {judgments_file}")
+    print(f"初期判定結果数: {len(all_judgments)}")
+    
+    try:
+        # 出力ディレクトリが存在しない場合は作成
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir, exist_ok=True)
+            
+        with open(judgments_file, 'w', encoding='utf-8') as f:
+            json.dump(all_judgments, f, ensure_ascii=False, indent=2)
+        print(f"初期類似度判定結果を {judgments_file} に保存しました（{len(all_judgments)}ペア）")
+        
+        # 判定エラーを分析して表示・保存
+        analyze_judgment_errors(
+            all_judgments, 
+            representatives, 
+            output_dir, 
+            output_prefix, 
+            strategy, 
+            human_accuracy, 
+            -1  # 初期判定の場合は-1
+        )
+        
+    except Exception as e:
+        print(f"ファイル保存中にエラーが発生: {e}")
     
     return all_similarities
 
@@ -936,28 +997,6 @@ def update_similarity_results(similarity_pairs: List[Dict[str, Any]],
             updated_count += 1
             print(f"Updated pair {pair} similarity from {old_score} to {similarity_pairs[idx]['similarity_score']}")
 
-# Calculate text similarity
-def calculate_text_similarity(text1: str, text2: str) -> float:
-    """
-    Calculate similarity between two texts
-    
-    Args:
-        text1: First text to compare
-        text2: Second text to compare
-        
-    Returns:
-        Similarity score (0-1)
-    """
-    if not text1 or not text2:
-        return 0.0
-    
-    # Normalize text
-    text1 = normalize_text(text1)
-    text2 = normalize_text(text2)
-    
-    # Calculate Jaro-Winkler similarity
-    return jaro_winkler_similarity(text1, text2)
-
 # Calculate year similarity
 def calculate_year_similarity(date1: str, date2: str) -> float:
     """
@@ -1201,7 +1240,7 @@ async def train_llm_with_feedback(training_dataset_path: str, api_key: str) -> D
         }
         
         tuning_payload = {
-            "model": "gpt-4o-mini",  # Base model (adjust as needed)
+            "model": "gpt-4o-mini-2024-07-18",  # Base model (adjust as needed)
             "training_file": file_id,
             "suffix": f"book-matching-{time.strftime('%Y%m%d%H%M%S')}",  # Unique suffix
             "hyperparameters": {
@@ -1227,7 +1266,7 @@ async def train_llm_with_feedback(training_dataset_path: str, api_key: str) -> D
             # Since API processes asynchronously, return simulated result
             simulated_result = {
                 "id": job_id,
-                "fine_tuned_model": f"ft:gpt-4o-mini:book-matching:{int(time.time())}",
+                "fine_tuned_model": f"ft:gpt-4o-mini-2024-07-18:book-matching:{int(time.time())}",
                 "status": "succeeded",
                 "created_at": int(time.time()),
                 "training_file": file_id
@@ -1239,165 +1278,297 @@ async def train_llm_with_feedback(training_dataset_path: str, api_key: str) -> D
 async def recalculate_similarities_with_trained_model(
     representatives: List[Dict[str, Any]],
     api_key: str,
-    fine_tuned_model: str
+    fine_tuned_model: str,
+    output_dir: str = "results",
+    output_prefix: str = "result",
+    iteration: int = 0,
+    strategy: str = "core_inconsistency",
+    human_accuracy: float = 1.0
 ) -> List[Dict[str, Any]]:
     """
-    Recalculate record similarities using fine-tuned model
-    
-    Args:
-        representatives: Representative records list
-        api_key: OpenAI API key
-        fine_tuned_model: Fine-tuned model ID
-        
-    Returns:
-        Updated similarity list
+    ファインチューニングされたモデルを使用してレコード間の類似度を再計算
+    個別処理方式（バッチサイズ=1）を使用
     """
-    print(f"Recalculating similarities using fine-tuned model {fine_tuned_model}...")
+    print(f"ファインチューニングされたモデル {fine_tuned_model} を使用して類似度を再計算中...")
     updated_similarities = []
-    total_pairs = len(representatives) * (len(representatives) - 1) // 2
-    processed = 0
+    all_similarity_judgments = []
     
-    # Lists for batch processing
-    pair_batches = []
-    current_batch = []
-    batch_size = 10  # Number of pairs to process at once
-    
-    # Generate pairs and divide into batches
+    # ペアを生成
+    all_pairs = []
     for i, rep1 in enumerate(representatives):
         for j, rep2 in enumerate(representatives[i+1:], i+1):
-            current_batch.append((rep1, rep2))
-            
-            if len(current_batch) >= batch_size:
-                pair_batches.append(current_batch)
-                current_batch = []
+            all_pairs.append((rep1, rep2))
     
-    # Add remaining pairs to last batch
-    if current_batch:
-        pair_batches.append(current_batch)
+    # 全ペア数を表示
+    total_pairs = len(all_pairs)
+    print(f"再計算対象ペア総数: {total_pairs}")
     
-    # Counters for progress display
-    processed_batches = 0
-    total_batches = len(pair_batches)
+    # 処理ペア数を制限（必要に応じて）
+    # max_pairs = min(1000, total_pairs)  # 最大1000ペアに制限する場合
+    # all_pairs = all_pairs[:max_pairs]
+    # print(f"処理を {max_pairs} ペアに制限します")
     
-    # Process each batch
-    for batch in pair_batches:
-        batch_similarities = []
-        
-        # Process all pairs in batch with one API request
-        batch_messages = []
-        for rep1, rep2 in batch:
-            # Prepare prompt
+    # 処理カウンター
+    processed = 0
+    successful = 0
+    error_count = 0
+    
+    # すべてのペアを個別に処理
+    for rep1, rep2 in all_pairs:
+        try:
+            # プロンプトを準備
             prompt = f"""
-            Determine if these two book records refer to the same book and return a similarity score (0-1):
+            以下の2つの書籍レコードが同じ本を指しているかどうかを判断し、類似度スコア（0～1）を返してください：
             
-            Record 1:
-            Title: {rep1['title']}
-            Author: {rep1['author']}
-            Publisher: {rep1['publisher']}
-            Publication year: {rep1['pubdate']}
+            レコード1:
+            タイトル: {rep1['title']}
+            著者: {rep1['author']}
+            出版社: {rep1.get('publisher', '不明')}
+            出版年: {rep1.get('pubdate', '不明')}
             
-            Record 2:
-            Title: {rep2['title']}
-            Author: {rep2['author']}
-            Publisher: {rep2['publisher']}
-            Publication year: {rep2['pubdate']}
+            レコード2:
+            タイトル: {rep2['title']}
+            著者: {rep2['author']}
+            出版社: {rep2.get('publisher', '不明')}
+            出版年: {rep2.get('pubdate', '不明')}
             
-            Return only the similarity score.
+            タイトルと著者の類似性、出版社と出版年情報を考慮して判断してください。
+            最後に「類似度: X.X」の形式でスコアを返してください。
             """
             
-            batch_messages.append({
-                "role": "system", "content": "You are an expert in analyzing bibliographic record similarity."
-            })
-            batch_messages.append({
-                "role": "user", "content": prompt
-            })
-        
-        # Send batch API request
-        async with aiohttp.ClientSession() as session:
-            payload = {
-                "model": fine_tuned_model,
-                "messages": batch_messages,
-                "temperature": 0.0  # Deterministic output
-            }
-            
-            headers = {
-                "Content-Type": "application/json",
-                "Authorization": f"Bearer {api_key}"
-            }
-            
-            try:
+            # API呼び出し
+            async with aiohttp.ClientSession() as session:
+                payload = {
+                    "model": fine_tuned_model,
+                    "messages": [
+                        {"role": "system", "content": "あなたは書誌レコードの類似度を分析する専門家です。"},
+                        {"role": "user", "content": prompt}
+                    ],
+                    "temperature": 0.0
+                }
+                
+                headers = {
+                    "Content-Type": "application/json",
+                    "Authorization": f"Bearer {api_key}"
+                }
+                
                 async with session.post(
                     "https://api.openai.com/v1/chat/completions", 
                     json=payload, 
                     headers=headers
                 ) as response:
+                    processed += 1
+                    
                     if response.status != 200:
-                        # Process individually if batch fails
-                        print(f"Batch processing error. Switching to individual processing.")
-                        # Add individual processing code here if needed
-                    else:
-                        result = await response.json()
+                        error_text = await response.text()
+                        print(f"API呼び出しエラー ({processed}/{total_pairs}): {response.status} - {error_text}")
+                        error_count += 1
                         
-                        # Process results
-                        for i, (rep1, rep2) in enumerate(batch):
-                            try:
-                                # Extract similarity score from API response
-                                response_content = result["choices"][i]["message"]["content"]
-                                
-                                # Extract score (expecting numeric value)
-                                score_match = re.search(r'(\d+\.\d+|\d+)', response_content)
-                                if score_match:
-                                    score = float(score_match.group(1))
-                                    # Clip to valid range
-                                    score = max(0.0, min(1.0, score))
-                                else:
-                                    # Default value if no number found
-                                    score = 0.5
-                                
-                                # Create similarity entry
-                                similarity = {
-                                    "cluster_pair": [rep1["cluster_id"], rep2["cluster_id"]],
-                                    "similarity_score": score,
-                                    "reason": f"Re-evaluation with trained model",
-                                    "records": [
-                                        {"cluster_id": rep1["cluster_id"], "title": rep1["title"], "author": rep1["author"]},
-                                        {"cluster_id": rep2["cluster_id"], "title": rep2["title"], "author": rep2["author"]}
-                                    ]
-                                }
-                                
-                                batch_similarities.append(similarity)
-                                processed += 1
-                                
-                            except Exception as e:
-                                print(f"Error processing pair: {e}")
-                                # Add default value on error
-                                similarity = {
-                                    "cluster_pair": [rep1["cluster_id"], rep2["cluster_id"]],
-                                    "similarity_score": 0.5,  # Middle value
-                                    "reason": "Processing error",
-                                    "records": [
-                                        {"cluster_id": rep1["cluster_id"], "title": rep1["title"], "author": rep1["author"]},
-                                        {"cluster_id": rep2["cluster_id"], "title": rep2["title"], "author": rep2["author"]}
-                                    ]
-                                }
-                                batch_similarities.append(similarity)
-                                processed += 1
+                        # APIエラーの場合はデフォルト値を使用
+                        similarity = {
+                            "cluster_pair": [rep1["cluster_id"], rep2["cluster_id"]],
+                            "similarity_score": 0.5,  # デフォルト値
+                            "reason": f"APIエラー: {response.status}",
+                            "records": [
+                                {"cluster_id": rep1["cluster_id"], "title": rep1["title"], "author": rep1["author"]},
+                                {"cluster_id": rep2["cluster_id"], "title": rep2["title"], "author": rep2["author"]}
+                            ]
+                        }
+                        updated_similarities.append(similarity)
+                        
+                        # 判定結果も記録
+                        all_similarity_judgments.append({
+                            "record1": {
+                                "cluster_id": rep1["cluster_id"],
+                                "title": rep1["title"],
+                                "author": rep1["author"],
+                                "publisher": rep1.get("publisher", ""),
+                                "pubdate": rep1.get("pubdate", "")
+                            },
+                            "record2": {
+                                "cluster_id": rep2["cluster_id"],
+                                "title": rep2["title"],
+                                "author": rep2["author"],
+                                "publisher": rep2.get("publisher", ""),
+                                "pubdate": rep2.get("pubdate", "")
+                            },
+                            "similarity_score": 0.5,
+                            "reason": f"APIエラー: {response.status}",
+                            "model": fine_tuned_model
+                        })
+                        
+                        # レート制限に遭遇した可能性がある場合は一時停止
+                        if response.status in [429, 500, 503]:
+                            print(f"レート制限またはサーバーエラーのため、一時停止します...")
+                            await asyncio.sleep(5)  # 5秒待機
+                        
+                        continue
+                    
+                    result = await response.json()
+                    successful += 1
+                    
+                    # 結果を処理
+                    response_content = result["choices"][0]["message"]["content"]
+                    
+                    # スコアを抽出
+                    score_match = re.search(r'類似度[:：]\s*(\d+\.\d+|\d+)', response_content)
+                    if not score_match:
+                        score_match = re.search(r'(\d+\.\d+|\d+)', response_content)
+                    
+                    if score_match:
+                        score = float(score_match.group(1))
+                        score = max(0.0, min(1.0, score))
+                    else:
+                        score = 0.5
+                    
+                    # 判定理由を抽出
+                    reason = response_content.strip()
+                    if len(reason) > 100:
+                        reason = reason[:97] + "..."
+                    
+                    # 類似度エントリを作成
+                    similarity = {
+                        "cluster_pair": [rep1["cluster_id"], rep2["cluster_id"]],
+                        "similarity_score": score,
+                        "reason": reason,
+                        "records": [
+                            {"cluster_id": rep1["cluster_id"], "title": rep1["title"], "author": rep1["author"]},
+                            {"cluster_id": rep2["cluster_id"], "title": rep2["title"], "author": rep2["author"]}
+                        ]
+                    }
+                    updated_similarities.append(similarity)
+                    
+                    # 判定結果も記録
+                    all_similarity_judgments.append({
+                        "record1": {
+                            "cluster_id": rep1["cluster_id"],
+                            "title": rep1["title"],
+                            "author": rep1["author"],
+                            "publisher": rep1.get("publisher", ""),
+                            "pubdate": rep1.get("pubdate", "")
+                        },
+                        "record2": {
+                            "cluster_id": rep2["cluster_id"],
+                            "title": rep2["title"],
+                            "author": rep2["author"],
+                            "publisher": rep2.get("publisher", ""),
+                            "pubdate": rep2.get("pubdate", "")
+                        },
+                        "similarity_score": score,
+                        "reason": reason,
+                        "full_response": response_content,
+                        "model": fine_tuned_model
+                    })
+        except Exception as e:
+            print(f"ペア処理中にエラー ({processed}/{total_pairs}): {e}")
+            error_count += 1
+            
+            # 例外が発生した場合はデフォルト値を使用
+            similarity = {
+                "cluster_pair": [rep1["cluster_id"], rep2["cluster_id"]],
+                "similarity_score": 0.5,
+                "reason": f"処理エラー: {str(e)}",
+                "records": [
+                    {"cluster_id": rep1["cluster_id"], "title": rep1["title"], "author": rep1["author"]},
+                    {"cluster_id": rep2["cluster_id"], "title": rep2["title"], "author": rep2["author"]}
+                ]
+            }
+            updated_similarities.append(similarity)
+            
+            # エラー時も判定結果を記録
+            all_similarity_judgments.append({
+                "record1": {
+                    "cluster_id": rep1["cluster_id"],
+                    "title": rep1["title"],
+                    "author": rep1["author"],
+                    "publisher": rep1.get("publisher", ""),
+                    "pubdate": rep1.get("pubdate", "")
+                },
+                "record2": {
+                    "cluster_id": rep2["cluster_id"],
+                    "title": rep2["title"],
+                    "author": rep2["author"],
+                    "publisher": rep2.get("publisher", ""),
+                    "pubdate": rep2.get("pubdate", "")
+                },
+                "similarity_score": 0.5,
+                "reason": f"処理エラー: {str(e)}",
+                "model": fine_tuned_model
+            })
+        
+        # 進捗を表示
+        if processed % 10 == 0 or processed == total_pairs:
+            progress = processed / total_pairs * 100
+            print(f"類似度再計算: {processed}/{total_pairs} ペア完了 ({progress:.1f}%) - 成功: {successful}, エラー: {error_count}")
+        
+        # レート制限対策で小さな遅延を入れる
+        await asyncio.sleep(0.1)
+        
+        # 部分結果の保存（100ペアごと）
+        if processed % 100 == 0:
+            try:
+                # 出力ディレクトリが存在しない場合は作成
+                if not os.path.exists(output_dir):
+                    os.makedirs(output_dir, exist_ok=True)
+                
+                # 部分結果を保存
+                partial_file = f"{output_dir}/{output_prefix}_{strategy}_{int(human_accuracy*100)}_iter{iteration}_partial_{processed}.json"
+                with open(partial_file, 'w', encoding='utf-8') as f:
+                    json.dump({
+                        "processed_pairs": processed,
+                        "total_pairs": total_pairs,
+                        "successful": successful,
+                        "error_count": error_count,
+                        "similarities": updated_similarities,
+                        "judgments": all_similarity_judgments
+                    }, f, ensure_ascii=False, indent=2)
+                print(f"部分結果を {partial_file} に保存しました")
             except Exception as e:
-                print(f"Batch API call error: {e}")
-                # Continue to next batch on error
-        
-        # Add batch results
-        updated_similarities.extend(batch_similarities)
-        
-        # Show progress
-        processed_batches += 1
-        progress = processed / total_pairs * 100
-        print(f"Similarity recalculation: {processed}/{total_pairs} pairs complete ({progress:.1f}%) - Batch {processed_batches}/{total_batches}")
+                print(f"部分結果保存中にエラー: {e}")
     
-    # Sort results (highest similarity first)
+    # 結果をソート（類似度の高い順）
     updated_similarities.sort(key=lambda x: x["similarity_score"], reverse=True)
     
+    # すべての判定結果を保存
+    all_judgments_file = f"{output_dir}/{output_prefix}_{strategy}_{int(human_accuracy*100)}_iter{iteration}_all_judgments.json"
+    print(f"再計算類似度判定を保存しています。出力先: {all_judgments_file}")
+    print(f"判定結果数: {len(all_similarity_judgments)}")
+    
+    try:
+        # 出力ディレクトリが存在しない場合は作成
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir, exist_ok=True)
+            
+        with open(all_judgments_file, 'w', encoding='utf-8') as f:
+            json.dump(all_similarity_judgments, f, ensure_ascii=False, indent=2)
+        print(f"すべての類似度判定結果を {all_judgments_file} に保存しました（{len(all_similarity_judgments)}ペア）")
+        
+        # 判定エラーを分析して表示・保存
+        try:
+            analyze_judgment_errors(
+                all_similarity_judgments, 
+                representatives, 
+                output_dir, 
+                output_prefix, 
+                strategy, 
+                human_accuracy, 
+                iteration
+            )
+        except Exception as e:
+            print(f"判定エラー分析中にエラー: {e}")
+        
+    except Exception as e:
+        print(f"判定結果保存中にエラーが発生: {e}")
+    
+    # 結果の統計情報を表示
+    print(f"\n=== 類似度再計算 完了 ===")
+    print(f"総ペア数: {total_pairs}")
+    print(f"処理完了: {processed} ({processed/total_pairs*100:.1f}%)")
+    print(f"成功: {successful} ({successful/total_pairs*100:.1f}%)")
+    print(f"エラー: {error_count} ({error_count/total_pairs*100:.1f}%)")
+    
     return updated_similarities
+
 
 # Human-in-the-loop process with LLM learning
 async def human_in_the_loop_process_with_llm_learning(yaml_data: str, 
@@ -1469,7 +1640,14 @@ async def human_in_the_loop_process_with_llm_learning(yaml_data: str,
     
     # Initial API call
     api_results = await process_requests_parallel(api_requests, api_key)
-    similarity_pairs = extract_similarity_results(api_results, representatives)
+    similarity_pairs = extract_similarity_results(
+        api_results, 
+        representatives, 
+        output_dir, 
+        output_prefix, 
+        strategy, 
+        human_accuracy
+    )
     
     # Extract correct labels (for simulation)
     correct_labels = {}
@@ -1644,9 +1822,17 @@ async def human_in_the_loop_process_with_llm_learning(yaml_data: str,
                     current_model = new_model
                     
                     # Recalculate similarities with trained model
-                    print("Recalculating similarities with trained model...")
+                    print("学習されたモデルで類似度を再計算中...")
                     updated_similarities = await recalculate_similarities_with_trained_model(
-                        representatives, api_key, current_model)
+                        representatives, 
+                        api_key, 
+                        current_model,
+                        output_dir,
+                        output_prefix,
+                        iteration,
+                        strategy,
+                        human_accuracy
+                    )
                     
                     # Integrate old and new similarities
                     # Prioritize new judgments but keep high-confidence existing ones
@@ -1759,6 +1945,328 @@ async def human_in_the_loop_process_with_llm_learning(yaml_data: str,
     final_results["model"] = current_model
     
     return final_results
+
+def analyze_judgment_errors(
+    all_judgments: List[Dict[str, Any]], 
+    representatives: List[Dict[str, Any]], 
+    output_dir: str = "results",
+    output_prefix: str = "result",
+    strategy: str = "core_inconsistency",
+    human_accuracy: float = 1.0,
+    iteration: int = 0
+) -> None:
+    """
+    間違って判定されたペアを分析して表示・保存する
+    
+    Args:
+        all_judgments: すべての判定結果
+        representatives: 代表レコードのリスト
+        output_dir: 出力ディレクトリ
+        output_prefix: 出力プレフィックス 
+        strategy: 戦略
+        human_accuracy: 人間の精度
+        iteration: 反復回数（初期判定の場合は-1）
+    """
+    print("\n=== 判定分析 ===")
+    print(f"総ペア数: {len(all_judgments)}")
+    
+    # cluster_id から original_cluster_id へのマッピングを作成
+    cluster_to_original = {}
+    for rep in representatives:
+        cluster_id = rep.get("cluster_id")
+        original_id = rep.get("original_cluster_id", "")
+        cluster_to_original[cluster_id] = original_id
+        
+    # デバッグ情報: マッピングのサンプルを表示
+    print(f"代表レコード数: {len(representatives)}")
+    print(f"cluster_id -> original_cluster_id マッピング例 (最大5件):")
+    for i, (cluster_id, original_id) in enumerate(list(cluster_to_original.items())[:5]):
+        print(f"  {cluster_id} -> {original_id}")
+    
+    # 各判定結果に対する分析
+    analyzed_judgments = []
+    original_id_based_matches = 0
+    llm_matches = 0
+    title_author_based_matches = 0
+    
+    for judgment in all_judgments:
+        record1_id = judgment["record1"]["cluster_id"]
+        record2_id = judgment["record2"]["cluster_id"]
+        
+        # LLMによる判定（閾値0.7）
+        similarity_score = judgment["similarity_score"]
+        llm_match = similarity_score >= 0.7
+        if llm_match:
+            llm_matches += 1
+        
+        # original_cluster_id による判定
+        # cluster_id から original_cluster_id を取得
+        original_id1 = cluster_to_original.get(record1_id, "unknown")
+        original_id2 = cluster_to_original.get(record2_id, "unknown")
+        
+        original_id_match = (original_id1 == original_id2) and original_id1 and original_id1 != "unknown"
+        if original_id_match:
+            original_id_based_matches += 1
+        
+        # タイトルと著者ベースの判定（参考用）
+        title1 = judgment["record1"]["title"]
+        title2 = judgment["record2"]["title"]
+        author1 = judgment["record1"]["author"]
+        author2 = judgment["record2"]["author"]
+        
+        # 基本的な類似度計算
+        title_similarity = calculate_text_similarity(title1, title2) if 'calculate_text_similarity' in globals() else 0.5
+        author_similarity = calculate_text_similarity(author1, author2) if 'calculate_text_similarity' in globals() else 0.5
+        
+        # タイトルと著者の類似度が高い場合は同じ本と見なす
+        title_author_match = title_similarity > 0.8 and author_similarity > 0.7
+        if title_author_match:
+            title_author_based_matches += 1
+        
+        # 分析結果を記録
+        analyzed_judgment = {
+            "judgment": judgment,
+            "record1": {
+                "cluster_id": record1_id,
+                "original_cluster_id": original_id1,
+                "title": title1,
+                "author": author1
+            },
+            "record2": {
+                "cluster_id": record2_id,
+                "original_cluster_id": original_id2,
+                "title": title2,
+                "author": author2
+            },
+            "llm_match": llm_match,
+            "original_id_match": original_id_match,
+            "title_author_match": title_author_match,
+            "similarity_score": similarity_score,
+            "title_similarity": title_similarity,
+            "author_similarity": author_similarity
+        }
+        
+        analyzed_judgments.append(analyzed_judgment)
+    
+    # 分析結果を整理
+    false_positives_orig = []  # original_id基準での偽陽性
+    false_negatives_orig = []  # original_id基準での偽陰性
+    false_positives_ta = []    # タイトル・著者基準での偽陽性
+    false_negatives_ta = []    # タイトル・著者基準での偽陰性
+    
+    for judgment in analyzed_judgments:
+        # original_id基準での誤判定
+        if judgment["llm_match"] and not judgment["original_id_match"]:
+            false_positives_orig.append(judgment)
+        elif not judgment["llm_match"] and judgment["original_id_match"]:
+            false_negatives_orig.append(judgment)
+        
+        # タイトル・著者基準での誤判定
+        if judgment["llm_match"] and not judgment["title_author_match"]:
+            false_positives_ta.append(judgment)
+        elif not judgment["llm_match"] and judgment["title_author_match"]:
+            false_negatives_ta.append(judgment)
+    
+    # 分析結果の概要を表示
+    print(f"\n=== 判定分析結果 ===")
+    print(f"総ペア数: {len(all_judgments)}")
+    print(f"LLMが一致と判定: {llm_matches} ペア ({llm_matches/len(all_judgments)*100:.1f}%)")
+    print(f"original_idが一致: {original_id_based_matches} ペア ({original_id_based_matches/len(all_judgments)*100:.1f}%)")
+    print(f"タイトル・著者が類似: {title_author_based_matches} ペア ({title_author_based_matches/len(all_judgments)*100:.1f}%)")
+    
+    print(f"\n-- original_id基準の誤判定 --")
+    print(f"偽陽性 (False Positives): {len(false_positives_orig)} ペア (original_idでは不一致だがLLMは一致と判定)")
+    print(f"偽陰性 (False Negatives): {len(false_negatives_orig)} ペア (original_idでは一致だがLLMは不一致と判定)")
+    
+    print(f"\n-- タイトル・著者基準の誤判定 --")
+    print(f"偽陽性 (False Positives): {len(false_positives_ta)} ペア (タイトル・著者は類似していないがLLMは一致と判定)")
+    print(f"偽陰性 (False Negatives): {len(false_negatives_ta)} ペア (タイトル・著者は類似しているがLLMは不一致と判定)")
+    
+    # 矛盾するトリプルを検出
+    try:
+        inconsistent_triplets = detect_transitivity_violations(all_judgments, 0.7)
+        print(f"\n矛盾するトリプル: {len(inconsistent_triplets)} 件")
+    except Exception as e:
+        print(f"矛盾トリプル検出中にエラーが発生: {e}")
+        inconsistent_triplets = []
+    
+    # 詳細な例を表示
+    if false_positives_orig:
+        print("\n== original_id基準の偽陽性の例（最大5件） ==")
+        for i, fp in enumerate(false_positives_orig[:5]):
+            judgment = fp["judgment"]
+            print(f"{i+1}. 「{fp['record1']['title']}」と「{fp['record2']['title']}」")
+            print(f"   著者: {fp['record1']['author']} / {fp['record2']['author']}")
+            print(f"   類似度: {fp['similarity_score']}")
+            print(f"   original_cluster_id: {fp['record1']['original_cluster_id']} / {fp['record2']['original_cluster_id']}")
+    
+    if false_negatives_orig:
+        print("\n== original_id基準の偽陰性の例（最大5件） ==")
+        for i, fn in enumerate(false_negatives_orig[:5]):
+            judgment = fn["judgment"]
+            print(f"{i+1}. 「{fn['record1']['title']}」と「{fn['record2']['title']}」")
+            print(f"   著者: {fn['record1']['author']} / {fn['record2']['author']}")
+            print(f"   類似度: {fn['similarity_score']}")
+            print(f"   original_cluster_id: {fn['record1']['original_cluster_id']} / {fn['record2']['original_cluster_id']}")
+    
+    # 結果をファイルに保存
+    iteration_str = "initial" if iteration == -1 else f"iter{iteration}"
+    analysis_file = f"{output_dir}/{output_prefix}_{strategy}_{int(human_accuracy*100)}_{iteration_str}_analysis.json"
+    
+    analysis_results = {
+        "total_judgments": len(all_judgments),
+        "llm_matches": llm_matches,
+        "original_id_matches": original_id_based_matches,
+        "title_author_matches": title_author_based_matches,
+        "original_id_false_positives": {
+            "count": len(false_positives_orig),
+            "examples": false_positives_orig[:20]
+        },
+        "original_id_false_negatives": {
+            "count": len(false_negatives_orig),
+            "examples": false_negatives_orig[:20]
+        },
+        "title_author_false_positives": {
+            "count": len(false_positives_ta),
+            "examples": false_positives_ta[:20]
+        },
+        "title_author_false_negatives": {
+            "count": len(false_negatives_ta),
+            "examples": false_negatives_ta[:20]
+        },
+        "inconsistent_triplets": {
+            "count": len(inconsistent_triplets),
+            "examples": inconsistent_triplets[:20]
+        },
+        "all_judgments": analyzed_judgments
+    }
+    
+    try:
+        # 出力ディレクトリが存在しない場合は作成
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir, exist_ok=True)
+            
+        with open(analysis_file, 'w', encoding='utf-8') as f:
+            json.dump(analysis_results, f, ensure_ascii=False, indent=2)
+        print(f"\n判定分析結果を {analysis_file} に保存しました")
+        
+        # マッピング情報だけを別ファイルにも保存（デバッグ用）
+        mapping_file = f"{output_dir}/{output_prefix}_{strategy}_{int(human_accuracy*100)}_{iteration_str}_id_mapping.json"
+        with open(mapping_file, 'w', encoding='utf-8') as f:
+            mapping_data = {
+                "cluster_to_original": cluster_to_original,
+                "representative_count": len(representatives),
+                "mapped_count": len(cluster_to_original)
+            }
+            json.dump(mapping_data, f, ensure_ascii=False, indent=2)
+        print(f"ID対応マッピングを {mapping_file} に保存しました")
+        
+    except Exception as e:
+        print(f"分析結果保存中にエラーが発生: {e}")
+
+def calculate_text_similarity(text1: str, text2: str) -> float:
+    """
+    2つのテキスト間の類似度を計算（簡易版）
+    
+    Args:
+        text1: 比較する1つ目のテキスト
+        text2: 比較する2つ目のテキスト
+        
+    Returns:
+        類似度スコア（0〜1）
+    """
+    if not text1 or not text2:
+        return 0.0
+    
+    # jellyfish.jaro_winkler_similarityを使用していない場合の代替処理
+    try:
+        from jellyfish import jaro_winkler_similarity
+        return jaro_winkler_similarity(text1, text2)
+    except ImportError:
+        # 簡易的な類似度計算（文字の共通性に基づく）
+        chars1 = set(text1)
+        chars2 = set(text2)
+        common = len(chars1.intersection(chars2))
+        total = len(chars1.union(chars2))
+        return common / total if total > 0 else 0.0
+    
+    
+    
+def detect_transitivity_violations(judgments: List[Dict[str, Any]], threshold: float = 0.7) -> List[Dict[str, Any]]:
+    """
+    判定結果から推移律に違反するトリプルを検出
+    
+    Args:
+        judgments: 判定結果リスト
+        threshold: 一致と見なす閾値
+        
+    Returns:
+        矛盾するトリプルのリスト
+    """
+    # グラフ構造を構築
+    match_graph = defaultdict(set)
+    unmatch_graph = defaultdict(set)
+    
+    # ペアごとに一致/不一致グラフに追加
+    for judgment in judgments:
+        record1_id = judgment["record1"]["cluster_id"]
+        record2_id = judgment["record2"]["cluster_id"]
+        similarity_score = judgment["similarity_score"]
+        
+        if similarity_score >= threshold:
+            match_graph[record1_id].add(record2_id)
+            match_graph[record2_id].add(record1_id)
+        else:
+            unmatch_graph[record1_id].add(record2_id)
+            unmatch_graph[record2_id].add(record1_id)
+    
+    # 推移律に違反するトリプルを検出
+    inconsistent_triplets = []
+    
+    # すべてのノードの組み合わせを調べる
+    nodes = list(match_graph.keys())
+    for i, node_a in enumerate(nodes):
+        for node_b in match_graph[node_a]:
+            if node_b <= node_a:  # 重複チェックを避ける
+                continue
+                
+            for node_c in match_graph[node_b]:
+                if node_c <= node_b:  # 重複チェックを避ける
+                    continue
+                
+                # A=B, B=C, A≠C という矛盾パターンを検出
+                if node_c in unmatch_graph.get(node_a, set()) or node_a in unmatch_graph.get(node_c, set()):
+                    # 矛盾するトリプル情報を構築
+                    triplet_info = {
+                        "nodes": [node_a, node_b, node_c],
+                        "relationships": {
+                            f"{node_a}-{node_b}": "match",
+                            f"{node_b}-{node_c}": "match",
+                            f"{node_a}-{node_c}": "unmatch"
+                        },
+                        "titles": {},
+                        "authors": {}
+                    }
+                    
+                    # タイトルと著者情報を追加
+                    for judgment in judgments:
+                        rec1_id = judgment["record1"]["cluster_id"]
+                        rec2_id = judgment["record2"]["cluster_id"]
+                        
+                        if rec1_id in triplet_info["nodes"] and rec1_id not in triplet_info["titles"]:
+                            triplet_info["titles"][rec1_id] = judgment["record1"]["title"]
+                            triplet_info["authors"][rec1_id] = judgment["record1"]["author"]
+                        
+                        if rec2_id in triplet_info["nodes"] and rec2_id not in triplet_info["titles"]:
+                            triplet_info["titles"][rec2_id] = judgment["record2"]["title"]
+                            triplet_info["authors"][rec2_id] = judgment["record2"]["author"]
+                    
+                    inconsistent_triplets.append(triplet_info)
+    
+    return inconsistent_triplets
+
+
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='改善された複数代表レコードによるエンティティマッチング')

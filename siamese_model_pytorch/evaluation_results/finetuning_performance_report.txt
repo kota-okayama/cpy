@@ -1,0 +1,41 @@
+# ファインチューニング性能評価レポート
+
+日付: 2025-05-12 06:14:39
+
+## 評価対象
+- 書誌データ: /mnt/f/lab/Lab2411-archive/benchmark/bib_japan_20241024/1k/record.yml
+- 評価ペアリスト: /mnt/f/lab/Lab2411-archive/siamese_model_pytorch/evaluation_candidate_pairs.csv (9985 ペア)
+- 評価対象レコード数: 1252
+
+## ファインチューニング前モデル (gpt-4o-mini-2024-07-18)
+### ペアワイズ評価
+- 適合率 (Precision): 1.0000
+- 再現率 (Recall):    0.9713
+- F1スコア:           0.9854
+- 判定エラー数:       0
+
+### クラスタリング評価
+- Adjusted Rand Index (ARI): 0.8327
+- Normalized Mutual Information (NMI): 0.8798
+- Homogeneity:  1.0000
+- Completeness: 0.7853
+- V-measure:    0.8798
+
+## ファインチューニング後モデル (ft:gpt-4o-mini-2024-07-18:mlab:bib-matching-01-0512:BW3SmCtm)
+### ペアワイズ評価
+- 適合率 (Precision): 1.0000
+- 再現率 (Recall):    1.0000
+- F1スコア:           1.0000
+- 判定エラー数:       0
+
+### クラスタリング評価
+- Adjusted Rand Index (ARI): 0.8366
+- Normalized Mutual Information (NMI): 0.8875
+- Homogeneity:  1.0000
+- Completeness: 0.7977
+- V-measure:    0.8875
+
+## 考察ポイント
+- F1スコアは向上したか？
+- ARI/NMIは向上したか？
+- 判定エラー数は減少したか？
